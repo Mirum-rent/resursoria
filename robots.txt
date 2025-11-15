@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+Disallow: /includes/
+Disallow: /tmp/
+Disallow: /private/
+
+# Основные директории
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+
+# Sitemap
+Sitemap: https://resursoria.ru/sitemap.xml
+
+# Хост
+Host: https://resursoria.ru
+
+# Кэширование
+Crawl-delay: 1
+
+# Поисковые системы
+User-agent: Yandex
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1

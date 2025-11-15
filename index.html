@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Аутстаффинг персонала в Москве | Вывод сотрудников за штат | Аренда персонала</title>
-    <meta name="description" content="✅ Аутстаффинг персонала через аккредитованные ЧАЗ. Снижаем налоговую нагрузку до 40%, защищаем от штрафов МВД. Легализация мигрантов из 20+ стран. Расчет стоимости онлайн.">
+    <title>Аутстаффинг и аренда персонала в Москве | Вывод сотрудников за штат</title>
+    <meta name="description" content="✅ Аренда персонала через аутстаффинг. Снижаем налоговую нагрузку до 40%, защищаем от штрафов. Легализация мигрантов. Расчет стоимости онлайн.">
     
     <!-- Ключевые слова для поисковых систем -->
     <meta name="keywords" content="аренда персонала, аутстаффинг, вывод персонала за штат, легализация мигрантов, оформление иностранцев, снижение налогов, кадровый аутсорсинг, услуги ЧАЗ, оптимизация ФОТ, штрафы ФМС, налоги на персонал">
@@ -18,7 +18,7 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Ресурсория",
-        "description": "Услуги аутстаффинга персонала через аккредитованные ЧАЗ",
+        "description": "Услуги аутстаффинга и аренды персонала через аккредитованные ЧАЗ",
         "url": "https://resursoria.ru",
         "telephone": "+7-958-111-85-14",
         "address": {
@@ -26,7 +26,7 @@
             "addressCountry": "Россия",
             "addressLocality": "Москва"
         },
-        "serviceType": "Аутстаффинг персонала",
+        "serviceType": "Аутстаффинг и аренда персонала",
         "areaServed": "Россия"
     }
     </script>
@@ -42,8 +42,9 @@
             --whatsapp-color: #25D366;
             --success-color: #2a9d8f;
             --header-height: 80px;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --border-radius: 12px;
+            --box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
         }
 
         /* === БАЗОВЫЕ СТИЛИ === */
@@ -58,7 +59,7 @@
             font-family: 'Arial', sans-serif;
             color: #333;
             line-height: 1.6;
-            background-color: #f5f7fa;
+            background-color: #fff;
             padding-top: var(--header-height);
         }
 
@@ -70,7 +71,7 @@
 
         h1, h2, h3, h4 {
             font-weight: 700;
-            line-height: 1.3;
+            line-height: 1.2;
             margin-bottom: 1rem;
             color: var(--dark-color);
         }
@@ -81,14 +82,15 @@
 
         /* === ХЕДЕР И НАВИГАЦИЯ === */
         .main-header {
-            background-color: var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.95);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
             height: var(--header-height);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
         }
 
         .header-container {
@@ -105,7 +107,12 @@
         }
 
         .logo img {
-            height: 50px;
+            height: 60px;
+            transition: var(--transition);
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -114,26 +121,42 @@
         }
 
         .nav-links a {
-            color: white;
+            color: var(--dark-color);
             text-decoration: none;
             padding: 0 15px;
             height: var(--header-height);
             display: flex;
             align-items: center;
-            transition: all 0.3s;
+            transition: var(--transition);
             font-weight: 500;
+            position: relative;
         }
 
         .nav-links a:hover {
-            color: var(--accent-color);
-            background-color: rgba(255,255,255,0.05);
+            color: var(--secondary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            right: 15px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
         }
 
         /* === ГЛАВНЫЙ БАННЕР (ГЕРОЙ-БЛОК) === */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+            background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
             color: white;
-            padding: 100px 0 80px;
+            padding: 120px 0 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -150,59 +173,75 @@
             background-size: cover;
         }
 
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
             position: relative;
+            color: white;
         }
 
         .accent {
-            color: var(--accent-color);
+            color: #ffd166;
+            display: block;
+            font-size: 3.2rem;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto 2rem;
             position: relative;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .hero-buttons {
             margin: 2.5rem 0;
             position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 32px;
+            padding: 16px 35px;
             border-radius: var(--border-radius);
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s;
-            margin: 0 10px;
+            transition: var(--transition);
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            text-align: center;
         }
 
         .btn-primary {
-            background-color: var(--secondary-color);
+            background-color: var(--accent-color);
             color: white;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
         }
 
         .btn-whatsapp {
             background-color: var(--whatsapp-color);
             color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         /* === ПРЕИМУЩЕСТВА === */
         .advantages {
-            padding: 80px 0;
+            padding: 100px 0;
             background-color: white;
         }
 
@@ -212,21 +251,29 @@
         }
 
         .section-title h2 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             position: relative;
             display: inline-block;
+            margin-bottom: 1.5rem;
         }
 
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
+            width: 100px;
+            height: 5px;
             background-color: var(--accent-color);
-            border-radius: 2px;
+            border-radius: 3px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .advantage-grid {
@@ -242,33 +289,39 @@
             border-radius: var(--border-radius);
             background: white;
             box-shadow: var(--box-shadow);
-            transition: transform 0.3s;
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
         }
 
         .advantage-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
         .advantage-card i {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             display: block;
         }
 
         .advantage-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+        }
+
+        .advantage-card p {
+            color: #666;
         }
 
         /* === КАЛЬКУЛЯТОР СТОИМОСТИ === */
         .calculator {
-            padding: 80px 0;
-            background-color: var(--light-color);
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
         .calculator-form {
             background: white;
-            padding: 40px;
+            padding: 50px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             max-width: 1000px;
@@ -304,16 +357,17 @@
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 14px;
+            padding: 16px;
             border: 1px solid #ddd;
             border-radius: var(--border-radius);
             font-size: 16px;
-            transition: border 0.3s;
+            transition: var(--transition);
         }
 
         .form-group input:focus, .form-group select:focus {
             border-color: var(--secondary-color);
             outline: none;
+            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
         }
 
         .radio-group {
@@ -326,6 +380,14 @@
             display: flex;
             align-items: center;
             cursor: pointer;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .radio-label:hover {
+            background: #e9ecef;
         }
 
         .radio-label input {
@@ -334,37 +396,42 @@
 
         .calculator-result {
             margin-top: 30px;
-            padding: 25px;
+            padding: 30px;
             background-color: #f8f9fa;
             border-radius: var(--border-radius);
             display: none;
-            border-left: 4px solid var(--success-color);
+            border-left: 5px solid var(--success-color);
+            box-shadow: var(--box-shadow);
         }
 
         .result-item {
             margin-bottom: 15px;
             display: flex;
             justify-content: space-between;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e9ecef;
         }
 
         .result-item:last-child {
             margin-bottom: 0;
+            border-bottom: none;
         }
 
         .result-value {
             font-weight: 700;
             color: var(--success-color);
+            font-size: 1.1rem;
         }
 
         /* === КЕЙСЫ И ОТЗЫВЫ === */
         .cases {
-            padding: 80px 0;
+            padding: 100px 0;
             background-color: white;
         }
 
         .case-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
@@ -374,30 +441,45 @@
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             padding: 30px;
-            border-top: 4px solid var(--accent-color);
-            transition: transform 0.3s;
+            border-top: 5px solid var(--accent-color);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .case-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
         .case-badge {
             background-color: var(--success-color);
             color: white;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
             display: inline-block;
             font-weight: 600;
+            align-self: flex-start;
+        }
+
+        .case-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .case-card p {
+            margin-bottom: 1rem;
+            flex-grow: 1;
         }
 
         /* === ФУТЕР === */
         .footer {
             background-color: var(--dark-color);
             color: white;
-            padding: 50px 0 30px;
+            padding: 70px 0 30px;
         }
 
         .footer-container {
@@ -440,15 +522,16 @@
         .footer-links a {
             color: #ccc;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: var(--transition);
         }
 
         .footer-links a:hover {
             color: white;
+            padding-left: 5px;
         }
 
         .footer-bottom {
-            margin-top: 40px;
+            margin-top: 50px;
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
@@ -459,10 +542,11 @@
         .whatsapp-cta {
             background: linear-gradient(135deg, var(--whatsapp-color) 0%, #128C7E 100%);
             color: white;
-            padding: 30px;
+            padding: 50px 30px;
             border-radius: var(--border-radius);
             margin: 30px 0;
             text-align: center;
+            box-shadow: var(--box-shadow);
         }
 
         /* === ХЛЕБНЫЕ КРОШКИ === */
@@ -493,7 +577,7 @@
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s;
+            transition: var(--transition);
             z-index: 999;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
@@ -517,15 +601,31 @@
             .calculator-right {
                 position: static;
             }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .accent {
+                font-size: 2.7rem;
+            }
         }
 
         @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 80px;
+            }
+            
             .hero h1 {
                 font-size: 2rem;
             }
             
+            .accent {
+                font-size: 2.2rem;
+            }
+            
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             .nav-links {
@@ -537,16 +637,21 @@
             }
             
             .btn {
-                display: block;
-                margin: 10px 0;
                 width: 100%;
                 max-width: 300px;
-                margin-left: auto;
-                margin-right: auto;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
             }
             
             .section-title h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+            
+            .calculator-form {
+                padding: 30px 20px;
             }
             
             .footer-container {
@@ -568,15 +673,23 @@
             }
             
             .hero h1 {
-                font-size: 1.7rem;
+                font-size: 1.8rem;
+            }
+            
+            .accent {
+                font-size: 2rem;
             }
             
             .calculator-form {
-                padding: 25px 20px;
+                padding: 25px 15px;
             }
             
             .case-card {
                 padding: 20px;
+            }
+            
+            .advantages, .calculator, .cases {
+                padding: 70px 0;
             }
         }
     </style>
@@ -585,7 +698,7 @@
     <!-- ХЛЕБНЫЕ КРОШКИ ДЛЯ SEO -->
     <nav class="breadcrumbs container">
         <a href="/">Главная</a> > 
-        <span>Аутстаффинг персонала</span>
+        <span>Аренда персонала и аутстаффинг</span>
     </nav>
 
     <!-- ШАПКА САЙТА -->
@@ -609,12 +722,14 @@
     <!-- ГЛАВНЫЙ БАННЕР -->
     <section class="hero">
         <div class="container">
-            <h1>Кадровый аутстаффинг <span class="accent">без рисков и проверок</span></h1>
-            <p>Оформляем персонал через аккредитованные ЧАЗ с 15-летним опытом. <strong>Защищаем от штрафов до 80 млн рублей</strong> и снижаем налоговую нагрузку до 40%</p>
-            
-            <div class="hero-buttons">
-                <a href="#calculator" class="btn btn-primary">Рассчитать стоимость</a>
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp">Консультация в WhatsApp</a>
+            <div class="hero-content">
+                <h1>Аренда персонала<br>и <span class="accent">аутстаффинг</span></h1>
+                <p>Оформляем сотрудников через аккредитованные ЧАЗ с 15-летним опытом. <strong>Защищаем от штрафов до 80 млн рублей</strong> и снижаем налоговую нагрузку до 40%</p>
+                
+                <div class="hero-buttons">
+                    <a href="#calculator" class="btn btn-primary">Рассчитать стоимость</a>
+                    <a href="https://wa.me/79581118514" class="btn btn-whatsapp">Консультация в WhatsApp</a>
+                </div>
             </div>
 
             <!-- БЛОК ПРЕИМУЩЕСТВ -->
@@ -647,7 +762,8 @@
     <section class="advantages" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Аутстаффинг и аутсорсинг: в чем разница?</h2>
+                <h2>Аренда персонала и аутстаффинг</h2>
+                <p>Выберите оптимальное решение для вашего бизнеса</p>
             </div>
             <div class="advantage-grid">
                 <div class="advantage-card">
@@ -662,7 +778,7 @@
                     <p style="margin-top: 1rem; font-style: italic;"><strong>Идеально для:</strong> легализации существующего штата, оптимизации налогов</p>
                 </div>
                 <div class="advantage-card">
-                    <h3>Аутсорсинг персонала</h3>
+                    <h3>Аренда персонала</h3>
                     <p><strong>Наш персонал → ваши задачи</strong></p>
                     <ul style="text-align: left; margin-top: 1rem;">
                         <li>✅ Мы находим и оформляем сотрудников</li>
@@ -676,12 +792,15 @@
         </div>
     </section>
 
+    <!-- Остальные секции (калькулятор, кейсы, GR-экспертиза, CTA, футер) остаются без изменений по структуре, 
+    но будут стилизованы в соответствии с новым дизайном -->
+    
     <!-- КАЛЬКУЛЯТОР СТОИМОСТИ -->
     <section class="calculator" id="calculator">
         <div class="container">
             <div class="section-title">
-                <h2>Калькулятор стоимости аутстаффинга</h2>
-                <p>Рассчитайте стоимость услуг за 1 минуту</p>
+                <h2>Калькулятор стоимости услуг</h2>
+                <p>Рассчитайте стоимость за 1 минуту</p>
             </div>
             
             <div class="calculator-form">
@@ -776,6 +895,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Реальные кейсы наших клиентов</h2>
+                <p>Убедитесь в эффективности нашего подхода на реальных примерах</p>
             </div>
             
             <div class="case-grid">
@@ -811,8 +931,8 @@
         <div class="container">
             <div class="section-title">
                 <h2>GR-экспертиза: защита от проверок и штрафов</h2>
+                <p>Наша экспертиза позволяет решать вопросы на досудебном уровне</p>
             </div>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;"><strong>GR (Government Relations)</strong> — управление взаимоотношениями с государственными органами. Наша экспертиза позволяет решать вопросы на досудебном уровне.</p>
             
             <div class="advantage-grid">
                 <div class="advantage-card">
@@ -870,7 +990,7 @@
             <div class="footer-container">
                 <div class="footer-section">
                     <h3>Ресурсория</h3>
-                    <p>Ваш надежный партнер в кадровом аутстаффинге</p>
+                    <p>Ваш надежный партнер в кадровом аутстаффинге и аренде персонала</p>
                     <div style="margin-top: 20px;">
                         <p><strong>Контакты:</strong></p>
                         <p>WhatsApp: <a href="https://wa.me/79581118514" style="color: var(--whatsapp-color);">+7 (958) 111-85-14</a></p>
@@ -880,8 +1000,8 @@
                 <div class="footer-section">
                     <h3>Услуги</h3>
                     <ul class="footer-links">
+                        <li><a href="#services">Аренда персонала</a></li>
                         <li><a href="#services">Аутстаффинг персонала</a></li>
-                        <li><a href="#services">Аутсорсинг персонала</a></li>
                         <li><a href="#about">Легализация мигрантов</a></li>
                         <li><a href="#calculator">Расчет стоимости</a></li>
                     </ul>

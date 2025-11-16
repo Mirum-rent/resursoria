@@ -628,6 +628,128 @@
             transform: translateY(-3px);
         }
 
+        /* === УВЕДОМЛЕНИЕ О КУКАХ === */
+        .cookie-notice {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark-color);
+            color: white;
+            padding: 20px;
+            z-index: 1001;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .cookie-notice.active {
+            transform: translateY(0);
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cookie-text {
+            flex: 1;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cookie-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cookie-btn.accept {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .cookie-btn.reject {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+
+        /* === СОГЛАСИЕ НА ОБРАБОТКУ ДАННЫХ === */
+        .consent-checkbox {
+            margin: 20px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .consent-checkbox input {
+            margin-top: 3px;
+        }
+
+        .consent-checkbox label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .consent-checkbox a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .consent-checkbox a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-disabled {
+            background-color: #ccc !important;
+            cursor: not-allowed !important;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        /* === СПИСКИ ПРОФЕССИЙ И ОТРАСЛЕЙ === */
+        .professions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .profession-category {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .profession-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+        }
+
+        .profession-list {
+            columns: 2;
+            column-gap: 20px;
+        }
+
+        .profession-list li {
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+
         /* === АДАПТИВНОСТЬ === */
         @media (max-width: 992px) {
             .calculator-flex {
@@ -644,6 +766,15 @@
             
             .accent {
                 font-size: 2.7rem;
+            }
+            
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profession-list {
+                columns: 1;
             }
         }
 
@@ -701,6 +832,10 @@
                 width: 45px;
                 height: 45px;
             }
+            
+            .professions-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -727,6 +862,15 @@
             .advantages, .calculator, .cases {
                 padding: 70px 0;
             }
+            
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .cookie-btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -746,6 +890,7 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#services">Услуги</a></li>
+                    <li><a href="#professions">Специалисты</a></li>
                     <li><a href="#calculator">Калькулятор</a></li>
                     <li><a href="#cases">Кейсы</a></li>
                     <li><a href="#about">О нас</a></li>
@@ -764,7 +909,7 @@
                 
                 <div class="hero-buttons">
                     <a href="#calculator" class="btn btn-primary">Рассчитать стоимость</a>
-                    <a href="https://wa.me/79581118514" class="btn btn-whatsapp">Консультация в WhatsApp</a>
+                    <a href="#whatsapp-consult" class="btn btn-whatsapp">Консультация в WhatsApp</a>
                 </div>
             </div>
 
@@ -828,6 +973,67 @@
         </div>
     </section>
 
+    <!-- БЛОК СПЕЦИАЛИСТОВ И ОТРАСЛЕЙ -->
+    <section class="calculator" id="professions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Мы предоставляем персонал для любых задач</h2>
+                <p>Более 50 специальностей для всех отраслей бизнеса</p>
+            </div>
+            
+            <div class="professions-grid">
+                <div class="profession-category">
+                    <h4>🏥 Медицинский персонал</h4>
+                    <ul class="profession-list">
+                        <li>Врачи всех специальностей</li>
+                        <li>Медсестры и медбратья</li>
+                        <li>Санитары</li>
+                        <li>Лаборанты</li>
+                        <li>Фельдшеры</li>
+                        <li>Администраторы</li>
+                    </ul>
+                    <p style="margin-top: 10px; font-style: italic;"><strong>Помогаем:</strong> поликлиникам, больницам, медицинским центрам, массажным салонам</p>
+                </div>
+                
+                <div class="profession-category">
+                    <h4>🏪 Торговля и услуги</h4>
+                    <ul class="profession-list">
+                        <li>Продавцы-консультанты</li>
+                        <li>Кассиры</li>
+                        <li>Мерчандайзеры</li>
+                        <li>Официанты</li>
+                        <li>Повара</li>
+                        <li>Бариста</li>
+                        <li>Уборщицы</li>
+                        <li>Охранники</li>
+                    </ul>
+                    <p style="margin-top: 10px; font-style: italic;"><strong>Помогаем:</strong> магазинам, кафе и ресторанам, ТЦ, клининговым компаниям</p>
+                </div>
+                
+                <div class="profession-category">
+                    <h4>🏗️ Строительство и производство</h4>
+                    <ul class="profession-list">
+                        <li>Строители</li>
+                        <li>Монтажники</li>
+                        <li>Сварщики</li>
+                        <li>Разнорабочие</li>
+                        <li>Грузчики</li>
+                        <li>Водители</li>
+                        <li>Курьеры</li>
+                        <li>Термисты</li>
+                        <li>Мясники</li>
+                    </ul>
+                    <p style="margin-top: 10px; font-style: italic;"><strong>Помогаем:</strong> стройкам, производственным компаниям, складам, транспортным компаниям</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p><strong>Не нашли нужную специальность?</strong> Мы предоставляем персонал практически любой квалификации!</p>
+                <a href="#whatsapp-consult" class="btn btn-primary" style="margin-top: 15px;">Узнать о возможности</a>
+            </div>
+        </div>
+    </section>
+
     <!-- КАЛЬКУЛЯТОР СТОИМОСТИ -->
     <section class="calculator" id="calculator">
         <div class="container">
@@ -881,7 +1087,15 @@
                             <input type="number" id="employees" placeholder="10" min="1" max="1000">
                         </div>
                         
-                        <button onclick="calculateCost()" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Рассчитать стоимость</button>
+                        <div class="consent-checkbox">
+                            <input type="checkbox" id="calculatorConsent">
+                            <label for="calculatorConsent">
+                                Я согласен на обработку моих персональных данных в соответствии с 
+                                <a href="#privacy-policy">Политикой конфиденциальности</a>
+                            </label>
+                        </div>
+                        
+                        <button onclick="calculateCost()" class="btn btn-primary" style="width: 100%; margin-top: 20px;" id="calculateBtn">Рассчитать стоимость</button>
                         <a href="javascript:void(0);" class="btn" onclick="calculatorReset()" style="width: 100%; margin-top: 10px; background: #f0f0f0; color: #333;">Сбросить все значения</a>
                     </div>
                     
@@ -912,7 +1126,7 @@
                             
                             <div style="margin-top: 25px; text-align: center;">
                                 <p><strong>Оставьте заявку и получите бесплатное кадровое сопровождение</strong></p>
-                                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" style="margin-top: 15px;">
+                                <a href="https://wa.me/79581118514" class="btn btn-whatsapp whatsapp-link" style="margin-top: 15px;" data-consent-required="true">
                                     📱 Получить расчет в WhatsApp
                                 </a>
                             </div>
@@ -963,34 +1177,40 @@
     <section class="advantages" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>GR-экспертиза: защита от проверок и штрафов</h2>
-                <p>Наша экспертиза позволяет решать вопросы на досудебном уровне</p>
+                <h2>Оператор обработки данных - ООО "МИРУМ"</h2>
+                <p>Ваши персональные данные защищены в соответствии с законодательством РФ</p>
             </div>
             
             <div class="advantage-grid">
                 <div class="advantage-card">
                     <i>🛡️</i>
-                    <h4>Защита при проверках</h4>
-                    <p>Сопровождение проверок МВД, ФНС, ГИТ. В 95% случаев удается избежать штрафов</p>
-                </div>
-                
-                <div class="advantage-card">
-                    <i>⚖️</i>
-                    <h4>Досудебное урегулирование</h4>
-                    <p>Решаем вопросы с контролирующими органами до возбуждения дел</p>
+                    <h4>Юридическая защита</h4>
+                    <p>ООО "МИРУМ" - официальный оператор обработки персональных данных с 2013 года</p>
                 </div>
                 
                 <div class="advantage-card">
                     <i>📋</i>
-                    <h4>Миграционное сопровождение</h4>
-                    <p>Легализация иностранных сотрудников из 20+ стран с полным соблюдением законодательства</p>
+                    <h4>Соответствие 152-ФЗ</h4>
+                    <p>Строгое соблюдение Федерального закона "О персональных данных"</p>
                 </div>
+                
+                <div class="advantage-card">
+                    <i>🔒</i>
+                    <h4>Безопасность данных</h4>
+                    <p>Все данные защищены и хранятся на территории РФ в соответствии с требованиями РКН</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: var(--border-radius);">
+                <h3>Политика конфиденциальности</h3>
+                <p>Мы собираем и обрабатываем только необходимые данные с вашего согласия. Все данные защищены и используются исключительно для предоставления услуг.</p>
+                <a href="#privacy-policy" class="btn btn-primary" style="margin-top: 15px;">Ознакомиться с политикой</a>
             </div>
         </div>
     </section>
 
     <!-- CTA БЛОК С WHATSAPP -->
-    <section class="calculator">
+    <section class="calculator" id="whatsapp-consult">
         <div class="container">
             <div class="whatsapp-cta">
                 <h2>Готовы избавиться от кадровых проблем?</h2>
@@ -1006,7 +1226,15 @@
                     </ul>
                 </div>
                 
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" style="font-size: 1.2rem; padding: 16px 35px;">
+                <div class="consent-checkbox" style="justify-content: center; background: rgba(255,255,255,0.2); padding: 15px; border-radius: var(--border-radius); margin: 20px 0;">
+                    <input type="checkbox" id="whatsappConsent">
+                    <label for="whatsappConsent" style="color: white;">
+                        Я согласен на обработку персональных данных в соответствии с 
+                        <a href="#privacy-policy" style="color: white; text-decoration: underline;">Политикой конфиденциальности</a>
+                    </label>
+                </div>
+                
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp whatsapp-link" style="font-size: 1.2rem; padding: 16px 35px;" data-consent-required="true">
                     📱 Написать в WhatsApp
                 </a>
                 
@@ -1025,8 +1253,9 @@
                     <h3>Ресурсория</h3>
                     <p>Ваш надежный партнер в кадровом аутстаффинге и аренде персонала</p>
                     <div style="margin-top: 20px;">
-                        <p><strong>Контакты:</strong></p>
-                        <p>WhatsApp: <a href="https://wa.me/79581118514" style="color: var(--whatsapp-color);">+7 (958) 111-85-14</a></p>
+                        <p><strong>Оператор обработки данных:</strong></p>
+                        <p>ООО "МИРУМ"</p>
+                        <p>ИНН: 3019008619</p>
                     </div>
                 </div>
                 
@@ -1035,7 +1264,7 @@
                     <ul class="footer-links">
                         <li><a href="#services">Аренда персонала</a></li>
                         <li><a href="#services">Аутстаффинг персонала</a></li>
-                        <li><a href="#about">Легализация мигрантов</a></li>
+                        <li><a href="#professions">Специалисты</a></li>
                         <li><a href="#calculator">Расчет стоимости</a></li>
                     </ul>
                 </div>
@@ -1045,20 +1274,96 @@
                     <ul class="footer-links">
                         <li><a href="#cases">Кейсы</a></li>
                         <li><a href="#about">О нас</a></li>
+                        <li><a href="#privacy-policy">Политика конфиденциальности</a></li>
                         <li><a href="#contacts">Контакты</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>© 2025 Ресурсория. Все права защищены.</p>
+                <p>© 2025 Ресурсория. Все права защищены. Оператор обработки данных - ООО "МИРУМ"</p>
             </div>
         </div>
     </footer>
 
+    <!-- ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ -->
+    <section class="advantages" id="privacy-policy" style="padding: 50px 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Политика конфиденциальности</h2>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3>1. Общие положения</h3>
+                <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006 №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые ООО "МИРУМ" (далее – Оператор).</p>
+                
+                <h3>2. Основные понятия</h3>
+                <p><strong>Персональные данные</strong> - любая информация, относящаяся к прямо или косвенно определенному или определяемому физическому лицу (субъекту персональных данных).</p>
+                <p><strong>Обработка персональных данных</strong> - любое действие (операция) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными.</p>
+                
+                <h3>3. Оператор может обрабатывать следующие персональные данные Пользователя</h3>
+                <ul>
+                    <li>Фамилия, имя, отчество</li>
+                    <li>Электронный адрес</li>
+                    <li>Номера телефонов</li>
+                    <li>Реквизиты компании</li>
+                    <li>Файлы cookie</li>
+                </ul>
+                
+                <h3>4. Цели обработки персональных данных</h3>
+                <ul>
+                    <li>Предоставление услуг аутстаффинга и аренды персонала</li>
+                    <li>Заключение, исполнение и прекращение гражданско-правовых договоров</li>
+                    <li>Информирование о новых услугах и специальных предложениях</li>
+                    <li>Улучшение качества обслуживания</li>
+                </ul>
+                
+                <h3>5. Правовые основания обработки персональных данных</h3>
+                <p>Оператор обрабатывает персональные данные Пользователя только в случае их заполнения и/или отправки Пользователем самостоятельно через специальные формы, расположенные на сайте. Заполняя соответствующие формы и/или отправляя свои персональные данные Оператору, Пользователь выражает свое согласие с данной Политикой.</p>
+                
+                <h3>6. Порядок сбора, хранения, передачи и других видов обработки персональных данных</h3>
+                <p>Безопасность персональных данных, которые обрабатываются Оператором, обеспечивается путем реализации правовых, организационных и технических мер, необходимых для выполнения в полном объеме требований действующего законодательства в области защиты персональных данных.</p>
+                <p>Оператор обеспечивает сохранность персональных данных и принимает все возможные меры, исключающие доступ к персональным данным неуполномоченных лиц.</p>
+                <p>Персональные данные Пользователя никогда, ни при каких условиях не будут переданы третьим лицам, за исключением случаев, связанных с исполнением действующего законодательства.</p>
+                
+                <h3>7. Файлы cookie</h3>
+                <p>Мы используем файлы cookie для улучшения работы сайта, анализа трафика и персонализации контента. Cookie - это небольшие текстовые файлы, которые сохраняются на вашем устройстве.</p>
+                <p><strong>Типы используемых cookie:</strong></p>
+                <ul>
+                    <li>Необходимые cookie - обеспечивают работу основных функций сайта</li>
+                    <li>Аналитические cookie - помогают нам анализировать использование сайта</li>
+                    <li>Функциональные cookie - запоминают ваши предпочтения</li>
+                </ul>
+                <p>Вы можете отключить cookie в настройках вашего браузера, однако это может повлиять на работу некоторых функций сайта.</p>
+                
+                <h3>8. Заключительные положения</h3>
+                <p>Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Оператору с помощью электронной почты MatserviceMirum@yandex.ru.</p>
+                <p>В данном документе будут отражены любые изменения политики обработки персональных данных Оператором. Политика действует бессрочно до замены ее новой версией.</p>
+                
+                <div style="margin-top: 30px; text-align: center;">
+                    <p><strong>Дата последнего обновления:</strong> 01.01.2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- КНОПКА "НАВЕРХ" -->
     <div class="scroll-to-top" id="scrollToTop">
         ↑
+    </div>
+
+    <!-- УВЕДОМЛЕНИЕ О КУКАХ -->
+    <div class="cookie-notice" id="cookieNotice">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с 
+                <a href="#privacy-policy" style="color: white; text-decoration: underline;">Политикой конфиденциальности</a> и обработкой персональных данных.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" onclick="acceptCookies()">Принять</button>
+                <button class="cookie-btn reject" onclick="rejectCookies()">Отклонить</button>
+            </div>
+        </div>
     </div>
 
     <!-- СКРИПТ КАЛЬКУЛЯТОРА -->
@@ -1109,7 +1414,31 @@
             }
         };
 
+        // Проверка согласия на обработку данных для калькулятора
+        document.getElementById('calculatorConsent').addEventListener('change', function() {
+            document.getElementById('calculateBtn').disabled = !this.checked;
+            document.getElementById('calculateBtn').classList.toggle('btn-disabled', !this.checked);
+        });
+
+        // Инициализация кнопки калькулятора как отключенной
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('calculateBtn').disabled = true;
+            document.getElementById('calculateBtn').classList.add('btn-disabled');
+            
+            // Показ уведомления о куках
+            if (!getCookie('cookiesAccepted')) {
+                setTimeout(() => {
+                    document.getElementById('cookieNotice').classList.add('active');
+                }, 1000);
+            }
+        });
+
         function calculateCost() {
+            if (!document.getElementById('calculatorConsent').checked) {
+                alert('Пожалуйста, дайте согласие на обработку персональных данных');
+                return;
+            }
+
             // Получаем значения из формы
             const citizen = document.getElementById('citizen').value;
             const region = document.querySelector('input[name="region"]:checked').value;
@@ -1141,6 +1470,9 @@
             document.getElementById('salary').value = '';
             document.getElementById('employees').value = '';
             document.getElementById('result').style.display = 'none';
+            document.getElementById('calculatorConsent').checked = false;
+            document.getElementById('calculateBtn').disabled = true;
+            document.getElementById('calculateBtn').classList.add('btn-disabled');
         }
         
         // Автоматический расчет при изменении значений
@@ -1169,6 +1501,61 @@
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
+            });
+        });
+
+        // Управление куками
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function acceptCookies() {
+            setCookie('cookiesAccepted', 'true', 365);
+            document.getElementById('cookieNotice').classList.remove('active');
+        }
+
+        function rejectCookies() {
+            setCookie('cookiesAccepted', 'false', 1);
+            document.getElementById('cookieNotice').classList.remove('active');
+        }
+
+        // Обработка ссылок WhatsApp с проверкой согласия
+        document.querySelectorAll('.whatsapp-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('data-consent-required') === 'true') {
+                    const consentCheckbox = document.getElementById('whatsappConsent');
+                    if (!consentCheckbox.checked) {
+                        e.preventDefault();
+                        alert('Пожалуйста, дайте согласие на обработку персональных данных перед отправкой сообщения');
+                        consentCheckbox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        return;
+                    }
+                }
+                
+                // Отслеживание события для аналитики
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'whatsapp_click', {
+                        'event_category': 'engagement',
+                        'event_label': this.href
+                    });
+                }
             });
         });
     </script>

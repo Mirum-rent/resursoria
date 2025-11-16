@@ -22,11 +22,19 @@ Host: https://resursoria.ru
 # Кэширование
 Crawl-delay: 1
 
-# Поисковые системы
+# Яндекс
 User-agent: Yandex
 Allow: /
 Clean-param: utm_source&utm_medium&utm_campaign
 
+# Google
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
+
+# Боты социальных сетей
+User-agent: FacebookBot
+Allow: /
+
+User-agent: TwitterBot
+Allow: /

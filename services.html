@@ -11,125 +11,33 @@
     <meta name="robots" content="index, follow" />
     
     <!-- Ключевые слова -->
-    <meta name="keywords" content="услуги аутстаффинга, аренда персонала москва, легализация мигрантов, вывод сотрудников за штат, кадровый аутсорсинг, ЧАЗ услуги">
+    <meta name="keywords" content="услуги аутстаффинга, аренда персонала москва, легализация мигрантов, вывод сотрудников за штат, кадровый аутсорсинг, ЧАЗ услуги, оптимизация ФОТ, снижение налогов на персонал">
     
     <!-- Гео-метатеги -->
     <meta name="geo.region" content="RU-MOW">
     <meta name="geo.placename" content="Moscow">
+    <meta name="geo.position" content="55.755826;37.6173">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Услуги аутстаффинга и аренды персонала в Москве">
     <meta property="og:description" content="Аутстаффинг, аренда персонала, легализация мигрантов. Аккредитованные ЧАЗ с 2009 года.">
     <meta property="og:url" content="https://resursoria.ru/services.html">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/android-chrome-192x192.png">
     
     <!-- Фавиконки -->
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/apple-touch-icon.png">
     
+    <!-- Подключаем CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Дополнительные стили для страницы услуг -->
     <style>
-        /* Стили из главной страницы */
-        :root {
-            --primary-color: #1a3a5f;
-            --secondary-color: #2c5aa0;
-            --accent-color: #e63946;
-            --light-color: #f8f9fa;
-            --dark-color: #1e2a3a;
-            --whatsapp-color: #25D366;
-            --success-color: #2a9d8f;
-            --header-height: 80px;
-            --border-radius: 12px;
-            --box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            color: #333;
-            line-height: 1.6;
-            background-color: #fff;
-            padding-top: var(--header-height);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Хедер */
-        .main-header {
-            background-color: rgba(255, 255, 255, 0.95);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            height: var(--header-height);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            backdrop-filter: blur(10px);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 140px;
-            transition: var(--transition);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--dark-color);
-            text-decoration: none;
-            padding: 0 15px;
-            height: var(--header-height);
-            display: flex;
-            align-items: center;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        /* Хлебные крошки */
-        .breadcrumbs {
-            padding: 15px 0;
-            font-size: 0.9rem;
-            background-color: var(--light-color);
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .breadcrumbs a {
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-
-        /* Герой */
         .hero {
             background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
             color: white;
-            padding: 80px 0 60px;
+            padding: 100px 0 80px;
             text-align: center;
         }
 
@@ -139,7 +47,6 @@
             color: white;
         }
 
-        /* Услуги */
         .services {
             padding: 80px 0;
         }
@@ -151,11 +58,18 @@
             padding: 40px;
             margin-bottom: 40px;
             border-left: 5px solid var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
         }
 
         .service-card h2 {
             color: var(--primary-color);
             margin-bottom: 20px;
+            font-size: 1.8rem;
         }
 
         .service-features {
@@ -166,70 +80,142 @@
         }
 
         .service-feature {
-            padding: 15px;
+            padding: 20px;
             background: #f8f9fa;
             border-radius: var(--border-radius);
+            border-left: 3px solid var(--secondary-color);
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
+        .service-feature h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .service-benefits {
+            background: #e8f5e9;
+            padding: 25px;
             border-radius: var(--border-radius);
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            margin: 10px 0;
+            margin: 25px 0;
         }
 
-        .btn-primary {
-            background-color: var(--accent-color);
-            color: white;
+        .service-benefits h4 {
+            color: var(--success-color);
+            margin-bottom: 15px;
         }
 
-        .btn-whatsapp {
-            background-color: var(--whatsapp-color);
-            color: white;
+        .service-navigation {
+            position: sticky;
+            top: 100px;
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
         }
 
-        /* Футер */
-        .footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 50px 0 20px;
-        }
-
-        .footer-container {
+        .service-nav-links {
+            list-style: none;
             display: flex;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 15px;
         }
 
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: #ccc;
+        .service-nav-links a {
+            color: var(--secondary-color);
             text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 25px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .service-nav-links a:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .consultation-form {
+            background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+        }
+
+        .consultation-form h3 {
+            color: white;
+            text-align: center;
+            margin-bottom: 25px;
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
             .service-card {
                 padding: 25px;
             }
+            
+            .service-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-nav-links {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
         }
     </style>
+
+    <!-- Микроразметка Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Аутстаффинг и аренда персонала",
+        "description": "Услуги аутстаффинга, аренды персонала и легализации мигрантов через аккредитованные ЧАЗ",
+        "provider": {
+            "@type": "Organization",
+            "name": "Ресурсория",
+            "url": "https://resursoria.ru"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Россия"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Услуги аутстаффинга",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Аутстаффинг персонала",
+                        "description": "Вывод вашего текущего персонала за штат с сохранением полного контроля"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Аренда персонала",
+                        "description": "Предоставление готовых сотрудников для выполнения ваших задач"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Легализация мигрантов",
+                        "description": "Полное оформление иностранных работников с защитой от штрафов"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Хлебные крошки -->
@@ -242,7 +228,7 @@
     <header class="main-header">
         <div class="header-container container">
             <a href="/" class="logo">
-                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg" alt="Ресурсория">
+                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg" alt="Ресурсория - аутстаффинг и аренда персонала">
             </a>
             <nav>
                 <ul class="nav-links">
@@ -259,12 +245,23 @@
     <section class="hero">
         <div class="container">
             <h1>Наши услуги</h1>
-            <p>Комплексные решения для вашего бизнеса от аккредиованных ЧАЗ</p>
+            <p>Комплексные решения для вашего бизнеса от аккредитованных ЧАЗ</p>
         </div>
     </section>
 
-    <!-- Услуги -->
+    <!-- Навигация по услугам -->
     <section class="services container">
+        <div class="service-navigation">
+            <ul class="service-nav-links">
+                <li><a href="#outstaffing">Аутстаффинг</a></li>
+                <li><a href="#rent">Аренда персонала</a></li>
+                <li><a href="#migrants">Легализация мигрантов</a></li>
+                <li><a href="#consulting">Кадровый консалтинг</a></li>
+                <li><a href="#calculator">Калькулятор экономии</a></li>
+            </ul>
+        </div>
+
+        <!-- Аутстаффинг персонала -->
         <div class="service-card" id="outstaffing">
             <h2>Аутстаффинг персонала</h2>
             <p><strong>Ваши сотрудники → наше оформление</strong></p>
@@ -283,19 +280,44 @@
                     <h4>🛡️ Защита</h4>
                     <p>Полная защита от проверок и штрафов</p>
                 </div>
+                <div class="service-feature">
+                    <h4>⚡ Сроки</h4>
+                    <p>Оформление за 1-3 рабочих дня</p>
+                </div>
+            </div>
+
+            <div class="service-benefits">
+                <h4>🎯 Преимущества аутстаффинга:</h4>
+                <ul>
+                    <li><strong>Легальная оптимизация налогов</strong> - снижение нагрузки с 43% до 9-12%</li>
+                    <li><strong>Полный кадровый аутсорсинг</strong> - мы берем на себя все обязательства</li>
+                    <li><strong>Защита при проверках</strong> - все общение с проверяющими органами на нас</li>
+                    <li><strong>Сохранение контроля</strong> - вы продолжаете руководить сотрудниками как прежде</li>
+                    <li><strong>Гибкость</strong> - легко масштабировать штат под задачи бизнеса</li>
+                </ul>
             </div>
 
             <h3>Как это работает:</h3>
             <ol style="margin-left: 20px; margin-bottom: 20px;">
-                <li>Заключаем договор аутстаффинга</li>
-                <li>Переводим ваших сотрудников в наш штат</li>
-                <li>Вы продолжаете руководить ими как прежде</li>
-                <li>Мы берем на себя все кадровые вопросы</li>
+                <li><strong>Консультация и расчет</strong> - анализируем вашу ситуацию, считаем экономию</li>
+                <li><strong>Заключение договора</strong> - оформляем все необходимые документы</li>
+                <li><strong>Перевод сотрудников</strong> - плавный вывод персонала в наш штат</li>
+                <li><strong>Полное сопровождение</strong> - берем на себя кадровые и налоговые вопросы</li>
+                <li><strong>Ежемесячная отчетность</strong> - предоставляем полный пакет документов</li>
             </ol>
 
-            <a href="https://wa.me/79581118514" class="btn btn-whatsapp">📱 Узнать подробности</a>
+            <div style="background: #fff3cd; padding: 20px; border-radius: var(--border-radius); border-left: 4px solid var(--warning-color); margin: 20px 0;">
+                <h4 style="color: var(--warning-color); margin-bottom: 10px;">💡 Реальный кейс:</h4>
+                <p><strong>Клиент:</strong> Производственная компания с ФОТ 8 млн руб/мес</p>
+                <p><strong>До:</strong> Налоговая нагрузка 3,4 млн руб/мес (42,5%)</p>
+                <p><strong>После:</strong> Нагрузка 720 тыс руб/мес (9%)</p>
+                <p><strong>Экономия:</strong> 2,68 млн руб ежемесячно</p>
+            </div>
+
+            <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required>📱 Получить расчет для моего бизнеса</a>
         </div>
 
+        <!-- Аренда персонала -->
         <div class="service-card" id="rent">
             <h2>Аренда персонала</h2>
             <p><strong>Наш персонал → ваши задачи</strong></p>
@@ -314,23 +336,52 @@
                     <h4>🎯 Гибкость</h4>
                     <p>Легко масштабировать под задачи</p>
                 </div>
+                <div class="service-feature">
+                    <h4>🏆 Качество</h4>
+                    <p>Тщательный подбор и проверка</p>
+                </div>
             </div>
 
-            <h3>Преимущества:</h3>
+            <h3>Преимущества аренды персонала:</h3>
             <ul style="margin-left: 20px; margin-bottom: 20px;">
-                <li>Не нужно искать и собеседовать</li>
-                <li>Экономия на рекрутинге</li>
-                <li>Быстрый старт проектов</li>
-                <li>Гибкость при изменении нагрузки</li>
+                <li><strong>Не нужно искать и собеседовать</strong> - мы предоставляем готовых специалистов</li>
+                <li><strong>Экономия на рекрутинге</strong> - нет затрат на поиск и подбор</li>
+                <li><strong>Быстрый старт проектов</strong> - сотрудники начинают работать сразу</li>
+                <li><strong>Гибкость при изменении нагрузки</strong> - легко увеличить или уменьшить штат</li>
+                <li><strong>Отсутствие кадровых рисков</strong> - все вопросы по сотрудникам решаем мы</li>
+                <li><strong>Любая квалификация</strong> - от разнорабочих до высококвалифицированных специалистов</li>
             </ul>
 
-            <a href="https://wa.me/79581118514" class="btn btn-whatsapp">📱 Заказать персонал</a>
+            <div class="service-benefits">
+                <h4>📊 Сферы применения:</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <div style="padding: 15px; background: white; border-radius: var(--border-radius);">
+                        <strong>🏗️ Строительство</strong>
+                        <p>Разнорабочие, маляры, штукатуры, сварщики</p>
+                    </div>
+                    <div style="padding: 15px; background: white; border-radius: var(--border-radius);">
+                        <strong>🏭 Производство</strong>
+                        <p>Операторы, сборщики, упаковщики, кладовщики</p>
+                    </div>
+                    <div style="padding: 15px; background: white; border-radius: var(--border-radius);">
+                        <strong>🛍️ Торговля</strong>
+                        <p>Продавцы, мерчендайзеры, кассиры</p>
+                    </div>
+                    <div style="padding: 15px; background: white; border-radius: var(--border-radius);">
+                        <strong>🎯 Логистика</strong>
+                        <p>Грузчики, водители, комплектовщики</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required>📱 Заказать персонал</a>
         </div>
 
+        <!-- Легализация мигрантов -->
         <div class="service-card" id="migrants">
             <h2>Легализация мигрантов</h2>
             <p><strong>Полное оформление иностранных работников</strong></p>
-            <p>Комплексное решение для работы с иностранными сотрудниками. От патента до полного сопровождения.</p>
+            <p>Комплексное решение для работы с иностранными сотрудниками. От патента до полного сопровождения. Защита от штрафов до 1 млн рублей за сотрудника.</p>
             
             <div class="service-features">
                 <div class="service-feature">
@@ -345,39 +396,165 @@
                     <h4>🛡️ Защита</h4>
                     <p>Защита от штрафов до 1 млн за сотрудника</p>
                 </div>
+                <div class="service-feature">
+                    <h4>⚡ Сроки</h4>
+                    <p>Легализация за 1-2 дня</p>
+                </div>
+            </div>
+
+            <div style="background: #f8d7da; padding: 20px; border-radius: var(--border-radius); border-left: 4px solid var(--accent-color); margin: 20px 0;">
+                <h4 style="color: var(--accent-color); margin-bottom: 10px;">⚠️ Внимание! Штрафы в 2025 году:</h4>
+                <ul>
+                    <li><strong>Для юридических лиц:</strong> до 1 000 000 рублей за каждого нелегального работника</li>
+                    <li><strong>Для должностных лиц:</strong> до 50 000 рублей</li>
+                    <li><strong>При повторном нарушении:</strong> до 1 500 000 рублей + приостановление деятельности</li>
+                </ul>
             </div>
 
             <h3>Что входит в услугу:</h3>
             <ul style="margin-left: 20px; margin-bottom: 20px;">
-                <li>Оформление патента/разрешения на работу</li>
-                <li>Медкомиссия и сертификаты</li>
-                <li>Полис ДМС</li>
-                <li>Миграционный учет</li>
-                <li>Налоговые отчисления</li>
-                <li>Юридическое сопровождение</li>
+                <li><strong>Оформление патента/разрешения на работу</strong> - все документы в соответствии с законодательством</li>
+                <li><strong>Медкомиссия и сертификаты</strong> - полное медицинское обследование</li>
+                <li><strong>Полис ДМС</strong> - обязательное медицинское страхование</li>
+                <li><strong>Миграционный учет</strong> - постановка на учет и ведение учета</li>
+                <li><strong>Налоговые отчисления</strong> - полный расчет и уплата налогов</li>
+                <li><strong>Юридическое сопровождение</strong> - защита при проверках МВД</li>
+                <li><strong>Поддержка 24/7</strong> - консультации по любым вопросам</li>
             </ul>
 
-            <a href="https://wa.me/79581118514" class="btn btn-whatsapp">📱 Легализовать мигрантов</a>
+            <div class="service-benefits">
+                <h4>🌍 Гражданства, с которыми работаем:</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 15px;">
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: var(--border-radius);">
+                        Узбекистан
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: var(--border-radius);">
+                        Таджикистан
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: var(--border-radius);">
+                        Кыргызстан
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: var(--border-radius);">
+                        Украина
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: var(--border-radius);">
+                        Молдова
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: var(--border-radius);">
+                        Армения
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: var(--border-radius);">
+                        Азербайджан
+                    </div>
+                    <div style="text-align: center; padding: 10px; background: white; border-radius: var(--border-radius);">
+                        Казахстан
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required>📱 Легализовать мигрантов</a>
         </div>
 
+        <!-- Кадровый консалтинг -->
         <div class="service-card" id="consulting">
             <h2>Кадровый консалтинг</h2>
             <p><strong>Экспертные решения для сложных ситуаций</strong></p>
-            <p>Помощь в сложных кадровых ситуациях, аудит, подготовка к проверкам, GR-сопровождение.</p>
+            <p>Помощь в сложных кадровых ситуациях, аудит, подготовка к проверкам, GR-сопровождение. Работаем с 2009 года.</p>
             
-            <div style="background: #e8f5e9; padding: 20px; border-radius: var(--border-radius); margin: 20px 0;">
-                <h4 style="color: var(--success-color); margin-bottom: 10px;">🎯 Решаем сложные задачи:</h4>
+            <div style="background: #e8f5e9; padding: 25px; border-radius: var(--border-radius); margin: 20px 0;">
+                <h4 style="color: var(--success-color); margin-bottom: 15px;">🎯 Решаем сложные задачи:</h4>
                 <ul style="margin-left: 20px;">
-                    <li>Срочная легализация при проверках</li>
-                    <li>Оспаривание штрафов</li>
-                    <li>Взаимодействие с МВД, ФНС, ГИТ</li>
-                    <li>Сложные миграционные случаи</li>
+                    <li><strong>Срочная легализация при проверках</strong> - экстренное оформление документов</li>
+                    <li><strong>Оспаривание штрафов</strong> - юридическая защита в судах</li>
+                    <li><strong>Взаимодействие с МВД, ФНС, ГИТ</strong> - представительство в госорганах</li>
+                    <li><strong>Сложные миграционные случаи</strong> - восстановление документов, апелляции</li>
+                    <li><strong>Кадровый аудит</strong> - проверка соответствия законодательству</li>
+                    <li><strong>Подготовка к проверкам</strong> - полный аудит и приведение в соответствие</li>
                 </ul>
+            </div>
+
+            <h3>Наши экспертные услуги:</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div style="padding: 20px; background: #f8f9fa; border-radius: var(--border-radius);">
+                    <h4>🔍 Кадровый аудит</h4>
+                    <p>Полная проверка кадровой документации на соответствие законодательству. Выявление рисков и рекомендации по устранению.</p>
+                </div>
+                <div style="padding: 20px; background: #f8f9fa; border-radius: var(--border-radius);">
+                    <h4>⚖️ Юридическая защита</h4>
+                    <p>Представительство в судах, оспаривание штрафов, защита при административных проверках.</p>
+                </div>
+                <div style="padding: 20px; background: #f8f9fa; border-radius: var(--border-radius);">
+                    <h4>🛡️ GR-сопровождение</h4>
+                    <p>Взаимодействие с государственными органами, получение разрешений и лицензий.</p>
+                </div>
             </div>
 
             <p><strong>Работаем с 2009 года</strong> и имеем опыт решения самых сложных задач. Если у вас "горящая" ситуация - мы поможем!</p>
 
-            <a href="https://wa.me/79581118514" class="btn btn-whatsapp">📱 Срочная консультация</a>
+            <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required>📱 Срочная консультация</a>
+        </div>
+
+        <!-- Калькулятор экономии -->
+        <div class="service-card" id="calculator">
+            <h2>Калькулятор экономии</h2>
+            <p>Узнайте, сколько вы сможете сэкономить с нашими услугами</p>
+            
+            <div style="background: #e7f3ff; padding: 25px; border-radius: var(--border-radius);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                    <div>
+                        <label for="service-salary" style="display: block; margin-bottom: 5px; font-weight: bold;">Средняя зарплата (руб):</label>
+                        <input type="number" id="service-salary" value="50000" min="10000" step="5000" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: var(--border-radius);">
+                    </div>
+                    <div>
+                        <label for="service-employees" style="display: block; margin-bottom: 5px; font-weight: bold;">Количество сотрудников:</label>
+                        <input type="number" id="service-employees" value="10" min="1" max="1000" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: var(--border-radius);">
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div style="text-align: center; padding: 20px; background: white; border-radius: var(--border-radius);">
+                        <h4>Штатные сотрудники</h4>
+                        <div id="service-result-staff" style="font-size: 1.2rem; font-weight: bold; color: var(--accent-color);"></div>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: white; border-radius: var(--border-radius); border: 2px solid var(--success-color);">
+                        <h4>Наш аутстаффинг</h4>
+                        <div id="service-result-outstaffing" style="font-size: 1.2rem; font-weight: bold; color: var(--success-color);"></div>
+                    </div>
+                </div>
+
+                <div id="service-saving" style="text-align: center; margin-top: 20px; padding: 15px; background: var(--success-color); color: white; border-radius: var(--border-radius); font-size: 1.3rem; font-weight: bold;"></div>
+            </div>
+        </div>
+
+        <!-- Форма для консультации -->
+        <div class="consultation-form">
+            <h3>📞 Получите бесплатную консультацию</h3>
+            <form data-validate="true">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                    <input type="text" name="name" placeholder="Ваше имя" required style="padding: 12px; border: none; border-radius: var(--border-radius);">
+                    <input type="tel" name="phone" placeholder="Телефон" required style="padding: 12px; border: none; border-radius: var(--border-radius);">
+                    <input type="email" name="email" placeholder="Email" required style="padding: 12px; border: none; border-radius: var(--border-radius);">
+                    <select name="service" required style="padding: 12px; border: none; border-radius: var(--border-radius);">
+                        <option value="">Выберите услугу</option>
+                        <option value="outstaffing">Аутстаффинг</option>
+                        <option value="rent">Аренда персонала</option>
+                        <option value="migrants">Легализация мигрантов</option>
+                        <option value="consulting">Консалтинг</option>
+                    </select>
+                </div>
+                
+                <textarea name="message" placeholder="Опишите вашу задачу..." rows="4" style="width: 100%; padding: 12px; border: none; border-radius: var(--border-radius); margin-bottom: 15px;"></textarea>
+                
+                <div class="consent-checkbox">
+                    <input type="checkbox" id="service-consent" required>
+                    <label for="service-consent">
+                        Даю согласие на обработку персональных данных в соответствии с 
+                        <a href="/privacy.html" style="color: white; text-decoration: underline;">политикой конфиденциальности</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; background: var(--accent-color);">Получить консультацию</button>
+            </form>
         </div>
     </section>
 
@@ -386,7 +563,7 @@
         <div class="container">
             <h2>Не нашли нужную услугу?</h2>
             <p>Мы предоставляем персонал практически любой квалификации и решаем самые сложные кадровые задачи</p>
-            <a href="https://wa.me/79581118514" class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 15px 30px;">📱 Написать в WhatsApp</a>
+            <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.1rem; padding: 15px 30px;">📱 Написать в WhatsApp</a>
         </div>
     </section>
 
@@ -397,6 +574,12 @@
                 <div class="footer-section">
                     <h3>Ресурсория</h3>
                     <p>Кадровый аутсорсинг и аутстаффинг с 2013 года</p>
+                    <div style="margin-top: 20px;">
+                        <p><strong>Оператор обработки данных:</strong></p>
+                        <p>ООО "МИРУМ"</p>
+                        <p>ИНН: 3019008619</p>
+                        <p>ОГРН: 1133023000665</p>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h3>Навигация</h3>
@@ -416,10 +599,76 @@
                     </ul>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div class="footer-bottom">
                 <p>© 2025 Ресурсория. ООО "МИРУМ". Все права защищены.</p>
+                <p><a href="/privacy.html" style="color: #ccc;">Политика конфиденциальности</a></p>
             </div>
         </div>
     </footer>
+
+    <!-- Уведомление о куках -->
+    <div id="cookieNotice" class="cookie-notice">
+        <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
+        <div class="cookie-buttons">
+            <button id="cookieAccept" class="cookie-btn cookie-accept">Принять</button>
+            <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+        </div>
+    </div>
+
+    <!-- Кнопка "Наверх" -->
+    <div class="scroll-to-top" id="scrollToTop">↑</div>
+
+    <!-- Подключаем JavaScript -->
+    <script src="/js/main.js"></script>
+    <script src="/js/forms.js"></script>
+    
+    <!-- Скрипт для калькулятора на странице услуг -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const salaryInput = document.getElementById('service-salary');
+            const employeesInput = document.getElementById('service-employees');
+            const staffResult = document.getElementById('service-result-staff');
+            const outstaffingResult = document.getElementById('service-result-outstaffing');
+            const savingElement = document.getElementById('service-saving');
+
+            function calculateService() {
+                const salary = parseFloat(salaryInput.value) || 0;
+                const employees = parseInt(employeesInput.value) || 1;
+                const totalSalary = salary * employees;
+
+                // Расчет для штатных сотрудников
+                const staffTax = totalSalary * 0.43; // 43% общая нагрузка
+                const staffTotal = totalSalary + staffTax;
+
+                // Расчет для аутстаффинга
+                const outstaffingTax = totalSalary * 0.12; // 12% наша нагрузка
+                const outstaffingTotal = totalSalary + outstaffingTax;
+
+                // Экономия
+                const saving = staffTax - outstaffingTax;
+                const savingPercent = ((saving / staffTax) * 100).toFixed(1);
+
+                // Обновление результатов
+                staffResult.textContent = formatCurrency(staffTotal);
+                outstaffingResult.textContent = formatCurrency(outstaffingTotal);
+                savingElement.textContent = `Экономия: ${formatCurrency(saving)} в месяц (${savingPercent}%)`;
+            }
+
+            function formatCurrency(amount) {
+                return new Intl.NumberFormat('ru-RU', {
+                    style: 'currency',
+                    currency: 'RUB',
+                    minimumFractionDigits: 0
+                }).format(amount);
+            }
+
+            // Обработчики событий
+            salaryInput.addEventListener('input', calculateService);
+            employeesInput.addEventListener('input', calculateService);
+
+            // Первоначальный расчет
+            calculateService();
+        });
+    </script>
 </body>
 </html>

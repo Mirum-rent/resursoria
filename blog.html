@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог об аутстаффинге и аренде персонала | Полезные статьи | Ресурсория</title>
+    <meta name="description" content="📚 Статьи об аутстаффинге, снижении налогов, легализации мигрантов. Актуальная информация для бизнеса в 2025 году. Советы от экспертов с 2009 года.">
+    
+    <!-- SEO метатеги -->
+    <link rel="canonical" href="https://resursoria.ru/blog.html" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Ключевые слова -->
+    <meta name="keywords" content="блог аутстаффинг, статьи аренда персонала, снижение налогов персонал, легализация мигрантов, кадровый аутсорсинг статьи">
+    
+    <style>
+        /* Стили из главной страницы */
+        :root {
+            --primary-color: #1a3a5f;
+            --secondary-color: #2c5aa0;
+            --accent-color: #e63946;
+            --light-color: #f8f9fa;
+            --dark-color: #1e2a3a;
+            --whatsapp-color: #25D366;
+            --success-color: #2a9d8f;
+            --header-height: 80px;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fff;
+            padding-top: var(--header-height);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Хедер */
+        .main-header {
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: var(--header-height);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 140px;
+            transition: var(--transition);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            text-decoration: none;
+            padding: 0 15px;
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        /* Хлебные крошки */
+        .breadcrumbs {
+            padding: 15px 0;
+            font-size: 0.9rem;
+            background-color: var(--light-color);
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .breadcrumbs a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        /* Герой */
+        .hero {
+            background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        /* Блог */
+        .blog-content {
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .article-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-color);
+            color: white;
+        }
+
+        /* Футер */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .blog-content {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs container">
+        <a href="/">Главная</a> > 
+        <span>Блог</span>
+    </nav>
+
+    <!-- Шапка -->
+    <header class="main-header">
+        <div class="header-container container">
+            <a href="/" class="logo">
+                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg" alt="Ресурсория">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/services.html">Услуги</a></li>
+                    <li><a href="/blog.html">Блог</a></li>
+                    <li><a href="/contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Герой -->
+    <section class="hero">
+        <div class="container">
+            <h1>Блог об аутстаффинге</h1>
+            <p>Актуальные статьи о кадровом аутсорсинге, снижении налогов и легализации персонала</p>
+        </div>
+    </section>
+
+    <!-- Контент блога -->
+    <section class="container blog-content">
+        <div class="articles">
+            <article class="article-card">
+                <div class="article-meta">16.11.2025 • Аутстаффинг • 7 мин чтения</div>
+                <h2>Почему вывод персонала за штат - это безопасно и выгодно для бизнеса</h2>
+                <p>Многие предприниматели опасаются выводить персонал за штат, считая это рискованным. Однако при работе с аккредитованными ЧАЗ это <strong>полностью легально и безопасно</strong>.</p>
+                
+                <h3>🎯 Преимущества вывода персонала за штат:</h3>
+                <ul>
+                    <li><strong>Снижение налоговой нагрузки до 40%</strong> - легальная оптимизация ФОТ</li>
+                    <li><strong>Полная защита от проверок</strong> - все вопросы при проверках адресуются к нам</li>
+                    <li><strong>Избавление от кадровой рутины</strong> - мы берем на себя все оформление</li>
+                    <li><strong>Гибкость управления</strong> - вы сохраняете оперативный контроль</li>
+                </ul>
+
+                <h3>🛡️ Почему это безопасно:</h3>
+                <p>Мы работаем через <strong>аккредитованные ЧАЗ с 2009 года</strong>. Все договоры полностью соответствуют законодательству. При проверках МВД, ФНС или ГИТ мы берем на себя все общение с проверяющими органами.</p>
+
+                <p><strong>Реальный пример:</strong> Клиент имел штат 200 сотрудников. После перевода к нам ежемесячная экономия составила 8,3 млн рублей при полном сохранении контроля над персоналом.</p>
+
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp">📱 Получить консультацию</a>
+            </article>
+
+            <article class="article-card">
+                <div class="article-meta">15.11.2025 • Мигранты • 5 мин чтения</div>
+                <h2>Штрафы за нелегальных работников в 2025 году: полный обзор</h2>
+                <p>В 2025 году ужесточились штрафы за нелегальное трудоустройство. Знание актуальных размеров штрафов поможет избежать серьезных финансовых потерь.</p>
+                
+                <h3>💸 Актуальные штрафы в 2025:</h3>
+                <ul>
+                    <li><strong>Для юридических лиц:</strong> до 1 000 000 рублей за каждого нелегального работника</li>
+                    <li><strong>Для должностных лиц:</strong> до 50 000 рублей</li>
+                    <li><strong>При повторном нарушении:</strong> до 1 500 000 рублей + приостановление деятельности</li>
+                </ul>
+
+                <h3>🚨 Как избежать штрафов:</h3>
+                <p>Мы предлагаем <strong>полную легализацию мигрантов за 1 день</strong>. Все документы оформляются в соответствии с требованиями законодательства. При проверках мы предоставляем полный пакет документов.</p>
+
+                <p><strong>Важно:</strong> Не рискуйте бизнесом! Легализация через аккредитованные ЧАЗ - единственный безопасный способ работы с иностранными сотрудниками.</p>
+
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp">📱 Срочная легализация</a>
+            </article>
+
+            <article class="article-card">
+                <div class="article-meta">14.11.2025 • ЧАЗ • 6 мин чтения</div>
+                <h2>Как выбрать надежного партнера для аутстаффинга: 5 ключевых критериев</h2>
+                <p>Выбор непроверенного партнера для аутстаффинга может привести к серьезным проблемам. Вот на что нужно обращать внимание:</p>
+                
+                <h3>🔍 Критерии выбора ЧАЗ:</h3>
+                <ol>
+                    <li><strong>Аккредитация и опыт</strong> - мы работаем с 2009 года</li>
+                    <li><strong>Юридическая чистота</strong> - все договоры соответствуют 56-ФЗ</li>
+                    <li><strong>Финансовая устойчивость</strong> - стабильная компания без долгов</li>
+                    <li><strong>Отзывы клиентов</strong> - 500+ довольных клиентов</li>
+                    <li><strong>Экспертиза в вашей отрасли</strong> - работаем со всеми сферами бизнеса</li>
+                </ol>
+
+                <h3>⭐ Почему выбирают нас:</h3>
+                <p>Мы не просто предоставляем услуги аутстаффинга - мы становимся вашими партнерами в кадровых вопросах. <strong>Решаем сложные задачи любой сложности</strong>, включая срочную легализацию при проверках.</p>
+
+                <p><strong>Наша гарантия:</strong> При проверках все вопросы решаем мы. Вы занимаетесь бизнесом, а мы - кадровыми вопросами.</p>
+
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp">📱 Обсудить сотрудничество</a>
+            </article>
+        </div>
+
+        <div class="sidebar">
+            <h3>📞 Нужна помощь?</h3>
+            <p>Мы готовы проконсультировать по любым вопросам аутстаффинга и легализации персонала</p>
+            <a href="https://wa.me/79581118514" class="btn btn-whatsapp" style="width: 100%; text-align: center; margin: 15px 0;">📱 Написать в WhatsApp</a>
+            
+            <h3>📅 Актуальные темы</h3>
+            <ul>
+                <li><a href="#" style="color: var(--secondary-color);">Снижение налогов на ФОТ</a></li>
+                <li><a href="#" style="color: var(--secondary-color);">Легализация мигрантов</a></li>
+                <li><a href="#" style="color: var(--secondary-color);">Защита от проверок</a></li>
+                <li><a href="#" style="color: var(--secondary-color);">Аренда персонала</a></li>
+            </ul>
+
+            <h3>🎯 Наши услуги</h3>
+            <ul>
+                <li><a href="/services.html#outstaffing" style="color: var(--secondary-color);">Аутстаффинг</a></li>
+                <li><a href="/services.html#rent" style="color: var(--secondary-color);">Аренда персонала</a></li>
+                <li><a href="/services.html#migrants" style="color: var(--secondary-color);">Легализация мигрантов</a></li>
+                <li><a href="/services.html#consulting" style="color: var(--secondary-color);">Кадровый консалтинг</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div style="text-align: center;">
+                <p>© 2025 Ресурсория. ООО "МИРУМ". Все права защищены.</p>
+                <p><a href="/" style="color: #ccc;">Главная</a> | <a href="/privacy.html" style="color: #ccc;">Политика конфиденциальности</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

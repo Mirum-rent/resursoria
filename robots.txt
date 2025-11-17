@@ -12,6 +12,8 @@ Allow: /css/
 Allow: /js/
 Allow: /images/
 Allow: /fonts/
+Allow: /regions/
+Allow: /blog/
 
 # Sitemap
 Sitemap: https://resursoria.ru/sitemap.xml
@@ -26,6 +28,7 @@ Crawl-delay: 1
 User-agent: Yandex
 Allow: /
 Clean-param: utm_source&utm_medium&utm_campaign
+Crawl-delay: 1
 
 # Google
 User-agent: Googlebot
@@ -38,3 +41,11 @@ Allow: /
 
 User-agent: TwitterBot
 Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Боты поисковых систем
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

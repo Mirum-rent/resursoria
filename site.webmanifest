@@ -1,7 +1,7 @@
 {
   "name": "Ресурсория - Аутстаффинг и аренда персонала",
   "short_name": "Ресурсория",
-  "description": "Услуги аутстаффинга персонала через аккредитованные ЧАЗ",
+  "description": "Услуги аутстаффинга персонала через аккредитованные ЧАЗ. Снижение налогов до 40%, легализация мигрантов.",
   "icons": [
     {
       "src": "https://raw.githubusercontent.com/Mirum-rent/resursoria/main/android-chrome-192x192.png",
@@ -18,5 +18,7 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "start_url": "/",
-  "scope": "/"
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity"]
 }

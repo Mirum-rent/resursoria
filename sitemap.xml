@@ -40,64 +40,14 @@
         <priority>0.3</priority>
     </url>
     
-    <!-- Статьи блога -->
-    <url>
-        <loc>https://resursoria.ru/blog/snizhenie-nalogov.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/blog/vyvod-personala-bezopasno.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/blog/shtrafy-2025.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/blog/vybor-chaz.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/blog/migranty-legalizaciya.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/blog/autstaffing-vs-autsorsing.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/blog/optimizaciya-fot.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/blog/proverki-git-mvd.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
     <!-- Региональные страницы -->
+    <url>
+        <loc>https://resursoria.ru/regions/</loc>
+        <lastmod>2025-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
     <url>
         <loc>https://resursoria.ru/regions/moscow.html</loc>
         <lastmod>2025-11-17</lastmod>
@@ -106,101 +56,12 @@
     </url>
     
     <url>
-        <loc>https://resursoria.ru/regions/spb.html</loc>
+        <loc>https://resursoria.ru/regions/saint-petersburg.html</loc>
         <lastmod>2025-11-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     
-    <url>
-        <loc>https://resursoria.ru/regions/novosibirsk.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
+    <!-- Добавьте здесь остальные региональные страницы -->
     
-    <url>
-        <loc>https://resursoria.ru/regions/ekaterinburg.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/regions/kazan.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/regions/nizhny-novgorod.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/regions/chelyabinsk.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/regions/samara.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/regions/omsk.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/regions/rostov-on-don.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/regions/ufa.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/regions/krasnoyarsk.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/regions/voronezh.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/regions/perm.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://resursoria.ru/regions/volgograd.html</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
 </urlset>

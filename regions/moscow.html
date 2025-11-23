@@ -13,38 +13,14 @@
     <meta name="geo.position" content="55.755826;37.6173">
     <meta name="ICBM" content="55.755826, 37.6173">
     
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Аутстаффинг персонала в Москве | Ресурсория">
-    <meta property="og:description" content="Вывод сотрудников за штат в Москве. Снижение налогов до 40%, полная юридическая защита.">
-    <meta property="og:url" content="https://resursoria.ru/regions/moscow.html">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/android-chrome-192x192.png">
-    
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/apple-touch-icon.png">
-    
     <link rel="stylesheet" href="/css/style.css">
     
     <style>
         .hero {
-            background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%), url('https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            background-blend-mode: overlay;
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
             color: white;
-            padding: 120px 0 80px;
+            padding: 100px 0 80px;
             text-align: center;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero .accent {
-            color: #ffd700;
         }
 
         .region-features {
@@ -120,7 +96,7 @@
 
         .case-header {
             display: flex;
-            justify-content: between;
+            justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
             flex-wrap: wrap;
@@ -171,7 +147,7 @@
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .feature-grid {
@@ -183,42 +159,6 @@
             }
         }
     </style>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Аутстаффинг персонала в Москве",
-        "description": "Услуги аутстаффинга и аренды персонала в Москве через аккредитованные ЧАЗ",
-        "provider": {
-            "@type": "Organization",
-            "name": "Ресурсория",
-            "url": "https://resursoria.ru"
-        },
-        "areaServed": {
-            "@type": "City",
-            "name": "Москва",
-            "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "Россия",
-                "addressLocality": "Москва"
-            }
-        },
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Услуги аутстаффинга",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Аутстаффинг персонала"
-                    }
-                }
-            ]
-        }
-    }
-    </script>
 </head>
 <body>
     <nav class="breadcrumbs container">
@@ -236,6 +176,7 @@
                 <ul class="nav-links">
                     <li><a href="/">Главная</a></li>
                     <li><a href="/services.html">Услуги</a></li>
+                    <li><a href="/regions/">Регионы</a></li>
                     <li><a href="/blog.html">Блог</a></li>
                     <li><a href="/contacts.html">Контакты</a></li>
                 </ul>
@@ -245,14 +186,12 @@
 
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Аутстаффинг персонала <span class="accent">в Москве</span></h1>
-                <p><strong>Работаем с московскими компаниями с 2013 года</strong>. Легальный вывод персонала за штат, снижение налоговой нагрузки до 40%, полная защита от проверок МВД, ФНС и ГИТ.</p>
-                
-                <div class="hero-buttons">
-                    <a href="#calculator" class="btn btn-primary">Рассчитать для Москвы</a>
-                    <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required>Московский менеджер</a>
-                </div>
+            <h1>Аутстаффинг персонала в Москве</h1>
+            <p><strong>Работаем с московскими компаниями с 2013 года</strong>. Легальный вывод персонала за штат, снижение налоговой нагрузки до 40%, полная защита от проверок МВД, ФНС и ГИТ.</p>
+            
+            <div style="margin-top: 30px;">
+                <a href="#calculator" class="btn btn-primary">Рассчитать для Москвы</a>
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required>Московский менеджер</a>
             </div>
         </div>
     </section>
@@ -359,11 +298,11 @@
         </div>
     </section>
 
-    <section id="calculator" class="calculator-section" style="padding: 80px 0; background: #f8f9fa;">
+    <section id="calculator" style="padding: 80px 0; background: #f8f9fa;">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 40px;">Калькулятор экономии для Москвы</h2>
             
-            <div class="calculator-form" style="background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); margin-bottom: 40px;">
+            <div style="background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); margin-bottom: 40px;">
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
                     <div>
                         <label for="moscow-salary">Средняя зарплата в Москве (руб):</label>
@@ -376,12 +315,12 @@
                 </div>
             </div>
 
-            <div class="calculator-results" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div class="result-card" style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
                     <h4>Штатные сотрудники в Москве</h4>
                     <div id="moscow-result-staff"></div>
                 </div>
-                <div class="result-card" style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); border: 2px solid var(--success-color);">
+                <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); border: 2px solid var(--success-color);">
                     <h4>Наш аутстаффинг в Москве</h4>
                     <div id="moscow-result-outstaffing"></div>
                 </div>
@@ -478,7 +417,7 @@
                     <h3>Регионы</h3>
                     <ul class="footer-links">
                         <li><a href="/regions/moscow.html" style="color: #ffd700;">Москва</a></li>
-                        <li><a href="/regions/spb.html">Санкт-Петербург</a></li>
+                        <li><a href="/regions/saint-petersburg.html">Санкт-Петербург</a></li>
                         <li><a href="/regions/ekaterinburg.html">Екатеринбург</a></li>
                         <li><a href="/regions/novosibirsk.html">Новосибирск</a></li>
                     </ul>
@@ -509,10 +448,7 @@
         </div>
     </div>
 
-    <div class="scroll-to-top" id="scrollToTop">↑</div>
-
     <script src="/js/main.js"></script>
-    <script src="/js/calculator.js"></script>
     <script src="/js/forms.js"></script>
 
     <script>
@@ -545,18 +481,18 @@
                 
                 if (staffElement) {
                     staffElement.innerHTML = `
-                        <div class="result-total">${formatCurrency(totalSalary)}</div>
-                        <div class="result-tax">Налоги: ${formatCurrency(staffTax)}</div>
-                        <div class="result-net">Чистыми: ${formatCurrency(staffNet)}</div>
+                        <div style="font-size: 1.2rem; font-weight: bold; color: var(--accent-color);">${formatCurrency(totalSalary)}</div>
+                        <div>Налоги: ${formatCurrency(staffTax)}</div>
+                        <div>Чистыми: ${formatCurrency(staffNet)}</div>
                     `;
                 }
                 
                 if (ourElement) {
                     ourElement.innerHTML = `
-                        <div class="result-total">${formatCurrency(totalSalary)}</div>
-                        <div class="result-tax">Налоги: ${formatCurrency(ourTax)}</div>
-                        <div class="result-net">Чистыми: ${formatCurrency(ourNet)}</div>
-                        <div class="result-saving" style="color: var(--success-color); font-weight: bold;">
+                        <div style="font-size: 1.2rem; font-weight: bold; color: var(--success-color);">${formatCurrency(totalSalary)}</div>
+                        <div>Налоги: ${formatCurrency(ourTax)}</div>
+                        <div>Чистыми: ${formatCurrency(ourNet)}</div>
+                        <div style="color: var(--success-color); font-weight: bold; margin-top: 10px;">
                             Экономия: ${formatCurrency(saving)} (${savingPercent}%)
                         </div>
                     `;

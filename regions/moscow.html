@@ -50,12 +50,6 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
 
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
         .moscow-stats {
             background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
             color: white;
@@ -81,75 +75,7 @@
             color: #ffd700;
         }
 
-        .region-cases {
-            padding: 80px 0;
-        }
-
-        .case-card {
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            padding: 30px;
-            margin-bottom: 30px;
-            border-left: 4px solid var(--success-color);
-        }
-
-        .case-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .case-industry {
-            background: var(--secondary-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .case-results {
-            background: #e8f5e9;
-            padding: 20px;
-            border-radius: var(--border-radius);
-            margin: 20px 0;
-        }
-
-        .local-contacts {
-            background: #f8f9fa;
-            padding: 60px 0;
-        }
-
-        .contact-person {
-            background: white;
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .person-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            background: #e9ecef;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: var(--secondary-color);
-        }
-
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
             .feature-grid {
                 grid-template-columns: 1fr;
             }
@@ -170,7 +96,7 @@
     <header class="main-header">
         <div class="header-container container">
             <a href="/" class="logo">
-                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg" alt="Ресурсория - аутстаффинг в Москве">
+                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" alt="Ресурсория - аутстаффинг в Москве">
             </a>
             <nav>
                 <ul class="nav-links">
@@ -181,13 +107,14 @@
                     <li><a href="/contacts.html">Контакты</a></li>
                 </ul>
             </nav>
+            <a href="https://www.avito.ru/brands/i359809882" class="btn btn-primary" style="margin-left: 20px;">Мы на Авито</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
             <h1>Аутстаффинг персонала в Москве</h1>
-            <p><strong>Работаем с московскими компаниями с 2013 года</strong>. Легальный вывод персонала за штат, снижение налоговой нагрузки до 40%, полная защита от проверок МВД, ФНС и ГИТ.</p>
+            <p><strong>Работаем с московскими компаниями с 2013 года</strong>. Легальный вывод персонала за штат, снижение налоговой нагрузки до 40%, полная защита от проверок.</p>
             
             <div style="margin-top: 30px;">
                 <a href="#calculator" class="btn btn-primary">Рассчитать для Москвы</a>
@@ -199,33 +126,21 @@
     <section class="region-features">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 20px;">Аутстаффинг в Москве - особенности</h2>
-            <p style="text-align: center; margin-bottom: 40px; color: #666; max-width: 800px; margin-left: auto; margin-right: auto;">
-                Москва - самый строгий регион по проверкам персонала. Мы знаем все особенности работы со столичными проверяющими органами.
-            </p>
             
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🏢</div>
                     <h3>Московские ставки налогов</h3>
                     <p>Знаем все нюансы налогового законодательства Москвы. Оптимизируем ФОТ с учетом региональных особенностей.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">👮</div>
                     <h3>Защита от проверок</h3>
                     <p>Опыт работы с МВД, ФНС, ГИТ Москвы. Берем на себя все общение с проверяющими органами столицы.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
                     <h3>Московские мигранты</h3>
                     <p>Легализация иностранных работников в Москве. Знаем все требования столичных миграционных служб.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Срочное оформление</h3>
-                    <p>В Москве оформляем сотрудников за 1 день. Курьерская доставка документов по всему городу.</p>
                 </div>
             </div>
         </div>
@@ -256,48 +171,6 @@
         </div>
     </section>
 
-    <section class="region-cases container">
-        <h2 style="text-align: center; margin-bottom: 50px;">Кейсы московских компаний</h2>
-        
-        <div class="case-card">
-            <div class="case-header">
-                <h3 style="color: var(--primary-color);">Строительная компания</h3>
-                <span class="case-industry">Строительство</span>
-            </div>
-            <p><strong>Задача:</strong> Легализовать 120 мигрантов из Узбекистана для объектов в Москве и Московской области.</p>
-            <p><strong>Проблема:</strong> Высокие риски штрафов от МВД Москвы за нелегальных работников.</p>
-            
-            <div class="case-results">
-                <h4 style="color: var(--success-color); margin-bottom: 15px;">✅ Результат:</h4>
-                <ul>
-                    <li>Оформили 120 сотрудников за 3 рабочих дня</li>
-                    <li>Ежемесячная экономия на налогах: 2.8 млн рублей</li>
-                    <li>Прошли 2 проверки МВД без замечаний</li>
-                    <li>Легализовали весь персонал по московским требованиям</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="case-card">
-            <div class="case-header">
-                <h3 style="color: var(--primary-color);">Сеть ресторанов</h3>
-                <span class="case-industry">Общественное питание</span>
-            </div>
-            <p><strong>Задача:</strong> Вывести за штат 85 сотрудников кухни и обслуживания в 15 ресторанах Москвы.</p>
-            <p><strong>Проблема:</strong> Высокая текучесть кадров и сложности с кадровым делопроизводством.</p>
-            
-            <div class="case-results">
-                <h4 style="color: var(--success-color); margin-bottom: 15px;">✅ Результат:</h4>
-                <ul>
-                    <li>Снизили налоговую нагрузку с 43% до 9%</li>
-                    <li>Избавили от кадровой рутины и отчетности</li>
-                    <li>Ежемесячная экономия: 1.2 млн рублей</li>
-                    <li>Сократили текучесть на 40%</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
     <section id="calculator" style="padding: 80px 0; background: #f8f9fa;">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 40px;">Калькулятор экономии для Москвы</h2>
@@ -324,83 +197,6 @@
                     <h4>Наш аутстаффинг в Москве</h4>
                     <div id="moscow-result-outstaffing"></div>
                 </div>
-            </div>
-
-            <div style="margin-top: 40px; background: #e8f5e9; padding: 25px; border-radius: var(--border-radius);">
-                <h4>🎯 Преимущества для московских компаний:</h4>
-                <ul>
-                    <li>✅ Знание специфики московских проверяющих органов</li>
-                    <li>✅ Опыт работы с МВД, ФНС, ГИТ Москвы</li>
-                    <li>✅ Быстрое оформление - 1 день для Москвы</li>
-                    <li>✅ Курьерская доставка документов по городу</li>
-                    <li>✅ Личный менеджер для московских клиентов</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="local-contacts">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 50px;">Московская команда</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div class="contact-person">
-                    <div class="person-photo">👨‍💼</div>
-                    <h3>Александр Петров</h3>
-                    <p><strong>Менеджер по Москве</strong></p>
-                    <p>Опыт работы: 8 лет</p>
-                    <p>Специализация: крупный бизнес</p>
-                    <div style="margin-top: 20px;">
-                        <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="display: block; margin-bottom: 10px;">Написать в WhatsApp</a>
-                        <a href="tel:+79581118514" class="btn btn-primary" style="display: block;">Позвонить</a>
-                    </div>
-                </div>
-                
-                <div class="contact-person">
-                    <div class="person-photo">👩‍💼</div>
-                    <h3>Мария Иванова</h3>
-                    <p><strong>Специалист по мигрантам</strong></p>
-                    <p>Опыт работы: 6 лет</p>
-                    <p>Специализация: легализация в Москве</p>
-                    <div style="margin-top: 20px;">
-                        <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="display: block; margin-bottom: 10px;">Написать в WhatsApp</a>
-                        <a href="tel:+79581118514" class="btn btn-primary" style="display: block;">Позвонить</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="padding: 60px 0; background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white;">
-        <div class="container">
-            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-                <h2>🚀 Бесплатная консультация для Москвы</h2>
-                <p style="margin: 20px 0; font-size: 1.1rem;">Получите расчет экономии для вашей московской компании</p>
-                
-                <form data-validate="true" style="margin-top: 30px;">
-                    <div style="display: grid; gap: 15px;">
-                        <input type="text" name="name" placeholder="Ваше имя" required style="padding: 12px; border: none; border-radius: var(--border-radius);">
-                        <input type="tel" name="phone" placeholder="Телефон" required style="padding: 12px; border: none; border-radius: var(--border-radius);">
-                        <input type="text" name="company" placeholder="Название компании в Москве" style="padding: 12px; border: none; border-radius: var(--border-radius);">
-                        <select name="employees" style="padding: 12px; border: none; border-radius: var(--border-radius);">
-                            <option value="">Количество сотрудников в Москве</option>
-                            <option value="1-10">1-10 сотрудников</option>
-                            <option value="11-50">11-50 сотрудников</option>
-                            <option value="51-100">51-100 сотрудников</option>
-                            <option value="100+">Более 100 сотрудников</option>
-                        </select>
-                        
-                        <div class="consent-checkbox">
-                            <input type="checkbox" id="moscow-consent" required>
-                            <label for="moscow-consent" style="color: white;">
-                                Даю согласие на обработку персональных данных в соответствии с 
-                                <a href="/privacy.html" style="color: white;">политикой конфиденциальности</a>
-                            </label>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%; background: var(--accent-color);">Получить расчет для Москвы</button>
-                    </div>
-                </form>
             </div>
         </div>
     </section>
@@ -435,10 +231,18 @@
             
             <div class="footer-bottom">
                 <p>© 2025 Ресурсория. ООО "МИРУМ". Все права защищены.</p>
-                <p><a href="/privacy.html" style="color: #ccc;">Политика конфиденциальности</a></p>
             </div>
         </div>
     </footer>
+
+    <!-- Кнопки -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/79581118514" class="whatsapp-link" data-consent-required>
+            <span>💬 Написать в WhatsApp</span>
+        </a>
+    </div>
+
+    <div class="scroll-to-top" id="scrollToTop">↑</div>
 
     <div id="cookieNotice" class="cookie-notice">
         <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
@@ -449,7 +253,7 @@
     </div>
 
     <script src="/js/main.js"></script>
-    <script src="/js/forms.js"></script>
+    <script src="/js/calculator.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

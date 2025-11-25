@@ -21,11 +21,11 @@
     <meta property="og:title" content="Контакты | Аутстаффинг персонала в Москве | Ресурсория">
     <meta property="og:description" content="📞 Контакты для связи: +7 (958) 111-85-14. WhatsApp, телефон, email. Аутстаффинг и аренда персонала в Москве и по всей России.">
     <meta property="og:url" content="https://resursoria.ru/contacts.html">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/android-chrome-192x192.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/android-chrome-192x192.png">
     
     <!-- Фавиконки -->
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/apple-touch-icon.png">
     
     <!-- Подключаем CSS -->
     <link rel="stylesheet" href="/css/style.css">
@@ -37,12 +37,6 @@
             color: white;
             padding: 100px 0 80px;
             text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: white;
         }
 
         .contacts {
@@ -75,18 +69,6 @@
             font-size: 3rem;
             margin-bottom: 20px;
             display: block;
-        }
-
-        .contact-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .contact-card p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.5;
         }
 
         .contact-response {
@@ -126,15 +108,6 @@
             color: white;
         }
 
-        .whatsapp-card .contact-link {
-            background: rgba(255,255,255,0.2);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .whatsapp-card .contact-link:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
         .info-section {
             background: #f8f9fa;
             padding: 40px;
@@ -154,14 +127,6 @@
             background: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-        }
-
-        .info-item h4 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .consultation-form {
@@ -222,36 +187,6 @@
             display: block;
         }
 
-        .region-selector {
-            background: #e7f3ff;
-            padding: 25px;
-            border-radius: var(--border-radius);
-            margin-bottom: 40px;
-        }
-
-        .region-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .region-btn {
-            padding: 8px 16px;
-            border: 1px solid var(--secondary-color);
-            background: white;
-            color: var(--secondary-color);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .region-btn.active,
-        .region-btn:hover {
-            background: var(--secondary-color);
-            color: white;
-        }
-
         @media (max-width: 768px) {
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -261,10 +196,6 @@
                 padding: 30px 20px;
             }
             
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
             .consultation-form {
                 padding: 25px;
             }
@@ -272,14 +203,10 @@
             .form-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .region-buttons {
-                justify-content: center;
-            }
         }
     </style>
 
-    <!-- Микроразметка Schema.org для контактов -->
+    <!-- Микроразметка -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -294,19 +221,12 @@
             "addressCountry": "Россия",
             "addressLocality": "Москва"
         },
-        "areaServed": {
-            "@type": "Country",
-            "name": "Россия"
-        },
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+7-958-111-85-14",
             "contactType": "customer service",
             "availableLanguage": "Russian"
-        },
-        "sameAs": [
-            "https://wa.me/79581118514"
-        ]
+        }
     }
     </script>
 </head>
@@ -321,16 +241,18 @@
     <header class="main-header">
         <div class="header-container container">
             <a href="/" class="logo">
-                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg" alt="Ресурсория - аутстаффинг и аренда персонала">
+                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" alt="Ресурсория - аутстаффинг и аренда персонала">
             </a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="/">Главная</a></li>
                     <li><a href="/services.html">Услуги</a></li>
+                    <li><a href="/regions/">Регионы</a></li>
                     <li><a href="/blog.html">Блог</a></li>
                     <li><a href="/contacts.html">Контакты</a></li>
                 </ul>
             </nav>
+            <a href="https://www.avito.ru/brands/i359809882" class="btn btn-primary" style="margin-left: 20px;">Мы на Авито</a>
         </div>
     </header>
 
@@ -338,22 +260,8 @@
     <section class="hero">
         <div class="container">
             <h1>Контакты</h1>
-            <p>Свяжитесь с нами удобным способом - ответим в течение 5 минут</p>
+            <p>Свяжитесь с нами удобным способом - ответим в ближайшее время</p>
         </div>
-    </section>
-
-    <!-- Селектор региона -->
-    <section class="container region-selector">
-        <h3 style="text-align: center; margin-bottom: 20px; color: var(--primary-color);">📍 Выберите ваш регион</h3>
-        <div class="region-buttons">
-            <button class="region-btn active" data-region="moscow">Москва</button>
-            <button class="region-btn" data-region="spb">Санкт-Петербург</button>
-            <button class="region-btn" data-region="ekaterinburg">Екатеринбург</button>
-            <button class="region-btn" data-region="novosibirsk">Новосибирск</button>
-            <button class="region-btn" data-region="kazan">Казань</button>
-            <button class="region-btn" data-region="other">Другой регион</button>
-        </div>
-        <p style="text-align: center; margin-top: 15px; color: #666;">Работаем по всей России - качество услуг одинаковое в любом городе!</p>
     </section>
 
     <!-- Контакты -->
@@ -363,8 +271,8 @@
             <div class="contact-card whatsapp-card">
                 <div class="contact-icon">📱</div>
                 <h3>WhatsApp</h3>
-                <p>Самый быстрый способ связи. Отправляйте документы, получайте консультацию, задавайте вопросы в любое время.</p>
-                <div class="contact-response">Время ответа: 5-10 минут</div>
+                <p>Самый быстрый способ связи. Отправляйте документы, получайте консультацию, задавайте вопросы.</p>
+                <div class="contact-response">Отвечаем быстро в любое время</div>
                 <p><strong>+7 (958) 111-85-14</strong></p>
                 <a href="https://wa.me/79581118514" class="contact-link" data-consent-required>Написать в WhatsApp</a>
             </div>
@@ -372,9 +280,9 @@
             <!-- Телефон -->
             <div class="contact-card">
                 <div class="contact-icon">📞</div>
-                <h3>Телефон</h3>
-                <p>Позвоните для срочной консультации по вопросам аутстаффинга, легализации мигрантов или оптимизации налогов.</p>
-                <div class="contact-response">Время ответа: 1-2 минуты</div>
+                <h3>Телефон / SMS</h3>
+                <p>Позвоните для срочной консультации или отправьте SMS.</p>
+                <div class="contact-response">Лучше отправить SMS - перезвоним</div>
                 <p><strong>+7 (958) 111-85-14</strong></p>
                 <a href="tel:+79581118514" class="contact-link">Позвонить</a>
             </div>
@@ -383,20 +291,10 @@
             <div class="contact-card">
                 <div class="contact-icon">📧</div>
                 <h3>Email</h3>
-                <p>Для официальных запросов, коммерческих предложений и отправки документов. Отвечаем в течение рабочего дня.</p>
-                <div class="contact-response">Ответ в течение 2 часов</div>
+                <p>Для официальных запросов, коммерческих предложений и отправки документов.</p>
+                <div class="contact-response">Ответ в течение рабочего дня</div>
                 <p><strong>MatserviceMirum@yandex.ru</strong></p>
                 <a href="mailto:MatserviceMirum@yandex.ru" class="contact-link">Написать email</a>
-            </div>
-
-            <!-- Telegram -->
-            <div class="contact-card">
-                <div class="contact-icon">✈️</div>
-                <h3>Telegram</h3>
-                <p>Для быстрой текстовой связи и отправки файлов. Удобно для оперативных вопросов и консультаций.</p>
-                <div class="contact-response">Время ответа: 10-15 минут</div>
-                <p><strong>@resursoria</strong></p>
-                <a href="https://t.me/resursoria" class="contact-link" data-consent-required>Написать в Telegram</a>
             </div>
         </div>
 
@@ -416,21 +314,18 @@
                     <p><strong>Москва и вся Россия</strong></p>
                     <p>Работаем с клиентами из всех регионов РФ</p>
                     <p>Удаленное оформление документов</p>
-                    <p>Курьерская доставка по России</p>
                 </div>
                 <div class="info-item">
                     <h4>🕘 Время работы</h4>
                     <p><strong>Пн-Пт: 9:00-18:00</strong></p>
                     <p>Сб: 10:00-16:00 (по предварительной записи)</p>
                     <p>Вс: выходной</p>
-                    <p>Срочные консультации: круглосуточно</p>
                 </div>
                 <div class="info-item">
                     <h4>🚀 Сроки оказания услуг</h4>
                     <p><strong>Аутстаффинг:</strong> 1-3 рабочих дня</p>
                     <p><strong>Легализация мигрантов:</strong> 1-2 дня</p>
                     <p><strong>Аренда персонала:</strong> 1-3 дня</p>
-                    <p><strong>Срочные случаи:</strong> в день обращения</p>
                 </div>
             </div>
         </div>
@@ -440,7 +335,7 @@
             <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary-color);">📝 Заявка на консультацию</h2>
             
             <div class="form-success" id="formSuccess">
-                ✅ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в течение 15 минут.
+                ✅ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
             </div>
 
             <form id="contactForm" data-validate="true">
@@ -471,19 +366,6 @@
                         <option value="rent">Аренда персонала</option>
                         <option value="migrants">Легализация мигрантов</option>
                         <option value="consulting">Кадровый консалтинг</option>
-                        <option value="other">Другое</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="employees">Количество сотрудников</label>
-                    <select id="employees" name="employees">
-                        <option value="">Не выбрано</option>
-                        <option value="1-10">1-10 сотрудников</option>
-                        <option value="11-50">11-50 сотрудников</option>
-                        <option value="51-100">51-100 сотрудников</option>
-                        <option value="101-500">101-500 сотрудников</option>
-                        <option value="500+">Более 500 сотрудников</option>
                     </select>
                 </div>
 
@@ -509,16 +391,16 @@
         <!-- CTA блок -->
         <div style="text-align: center; margin-top: 50px; padding: 40px; background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; border-radius: var(--border-radius);">
             <h2 style="color: white; margin-bottom: 20px;">🚀 Готовы начать сотрудничество?</h2>
-            <p style="margin: 20px 0; font-size: 1.1rem;">Оставьте заявку и получите бесплатную консультацию по аутстаффингу вашего персонала</p>
+            <p style="margin: 20px 0; font-size: 1.1rem;">Напишите нам в WhatsApp для быстрой консультации</p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; max-width: 500px; margin: 0 auto;">
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.1rem; padding: 15px;">📱 Написать в WhatsApp</a>
-                <a href="tel:+79581118514" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px; background: var(--accent-color);">📞 Позвонить сейчас</a>
+            <div style="max-width: 400px; margin: 0 auto;">
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: block; margin-bottom: 15px;">
+                    📱 Написать в WhatsApp
+                </a>
+                <p style="font-size: 0.9rem; opacity: 0.9;">
+                    Пишите в любое время дня и ночи, в выходные и праздники – мы ответим, как можно скорее!
+                </p>
             </div>
-            
-            <p style="margin-top: 20px; font-size: 0.95rem;">
-                Или напишите нам в <a href="https://t.me/resursoria" style="color: white; text-decoration: underline;">Telegram</a>
-            </p>
         </div>
     </section>
 
@@ -536,6 +418,7 @@
                         <p>ОГРН: 1133023000665</p>
                     </div>
                 </div>
+                
                 <div class="footer-section">
                     <h3>Навигация</h3>
                     <ul class="footer-links">
@@ -545,30 +428,32 @@
                         <li><a href="/contacts.html">Контакты</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
                     <h3>Контакты</h3>
                     <ul class="footer-links">
                         <li><a href="tel:+79581118514">+7 (958) 111-85-14</a></li>
                         <li><a href="https://wa.me/79581118514">WhatsApp</a></li>
-                        <li><a href="https://t.me/resursoria">Telegram</a></li>
                         <li><a href="mailto:MatserviceMirum@yandex.ru">Email</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Юридическая информация</h3>
-                    <ul class="footer-links">
-                        <li><a href="/privacy.html">Политика конфиденциальности</a></li>
-                        <li><a href="/privacy.html#cookies">Использование cookies</a></li>
-                        <li><a href="/privacy.html#data">Обработка данных</a></li>
-                    </ul>
-                </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>© 2025 Ресурсория. ООО "МИРУМ". Все права защищены.</p>
-                <p>ИНН: 3019008619 | ОГРН: 1133023000665</p>
+                <p><a href="/privacy.html" style="color: #ccc;">Политика конфиденциальности</a></p>
             </div>
         </div>
     </footer>
+
+    <!-- Кнопки -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/79581118514" class="whatsapp-link" data-consent-required>
+            <span>💬 Написать в WhatsApp</span>
+        </a>
+    </div>
+
+    <div class="scroll-to-top" id="scrollToTop">↑</div>
 
     <!-- Уведомление о куках -->
     <div id="cookieNotice" class="cookie-notice">
@@ -579,122 +464,8 @@
         </div>
     </div>
 
-    <!-- Кнопка "Наверх" -->
-    <div class="scroll-to-top" id="scrollToTop">↑</div>
-
     <!-- Подключаем JavaScript -->
     <script src="/js/main.js"></script>
     <script src="/js/forms.js"></script>
-    
-    <!-- Дополнительный скрипт для страницы контактов -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Обработка выбора региона
-            const regionButtons = document.querySelectorAll('.region-btn');
-            regionButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Убираем активный класс у всех кнопок
-                    regionButtons.forEach(b => b.classList.remove('active'));
-                    // Добавляем активный класс текущей кнопке
-                    this.classList.add('active');
-                    
-                    const region = this.dataset.region;
-                    // Здесь можно добавить логику для изменения контента в зависимости от региона
-                    console.log('Выбран регион:', region);
-                });
-            });
-
-            // Обработка формы обратной связи
-            const contactForm = document.getElementById('contactForm');
-            const formSuccess = document.getElementById('formSuccess');
-
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Проверяем согласие
-                    const consentCheckbox = document.getElementById('contact-consent');
-                    if (!consentCheckbox.checked) {
-                        alert('Пожалуйста, дайте согласие на обработку персональных данных');
-                        consentCheckbox.focus();
-                        return;
-                    }
-
-                    // Здесь будет отправка формы на сервер
-                    // Временно имитируем успешную отправку
-                    
-                    // Показываем сообщение об успехе
-                    formSuccess.classList.add('visible');
-                    
-                    // Очищаем форму
-                    contactForm.reset();
-                    
-                    // Прячем сообщение через 5 секунд
-                    setTimeout(() => {
-                        formSuccess.classList.remove('visible');
-                    }, 5000);
-
-                    // Логируем событие для аналитики
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'contact_form_submit', {
-                            'event_category': 'engagement',
-                            'event_label': 'Contact Page'
-                        });
-                    }
-                });
-            }
-
-            // Маска для телефона
-            const phoneInput = document.getElementById('phone');
-            if (phoneInput) {
-                phoneInput.addEventListener('input', function(e) {
-                    let value = e.target.value.replace(/\D/g, '');
-                    
-                    if (value.length === 0) return;
-                    
-                    if (value[0] === '7' || value[0] === '8') {
-                        value = value.substring(1);
-                    }
-                    
-                    let formattedValue = '+7 (';
-                    
-                    if (value.length > 0) {
-                        formattedValue += value.substring(0, 3);
-                    }
-                    if (value.length > 3) {
-                        formattedValue += ') ' + value.substring(3, 6);
-                    }
-                    if (value.length > 6) {
-                        formattedValue += '-' + value.substring(6, 8);
-                    }
-                    if (value.length > 8) {
-                        formattedValue += '-' + value.substring(8, 10);
-                    }
-                    
-                    e.target.value = formattedValue;
-                });
-            }
-
-            // Отслеживание кликов по контактам
-            document.querySelectorAll('a[href^="tel:"], a[href*="wa.me"], a[href*="t.me"], a[href^="mailto:"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    let eventLabel = '';
-                    
-                    if (href.includes('wa.me')) eventLabel = 'WhatsApp Click';
-                    else if (href.includes('t.me')) eventLabel = 'Telegram Click';
-                    else if (href.includes('tel:')) eventLabel = 'Phone Click';
-                    else if (href.includes('mailto:')) eventLabel = 'Email Click';
-                    
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'contact_click', {
-                            'event_category': 'engagement',
-                            'event_label': eventLabel
-                        });
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>

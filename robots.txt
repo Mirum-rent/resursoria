@@ -1,51 +1,27 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /wp-admin/
-Disallow: /cgi-bin/
-Disallow: /includes/
-Disallow: /tmp/
 Disallow: /private/
+Disallow: /tmp/
 
-# Основные директории
-Allow: /css/
-Allow: /js/
-Allow: /images/
-Allow: /fonts/
-Allow: /regions/
-Allow: /blog/
-
-# Sitemap
 Sitemap: https://resursoria.ru/sitemap.xml
 
-# Хост
-Host: https://resursoria.ru
+# Основные страницы
+Allow: /index.htm
+Allow: /services.html
+Allow: /calculator.html
+Allow: /regions/
+Allow: /blog.html
+Allow: /contacts.html
 
-# Кэширование
-Crawl-delay: 1
+# Региональные страницы
+Allow: /regions/moscow.html
+Allow: /regions/saint-petersburg.html
+Allow: /regions/novosibirsk.html
+Allow: /regions/ekaterinburg.html
+Allow: /regions/kazan.html
 
-# Яндекс
-User-agent: Yandex
-Allow: /
-Clean-param: utm_source&utm_medium&utm_campaign
-Crawl-delay: 1
-
-# Google
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-# Боты социальных сетей
-User-agent: FacebookBot
-Allow: /
-
-User-agent: TwitterBot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-# Боты поисковых систем
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
+# Статьи блога
+Allow: /blog/snizhenie-nalogov.html
+Allow: /blog/vyvod-personala-bezopasno.html
+Allow: /blog/shtrafy-2025.html

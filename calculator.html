@@ -310,6 +310,16 @@
             border-left: 4px solid #25D366;
         }
 
+        /* Стили для опасного пункта */
+        .comparison-advantage.danger {
+            border-left: 4px solid #e53e3e;
+            background: linear-gradient(135deg, #fed7d7, #fff5f5);
+        }
+
+        .comparison-advantage.danger .advantage-content strong {
+            color: #c53030;
+        }
+
         .advantage-icon {
             font-size: 1.8em;
             flex-shrink: 0;
@@ -550,6 +560,13 @@
             <div class="comparison-advantages">
                 <div class="comparison-advantages-title">🤔 Почему наш аутстаффинг лучше самозанятых?</div>
                 <div class="comparison-advantages-grid">
+                    <div class="comparison-advantage danger">
+                        <div class="advantage-icon">🚨</div>
+                        <div class="advantage-content">
+                            <strong>Риск переквалификации в трудовые отношения</strong>
+                            <p>ФНС активно переквалифицирует договоры с самозанятыми. Штрафы + доначисления налогов за 3 года</p>
+                        </div>
+                    </div>
                     <div class="comparison-advantage">
                         <div class="advantage-icon">🌍</div>
                         <div class="advantage-content">
@@ -583,13 +600,6 @@
                         <div class="advantage-content">
                             <strong>Любая численность</strong>
                             <p>Нет ограничений по количеству сотрудников в отличие от самозанятых</p>
-                        </div>
-                    </div>
-                    <div class="comparison-advantage">
-                        <div class="advantage-icon">💰</div>
-                        <div class="advantage-content">
-                            <strong>Защита от штрафов</strong>
-                            <p>Штрафы за нелегальных мигрантов - до 1 млн рублей. Мы защищаем вас</p>
                         </div>
                     </div>
                 </div>

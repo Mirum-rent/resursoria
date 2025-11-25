@@ -11,97 +11,6 @@
     <meta name="robots" content="index, follow" />
     
     <style>
-        /* Стили из главной страницы */
-        :root {
-            --primary-color: #1a3a5f;
-            --secondary-color: #2c5aa0;
-            --accent-color: #e63946;
-            --light-color: #f8f9fa;
-            --dark-color: #1e2a3a;
-            --header-height: 80px;
-            --border-radius: 12px;
-            --box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            color: #333;
-            line-height: 1.6;
-            background-color: #fff;
-            padding-top: var(--header-height);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Хедер */
-        .main-header {
-            background-color: rgba(255, 255, 255, 0.95);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            height: var(--header-height);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            backdrop-filter: blur(10px);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 140px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--dark-color);
-            text-decoration: none;
-            padding: 0 15px;
-            height: var(--header-height);
-            display: flex;
-            align-items: center;
-            font-weight: 500;
-        }
-
-        /* Хлебные крошки */
-        .breadcrumbs {
-            padding: 15px 0;
-            font-size: 0.9rem;
-            background-color: var(--light-color);
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .breadcrumbs a {
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-
-        /* Контент */
         .privacy-content {
             padding: 60px 0;
             max-width: 800px;
@@ -132,19 +41,6 @@
         .privacy-section li {
             margin-bottom: 8px;
         }
-
-        /* Футер */
-        .footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 40px 0 20px;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-        }
     </style>
 </head>
 <body>
@@ -158,16 +54,18 @@
     <header class="main-header">
         <div class="header-container container">
             <a href="/" class="logo">
-                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.svg" alt="Ресурсория">
+                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" alt="Ресурсория">
             </a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="/">Главная</a></li>
                     <li><a href="/services.html">Услуги</a></li>
+                    <li><a href="/regions/">Регионы</a></li>
                     <li><a href="/blog.html">Блог</a></li>
                     <li><a href="/contacts.html">Контакты</a></li>
                 </ul>
             </nav>
+            <a href="https://www.avito.ru/brands/i359809882" class="btn btn-primary" style="margin-left: 20px;">Мы на Авито</a>
         </div>
     </header>
 
@@ -175,7 +73,7 @@
     <section class="privacy-content container">
         <div class="privacy-section">
             <h1>Политика конфиденциальности</h1>
-            <p><strong>Дата последнего обновления:</strong> 16.11.2025</p>
+            <p><strong>Дата последнего обновления:</strong> 24.11.2025</p>
         </div>
 
         <div class="privacy-section">
@@ -221,7 +119,6 @@
             <p><strong>Срок хранения персональных данных:</strong> 3 (три) года с момента окончания взаимодействия с пользователем, если иное не предусмотрено законодательством РФ.</p>
             <p>Безопасность персональных данных, которые обрабатываются Оператором, обеспечивается путем реализации правовых, организационных и технических мер, необходимых для выполнения в полном объеме требований действующего законодательства в области защиты персональных данных.</p>
             <p>Оператор обеспечивает сохранность персональных данных и принимает все возможные меры, исключающие доступ к персональным данным неуполномоченных лиц.</p>
-            <p>Персональные данные Пользователя никогда, ни при каких условиях не будут переданы третьим лицам, за исключением случаев, связанных с исполнением действующего законодательства.</p>
         </div>
 
         <div class="privacy-section">
@@ -263,5 +160,26 @@
             </div>
         </div>
     </footer>
+
+    <!-- Кнопки -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/79581118514" class="whatsapp-link" data-consent-required>
+            <span>💬 Написать в WhatsApp</span>
+        </a>
+    </div>
+
+    <div class="scroll-to-top" id="scrollToTop">↑</div>
+
+    <!-- Уведомление о куках -->
+    <div id="cookieNotice" class="cookie-notice">
+        <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
+        <div class="cookie-buttons">
+            <button id="cookieAccept" class="cookie-btn cookie-accept">Принять</button>
+            <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+        </div>
+    </div>
+
+    <!-- Подключаем JavaScript -->
+    <script src="/js/main.js"></script>
 </body>
 </html>

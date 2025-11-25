@@ -24,6 +24,7 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <!-- Региональные страницы -->
     <url>
         <loc>https://resursoria.ru/regions/moscow.html</loc>
         <lastmod>2025-11-25</lastmod>
@@ -37,10 +38,53 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://resursoria.ru/regions/novosibirsk.html</loc>
+        <lastmod>2025-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/ekaterinburg.html</loc>
+        <lastmod>2025-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/kazan.html</loc>
+        <lastmod>2025-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/nizhny-novgorod.html</loc>
+        <lastmod>2025-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/chelyabinsk.html</loc>
+        <lastmod>2025-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <!-- Блог -->
+    <url>
         <loc>https://resursoria.ru/blog.html</loc>
         <lastmod>2025-11-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/blog/vyvod-personala-bezopasno.html</loc>
+        <lastmod>2025-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/blog/shtrafy-2025.html</loc>
+        <lastmod>2025-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/blog/snizhenie-nalogov.html</loc>
@@ -49,7 +93,13 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://resursoria.ru/blog/vyvod-personala-bezopasno.html</loc>
+        <loc>https://resursoria.ru/blog/legalizaciya-migrantov.html</loc>
+        <lastmod>2025-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/blog/vybor-chaz.html</loc>
         <lastmod>2025-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>

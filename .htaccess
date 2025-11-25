@@ -86,4 +86,5 @@ ErrorDocument 500 /500.html
     RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|iemobile|iphone|ipod|#opera mobile|palmos|webos" [NC]
     RewriteCond %{HTTP_HOST} ^resursoria\.ru$ [NC]
     RewriteRule ^$ https://resursoria.ru/ [L,R=302]
+
 </IfModule>

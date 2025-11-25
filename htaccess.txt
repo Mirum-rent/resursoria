@@ -1,0 +1,89 @@
+# Переименуйте этот файл в .htaccess после загрузки на сервер
+
+# Основные настройки
+RewriteEngine On
+
+# Редирект с www на без www
+RewriteCond %{HTTP_HOST} ^www\.resursoria\.ru$ [NC]
+RewriteRule ^(.*)$ https://resursoria.ru/$1 [R=301,L]
+
+# Редирект с HTTP на HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Кэширование статических файлов
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType application/xml "access plus 0 seconds"
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# Сжатие GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Безопасность заголовков
+<IfModule mod_headers.c>
+    # XSS Protection
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Clickjacking Protection
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # MIME Type Protection
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # HSTS
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    
+    # CSP
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://wa.me https://www.google-analytics.com; frame-ancestors 'self';"
+</IfModule>
+
+# Обработка ошибок
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# Запрет доступа к敏感 файлам
+<FilesMatch "\.(env|json|config|md|gitignore|gitattributes|lock)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<Files "(.htaccess|.htpasswd)">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Оптимизация для мобильных устройств
+<IfModule mod_rewrite.c>
+    # Mobile redirect
+    RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|iemobile|iphone|ipod|#opera mobile|palmos|webos" [NC]
+    RewriteCond %{HTTP_HOST} ^resursoria\.ru$ [NC]
+    RewriteRule ^$ https://resursoria.ru/ [L,R=302]
+</IfModule>

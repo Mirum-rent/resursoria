@@ -3,31 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Блог об аутстаффинге и аренде персонала | Полезные статьи | Ресурсория</title>
-    <meta name="description" content="📚 Статьи об аутстаффинге, снижении налогов, легализации мигрантов. Актуальная информация для бизнеса в 2025 году. Советы от экспертов с 2009 года.">
+    <title>Блог об аутстаффинге персонала | Ресурсория</title>
+    <meta name="description" content="✅ Полезные статьи об аутстаффинге персонала, снижении налогов, легализации мигрантов. Советы от экспертов с 2013 года.">
     
-    <!-- SEO метатеги -->
     <link rel="canonical" href="https://resursoria.ru/blog.html" />
     <meta name="robots" content="index, follow" />
     
-    <!-- Ключевые слова -->
-    <meta name="keywords" content="блог аутстаффинг, статьи аренда персонала, снижение налогов персонал, легализация мигрантов, кадровый аутсорсинг статьи, ЧАЗ блог, оптимизация ФОТ">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Блог об аутстаффинге и аренде персонала | Ресурсория">
-    <meta property="og:description" content="Актуальные статьи о кадровом аутсорсинге, снижении налогов и легализации персонала">
-    <meta property="og:url" content="https://resursoria.ru/blog.html">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/android-chrome-192x192.png">
-    
-    <!-- Фавиконки -->
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/apple-touch-icon.png">
-    
-    <!-- Подключаем CSS -->
     <link rel="stylesheet" href="/css/style.css">
     
-    <!-- Дополнительные стили для страницы блога -->
     <style>
         .hero {
             background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
@@ -36,58 +19,80 @@
             text-align: center;
         }
 
-        .blog-content {
-            padding: 60px 0;
+        .blog-section {
+            padding: 80px 0;
+        }
+
+        .articles-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .article-card {
             background: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            padding: 40px;
-            margin-bottom: 40px;
+            overflow: hidden;
             transition: var(--transition);
-            border-left: 4px solid var(--secondary-color);
+            border: 1px solid #e9ecef;
         }
 
         .article-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .article-content {
+            padding: 25px;
         }
 
         .article-meta {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #666;
         }
 
-        .article-meta .category {
+        .article-category {
             background: var(--secondary-color);
             color: white;
             padding: 4px 12px;
-            border-radius: 15px;
+            border-radius: 20px;
             font-size: 0.8rem;
         }
 
-        .article-card h2 {
-            color: var(--primary-color);
+        .article-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .article-title a {
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .article-title a:hover {
+            color: var(--secondary-color);
+        }
+
+        .article-excerpt {
+            color: #666;
             margin-bottom: 20px;
-            font-size: 1.6rem;
-            line-height: 1.3;
+            line-height: 1.6;
         }
 
         .read-more {
-            display: inline-block;
-            margin-top: 15px;
             color: var(--secondary-color);
             text-decoration: none;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
             transition: var(--transition);
         }
 
@@ -96,118 +101,55 @@
             transform: translateX(5px);
         }
 
-        .sidebar {
+        .categories-section {
+            padding: 60px 0;
             background: #f8f9fa;
-            padding: 30px;
-            border-radius: var(--border-radius);
-            height: fit-content;
-            position: sticky;
-            top: 100px;
         }
 
-        .sidebar h3 {
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--accent-color);
-        }
-
-        .sidebar-section {
-            margin-bottom: 30px;
-        }
-
-        .sidebar-links {
-            list-style: none;
-        }
-
-        .sidebar-links li {
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .sidebar-links a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: var(--transition);
-            display: block;
-        }
-
-        .sidebar-links a:hover {
-            color: var(--primary-color);
-            padding-left: 5px;
-        }
-
-        .newsletter-form {
-            background: var(--primary-color);
-            color: white;
-            padding: 25px;
-            border-radius: var(--border-radius);
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             margin-top: 30px;
         }
 
-        .newsletter-form h4 {
-            color: white;
+        .category-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .category-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
             margin-bottom: 15px;
         }
-
-        .newsletter-form input {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: var(--border-radius);
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .blog-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .article-card {
-                padding: 25px;
-            }
-            
-            .sidebar {
-                position: static;
-            }
-        }
     </style>
-
-    <!-- Микроразметка -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "name": "Блог Ресурсория - статьи об аутстаффинге",
-        "description": "Актуальные статьи о кадровом аутсорсинге, снижении налогов и легализации персонала",
-        "url": "https://resursoria.ru/blog.html",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Ресурсория"
-        }
-    }
-    </script>
 </head>
 <body>
-    <!-- Хлебные крошки -->
     <nav class="breadcrumbs container">
         <a href="/">Главная</a> > 
         <span>Блог</span>
     </nav>
 
-    <!-- Шапка -->
     <header class="main-header">
         <div class="header-container container">
             <a href="/" class="logo">
-                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" alt="Ресурсория - аутстаффинг и аренда персонала">
+                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" alt="Ресурсория - блог об аутстаффинге">
             </a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="/">Главная</a></li>
                     <li><a href="/services.html">Услуги</a></li>
                     <li><a href="/regions/">Регионы</a></li>
-                    <li><a href="/blog.html">Блог</a></li>
+                    <li><a href="/blog.html" style="color: var(--secondary-color);">Блог</a></li>
                     <li><a href="/contacts.html">Контакты</a></li>
                 </ul>
             </nav>
@@ -215,109 +157,200 @@
         </div>
     </header>
 
-    <!-- Герой -->
     <section class="hero">
         <div class="container">
-            <h1>Блог об аутстаффинге</h1>
-            <p>Актуальные статьи о кадровом аутсорсинге, снижении налогов и легализации персонала</p>
+            <h1>Блог об аутстаффинге персонала</h1>
+            <p>Полезные статьи и экспертные материалы о выводе сотрудников за штат, снижении налогов и легализации мигрантов</p>
+            
+            <div style="margin-top: 30px;">
+                <a href="#articles" class="btn btn-primary">Читать статьи</a>
+                <a href="/calculator.html" class="btn btn-whatsapp">🧮 Калькулятор экономии</a>
+            </div>
         </div>
     </section>
 
-    <!-- Контент блога -->
-    <section class="container blog-content">
-        <div class="articles">
+    <section id="articles" class="blog-section container">
+        <h2 style="text-align: center; margin-bottom: 20px;">Последние статьи</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #666;">Актуальная информация об аутстаффинге, изменениях в законодательстве и налоговой оптимизации</p>
+        
+        <div class="articles-grid">
             <!-- Статья 1 -->
             <article class="article-card">
-                <div class="article-meta">
-                    <span class="category">Аутстаффинг</span>
-                    <time datetime="2025-11-24">24.11.2025</time>
-                    <span>• 7 мин чтения</span>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-category">Налоги</span>
+                        <span>15.11.2024</span>
+                    </div>
+                    <h3 class="article-title">
+                        <a href="/blog/snizhenie-nalogov.html">Снижение налоговой нагрузки до 40% через аутстаффинг</a>
+                    </h3>
+                    <p class="article-excerpt">Как легально сократить налоговые выплаты на ФОТ без рисков для бизнеса. Подробный разбор экономии на реальных примерах.</p>
+                    <a href="/blog/snizhenie-nalogov.html" class="read-more">
+                        Читать статью →
+                    </a>
                 </div>
-                
-                <h2>Почему вывод персонала за штат - это безопасно и выгодно для бизнеса</h2>
-                
-                <p>Многие предприниматели опасаются выводить персонал за штат, считая это рискованным. Однако при работе с аккредитованными ЧАЗ это <strong>полностью легально и безопасно</strong>.</p>
-
-                <h3>🛡️ Почему это безопасно:</h3>
-                <p>Мы работаем через <strong>аккредитованные ЧАЗ с 2009 года</strong>. Все договоры полностью соответствуют законодательству. При проверках МВД, ФНС или ГИТ мы берем на себя все общение с проверяющими органами.</p>
-
-                <a href="/blog/vyvod-personala-bezopasno.html" class="read-more">Читать полную статью →</a>
             </article>
 
             <!-- Статья 2 -->
             <article class="article-card">
-                <div class="article-meta">
-                    <span class="category">Мигранты</span>
-                    <time datetime="2025-11-23">23.11.2025</time>
-                    <span>• 5 мин чтения</span>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-category">Безопасность</span>
+                        <span>10.11.2024</span>
+                    </div>
+                    <h3 class="article-title">
+                        <a href="/blog/vyvod-personala-bezopasno.html">Безопасный вывод персонала за штат: пошаговое руководство</a>
+                    </h3>
+                    <p class="article-excerpt">Как правильно вывести сотрудников за штат без нарушений трудового законодательства. Все этапы от подготовки до реализации.</p>
+                    <a href="/blog/vyvod-personala-bezopasno.html" class="read-more">
+                        Читать статью →
+                    </a>
                 </div>
-                
-                <h2>Штрафы за нелегальных работников в 2025 году: полный обзор</h2>
-                
-                <p>В 2025 году ужесточились штрафы за нелегальное трудоустройство. Знание актуальных размеров штрафов поможет избежать серьезных финансовых потерь.</p>
+            </article>
 
-                <h3>🚨 Как избежать штрафов:</h3>
-                <p>Мы предлагаем <strong>полную легализацию мигрантов за 1 день</strong>. Все документы оформляются в соответствии с требованиями законодательства. При проверках мы предоставляем полный пакет документов.</p>
+            <!-- Статья 3 -->
+            <article class="article-card">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-category">Миграция</span>
+                        <span>05.11.2024</span>
+                    </div>
+                    <h3 class="article-title">
+                        <a href="/blog/legalizaciya-migrantov.html">Легализация иностранных работников в 2025 году</a>
+                    </h3>
+                    <p class="article-excerpt">Новые правила трудоустройства мигрантов, изменения в патентах и разрешениях на работу. Актуальная информация для работодателей.</p>
+                    <a href="/blog/legalizaciya-migrantov.html" class="read-more">
+                        Читать статью →
+                    </a>
+                </div>
+            </article>
 
-                <a href="/blog/shtrafy-2025.html" class="read-more">Читать полную статью →</a>
+            <!-- Статья 4 -->
+            <article class="article-card">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-category">Штрафы</span>
+                        <span>01.11.2024</span>
+                    </div>
+                    <h3 class="article-title">
+                        <a href="/blog/shtrafy-2025.html">Штрафы за нелегальный труд в 2025 году: что ждет работодателей</a>
+                    </h3>
+                    <p class="article-excerpt">Обзор новых штрафных санкций за нарушения трудового законодательства. Как избежать многомиллионных штрафов.</p>
+                    <a href="/blog/shtrafy-2025.html" class="read-more">
+                        Читать статью →
+                    </a>
+                </div>
+            </article>
+
+            <!-- Статья 5 -->
+            <article class="article-card">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-category">ЧАЗ</span>
+                        <span>25.10.2024</span>
+                    </div>
+                    <h3 class="article-title">
+                        <a href="/blog/vybor-chaz.html">Как выбрать надежного ЧАЗ для аутстаффинга: 7 критериев</a>
+                    </h3>
+                    <p class="article-excerpt">На что обращать внимание при выборе частного агентства занятости. Критерии надежности и профессиональные рекомендации.</p>
+                    <a href="/blog/vybor-chaz.html" class="read-more">
+                        Читать статью →
+                    </a>
+                </div>
+            </article>
+
+            <!-- Статья 6 -->
+            <article class="article-card">
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-category">Кейсы</span>
+                        <span>20.10.2024</span>
+                    </div>
+                    <h3 class="article-title">
+                        <a href="/blog/realnye-kejsy.html">Реальные кейсы экономии: от 500 тыс до 2 млн рублей в месяц</a>
+                    </h3>
+                    <p class="article-excerpt">Разбор реальных примеров компаний, которые сократили расходы на персонал через аутстаффинг. Цифры и результаты.</p>
+                    <a href="/blog/realnye-kejsy.html" class="read-more">
+                        Читать статью →
+                    </a>
+                </div>
             </article>
         </div>
+    </section>
 
-        <!-- Сайдбар -->
-        <div class="sidebar">
-            <div class="sidebar-section">
-                <h3>📞 Нужна помощь?</h3>
-                <p>Мы готовы проконсультировать по любым вопросам аутстаффинга и легализации персонала</p>
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="width: 100%; text-align: center; margin: 15px 0; display: block;">📱 Написать в WhatsApp</a>
-            </div>
-
-            <div class="sidebar-section">
-                <h3>📅 Популярные темы</h3>
-                <ul class="sidebar-links">
-                    <li><a href="/blog/tag/snizhenie-nalogov.html">Снижение налогов на ФОТ</a></li>
-                    <li><a href="/blog/tag/legalizaciya-migrantov.html">Легализация мигрантов</a></li>
-                    <li><a href="/blog/tag/zashchita-ot-proverok.html">Защита от проверок</a></li>
-                    <li><a href="/blog/tag/arenda-personala.html">Аренда персонала</a></li>
-                </ul>
-            </div>
-
-            <!-- Форма подписки на рассылку -->
-            <div class="newsletter-form">
-                <h4>📧 Подпишитесь на рассылку</h4>
-                <p>Получайте свежие статьи об аутстаффинге и оптимизации налогов</p>
-                <form data-validate="true">
-                    <input type="email" name="email" placeholder="Ваш email" required>
-                    
-                    <div class="consent-checkbox" style="margin: 10px 0;">
-                        <input type="checkbox" id="newsletter-consent" required>
-                        <label for="newsletter-consent" style="color: white; font-size: 0.8rem;">
-                            Даю согласие на обработку данных для рассылки
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="width: 100%; background: var(--accent-color);">Подписаться</button>
-                </form>
+    <section class="categories-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px;">Категории статей</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: #666;">Выберите интересующую вас тему</p>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">💰</div>
+                    <h3>Налоговая оптимизация</h3>
+                    <p>Снижение налоговой нагрузки легальными способами</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🛡️</div>
+                    <h3>Юридическая безопасность</h3>
+                    <p>Защита от проверок и штрафов</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🌏</div>
+                    <h3>Миграционное право</h3>
+                    <p>Легализация иностранных работников</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">📊</div>
+                    <h3>Кейсы и практика</h3>
+                    <p>Реальные примеры из нашей практики</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Футер -->
+    <!-- CTA БЛОК -->
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; text-align: center;">
+        <div class="container">
+            <h2>Нужна консультация по аутстаффингу?</h2>
+            <p style="margin: 20px 0; font-size: 1.1rem;">Ответим на все вопросы и рассчитаем экономию для вашей компании</p>
+            
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <a href="/calculator.html" class="btn btn-primary" style="font-size: 1.1rem;">
+                    🧮 Рассчитать экономию
+                </a>
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.1rem;">
+                    📱 Консультация в WhatsApp
+                </a>
+            </div>
+            
+            <div style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                <p><strong>Лучше не звонить - возможны проблемы со связью</strong></p>
+                <p>Отправьте SMS или напишите в WhatsApp - мы свяжемся в ближайшее время!</p>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
                 <div class="footer-section">
                     <h3>Ресурсория</h3>
-                    <p>Кадровый аутсорсинг и аутстаффинг с 2013 года</p>
+                    <p>Аутстаффинг и аренда персонала по всей России</p>
                 </div>
+                
                 <div class="footer-section">
-                    <h3>Навигация</h3>
+                    <h3>Разделы блога</h3>
                     <ul class="footer-links">
-                        <li><a href="/">Главная</a></li>
-                        <li><a href="/services.html">Услуги</a></li>
-                        <li><a href="/blog.html">Блог</a></li>
-                        <li><a href="/contacts.html">Контакты</a></li>
+                        <li><a href="/blog/snizhenie-nalogov.html">Налоговая оптимизация</a></li>
+                        <li><a href="/blog/vyvod-personala-bezopasno.html">Юридическая безопасность</a></li>
+                        <li><a href="/blog/legalizaciya-migrantov.html">Миграционное право</a></li>
+                        <li><a href="/blog/realnye-kejsy.html">Кейсы и практика</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
                     <h3>Контакты</h3>
                     <ul class="footer-links">
@@ -327,9 +360,9 @@
                     </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>© 2025 Ресурсория. ООО "МИРУМ". Все права защищены.</p>
-                <p><a href="/privacy.html" style="color: #ccc;">Политика конфиденциальности</a></p>
             </div>
         </div>
     </footer>
@@ -343,7 +376,6 @@
 
     <div class="scroll-to-top" id="scrollToTop">↑</div>
 
-    <!-- Уведомление о куках -->
     <div id="cookieNotice" class="cookie-notice">
         <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
         <div class="cookie-buttons">
@@ -352,8 +384,6 @@
         </div>
     </div>
 
-    <!-- Подключаем JavaScript -->
     <script src="/js/main.js"></script>
-    <script src="/js/forms.js"></script>
 </body>
 </html>

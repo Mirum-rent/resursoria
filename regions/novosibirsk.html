@@ -87,6 +87,16 @@
             margin-bottom: 30px;
             border-left: 4px solid var(--secondary-color);
         }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -120,8 +130,8 @@
             <p><strong>Работаем с новосибирскими компаниями с 2016 года</strong>. Легальный вывод персонала за штат, снижение налоговой нагрузки до 40%, полная защита от проверок в столице Сибири.</p>
             
             <div style="margin-top: 30px;">
-                <a href="#calculator" class="btn btn-primary">Рассчитать экономию для Новосибирска</a>
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required>📞 Менеджер по Новосибирску</a>
+                <a href="#calculator-cta" class="btn btn-primary">Рассчитать экономию для Новосибирска</a>
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required>Менеджер по Новосибирску</a>
             </div>
         </div>
     </section>
@@ -197,42 +207,37 @@
         </div>
     </section>
 
-    <section id="calculator" style="padding: 80px 0; background: #f8f9fa;">
+    <!-- КАЛЬКУЛЯТОР CTA БЛОК -->
+    <section id="calculator-cta" style="padding: 80px 0; background: #f8f9fa;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 40px;">Калькулятор экономии для Новосибирска</h2>
-            
-            <div style="background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); margin-bottom: 40px;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
-                    <div>
-                        <label for="nsk-salary">Средняя зарплата в НСК (руб):</label>
-                        <input type="number" id="nsk-salary" value="55000" min="10000" step="5000" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: var(--border-radius);">
-                    </div>
-                    <div>
-                        <label for="nsk-employees">Количество сотрудников:</label>
-                        <input type="number" id="nsk-employees" value="10" min="1" max="1000" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: var(--border-radius);">
-                    </div>
-                </div>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
-                    <h4>Штатные сотрудники в НСК</h4>
-                    <div id="nsk-result-staff"></div>
-                </div>
-                <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); border: 2px solid var(--success-color);">
-                    <h4>Наш аутстаффинг в НСК</h4>
-                    <div id="nsk-result-outstaffing"></div>
+            <div style="text-align: center; margin: 40px 0;">
+                <h3>Рассчитайте точную экономию для вашего бизнеса в Новосибирске</h3>
+                <p style="margin: 20px 0; font-size: 1.1rem;">Узнайте, сколько вы сможете сэкономить на налогах и административных расходах</p>
+                <a href="/calculator.html" class="btn btn-whatsapp" style="font-size: 1.2rem; padding: 15px 30px;">
+                    🧮 Открыть калькулятор экономии
+                </a>
+                <div style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+                    Простой расчет за 2 минуты • Точные цифры • Без регистрации
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CTA WHATSAPP БЛОК -->
     <section style="padding: 60px 0; background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; text-align: center;">
         <div class="container">
             <h2>👨‍💼 Ваш менеджер в Новосибирске</h2>
             <p><strong>Дмитрий Сидоров</strong> - специалист по работе с клиентами Сибирского региона</p>
             <p>Знает все особенности ведения бизнеса в Новосибирске и НСО</p>
-            <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="margin-top: 20px;">📱 Написать Дмитрию в WhatsApp</a>
+            
+            <div style="margin-top: 30px;">
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.1rem; padding: 12px 25px;">
+                    📱 Написать Дмитрию в WhatsApp
+                </a>
+                <div style="margin-top: 15px; font-size: 0.9rem;">
+                    Пишите в любое время - отвечаем сразу, как появляется возможность!
+                </div>
+            </div>
         </div>
     </section>
 
@@ -270,60 +275,23 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const nskSalary = document.getElementById('nsk-salary');
-            const nskEmployees = document.getElementById('nsk-employees');
-            
-            function calculateNSK() {
-                const salary = parseFloat(nskSalary.value) || 0;
-                const employees = parseInt(nskEmployees.value) || 1;
-                
-                const totalSalary = salary * employees;
-                const staffTax = totalSalary * 0.43;
-                const staffNet = totalSalary - staffTax;
-                const ourTax = totalSalary * 0.12;
-                const ourNet = totalSalary - ourTax;
-                const saving = staffTax - ourTax;
-                const savingPercent = ((saving / staffTax) * 100).toFixed(1);
-                
-                const formatCurrency = (amount) => {
-                    return new Intl.NumberFormat('ru-RU', {
-                        style: 'currency',
-                        currency: 'RUB',
-                        minimumFractionDigits: 0
-                    }).format(amount);
-                };
-                
-                const staffElement = document.getElementById('nsk-result-staff');
-                const ourElement = document.getElementById('nsk-result-outstaffing');
-                
-                if (staffElement) {
-                    staffElement.innerHTML = `
-                        <div style="font-size: 1.2rem; font-weight: bold; color: var(--accent-color);">${formatCurrency(totalSalary)}</div>
-                        <div>Налоги: ${formatCurrency(staffTax)}</div>
-                        <div>Чистыми: ${formatCurrency(staffNet)}</div>
-                    `;
-                }
-                
-                if (ourElement) {
-                    ourElement.innerHTML = `
-                        <div style="font-size: 1.2rem; font-weight: bold; color: var(--success-color);">${formatCurrency(totalSalary)}</div>
-                        <div>Налоги: ${formatCurrency(ourTax)}</div>
-                        <div>Чистыми: ${formatCurrency(ourNet)}</div>
-                        <div style="color: var(--success-color); font-weight: bold; margin-top: 10px;">
-                            Экономия: ${formatCurrency(saving)} (${savingPercent}%)
-                        </div>
-                    `;
-                }
-            }
-            
-            if (nskSalary && nskEmployees) {
-                nskSalary.addEventListener('input', calculateNSK);
-                nskEmployees.addEventListener('input', calculateNSK);
-                calculateNSK();
-            }
-        });
-    </script>
+    <!-- Кнопки -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/79581118514" class="whatsapp-link" data-consent-required>
+            <span>💬 Написать в WhatsApp</span>
+        </a>
+    </div>
+
+    <div class="scroll-to-top" id="scrollToTop">↑</div>
+
+    <div id="cookieNotice" class="cookie-notice">
+        <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
+        <div class="cookie-buttons">
+            <button id="cookieAccept" class="cookie-btn cookie-accept">Принять</button>
+            <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@ Disallow: /tmp/
 
 Sitemap: https://resursoria.ru/sitemap.xml
 
-# Основные страницы
+# ОСНОВНЫЕ СТРАНИЦЫ
 Allow: /index.htm
 Allow: /services.html
 Allow: /calculator.html
@@ -14,12 +14,14 @@ Allow: /regions/
 Allow: /blog.html
 Allow: /contacts.html
 
-# Региональные страницы
+# РЕГИОНАЛЬНЫЕ СТРАНИЦЫ (СОЗДАННЫЕ)
 Allow: /regions/moscow.html
 Allow: /regions/saint-petersburg.html
 Allow: /regions/novosibirsk.html
 Allow: /regions/ekaterinburg.html
 Allow: /regions/kazan.html
+
+# РЕГИОНАЛЬНЫЕ СТРАНИЦЫ (ПЛАНИРУЕМЫЕ)
 Allow: /regions/nizhny-novgorod.html
 Allow: /regions/chelyabinsk.html
 Allow: /regions/samara.html
@@ -31,12 +33,13 @@ Allow: /regions/voronezh.html
 Allow: /regions/perm.html
 Allow: /regions/volgograd.html
 
-# Статьи блога
-Allow: /blog/vyvod-personala-bezopasno.html
-Allow: /blog/shtrafy-2025.html
+# СТАТЬИ БЛОГА (ПЛАНИРУЕМЫЕ)
 Allow: /blog/snizhenie-nalogov.html
+Allow: /blog/vyvod-personala-bezopasno.html
 Allow: /blog/legalizaciya-migrantov.html
+Allow: /blog/shtrafy-2025.html
 Allow: /blog/vybor-chaz.html
+Allow: /blog/realnye-kejsy.html
 
 # Crawl-delay для бережного индексирования
 Crawl-delay: 1

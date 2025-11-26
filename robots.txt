@@ -20,13 +20,13 @@ Allow: /regions/saint-petersburg.html
 Allow: /regions/novosibirsk.html
 Allow: /regions/ekaterinburg.html
 Allow: /regions/kazan.html
-
-# РЕГИОНАЛЬНЫЕ СТРАНИЦЫ (ПЛАНИРУЕМЫЕ)
 Allow: /regions/nizhny-novgorod.html
 Allow: /regions/chelyabinsk.html
 Allow: /regions/samara.html
 Allow: /regions/omsk.html
 Allow: /regions/rostov-on-don.html
+
+# РЕГИОНАЛЬНЫЕ СТРАНИЦЫ (ОСТАВШИЕСЯ)
 Allow: /regions/ufa.html
 Allow: /regions/krasnoyarsk.html
 Allow: /regions/voronezh.html

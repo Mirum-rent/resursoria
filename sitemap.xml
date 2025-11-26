@@ -69,8 +69,6 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-
-    <!-- РЕГИОНАЛЬНЫЕ СТРАНИЦЫ (ПЛАНИРУЕМЫЕ) -->
     <url>
         <loc>https://resursoria.ru/regions/nizhny-novgorod.html</loc>
         <lastmod>2025-11-26</lastmod>
@@ -101,6 +99,8 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+
+    <!-- РЕГИОНАЛЬНЫЕ СТРАНИЦЫ (ОСТАВШИЕСЯ) -->
     <url>
         <loc>https://resursoria.ru/regions/ufa.html</loc>
         <lastmod>2025-11-26</lastmod>

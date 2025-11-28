@@ -1,62 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Высокий приоритет: Главная и основные услуги -->
+    <!-- ОСНОВНЫЕ СТРАНИЦЫ -->
     <url>
-        <loc>https://arenda-kovrov-mirum.ru/</loc>
-        <lastmod>2025-11-25</lastmod>
-        <changefreq>daily</changefreq>
+        <loc>https://resursoria.ru/</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://arenda-kovrov-mirum.ru/arenda-gryazezashchitnyh-kovrov.html</loc>
-        <lastmod>2025-11-25</lastmod>
-        <changefreq>weekly</changefreq>
+        <loc>https://resursoria.ru/services.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://arenda-kovrov-mirum.ru/window-cleaning.html</loc>
-        <lastmod>2025-11-25</lastmod>
-        <changefreq>weekly</changefreq>
+        <loc>https://resursoria.ru/calculator.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
-    
-    <!-- Средний приоритет: Дополнительные страницы -->
     <url>
-        <loc>https://arenda-kovrov-mirum.ru/pogoda.html</loc>
-        <lastmod>2025-11-25</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://arenda-kovrov-mirum.ru/blog.html</loc>
-        <lastmod>2025-11-25</lastmod>
+        <loc>https://resursoria.ru/regions/</loc>
+        <lastmod>2025-11-28</lastmod>
         <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/blog.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/contacts.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- РЕГИОНАЛЬНЫЕ СТРАНИЦЫ (СОЗДАННЫЕ) -->
+    <url>
+        <loc>https://resursoria.ru/regions/moscow.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://arenda-kovrov-mirum.ru/FAQ.html</loc>
-        <lastmod>2025-11-25</lastmod>
+        <loc>https://resursoria.ru/regions/saint-petersburg.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/novosibirsk.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/ekaterinburg.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/kazan.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/nizhny-novgorod.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/chelyabinsk.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/samara.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/omsk.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/rostov-on-don.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- РЕГИОНАЛЬНЫЕ СТРАНИЦЫ (ОСТАВШИЕСЯ) -->
+    <url>
+        <loc>https://resursoria.ru/regions/ufa.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/krasnoyarsk.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/voronezh.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/perm.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/regions/volgograd.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- СТАТЬИ БЛОГА (ПЛАНИРУЕМЫЕ) -->
+    <url>
+        <loc>https://resursoria.ru/blog/snizhenie-nalogov.html</loc>
+        <lastmod>2025-11-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
-    
-    <!-- Низкий приоритет: Служебные и информационные страницы -->
     <url>
-        <loc>https://arenda-kovrov-mirum.ru/privacy-policy.html</loc>
-        <lastmod>2025-11-25</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://arenda-kovrov-mirum.ru/terms-of-use.html</loc>
-        <lastmod>2025-11-25</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://arenda-kovrov-mirum.ru/contacts.html</loc>
-        <lastmod>2025-11-25</lastmod>
+        <loc>https://resursoria.ru/blog/vyvod-personala-bezopasno.html</loc>
+        <lastmod>2025-11-28</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/blog/legalizaciya-migrantov.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/blog/shtrafy-2025.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/blog/vybor-chaz.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://resursoria.ru/blog/realnye-kejsy.html</loc>
+        <lastmod>2025-11-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
 </urlset>

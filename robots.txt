@@ -13,8 +13,9 @@ Allow: /calculator.html
 Allow: /regions/
 Allow: /blog.html
 Allow: /contacts.html
+Allow: /privacy.html
 
-# Региональные страницы
+# Региональные страницы - города-миллионники
 Allow: /regions/moscow.html
 Allow: /regions/saint-petersburg.html
 Allow: /regions/novosibirsk.html
@@ -30,6 +31,23 @@ Allow: /regions/krasnoyarsk.html
 Allow: /regions/voronezh.html
 Allow: /regions/perm.html
 Allow: /regions/volgograd.html
+
+# Региональные страницы - города 500+
+Allow: /regions/krasnodar.html
+Allow: /regions/saratov.html
+Allow: /regions/tyumen.html
+Allow: /regions/tolyatti.html
+Allow: /regions/izhevsk.html
+Allow: /regions/barnaul.html
+Allow: /regions/ulyanovsk.html
+Allow: /regions/irkutsk.html
+Allow: /regions/habarovsk.html
+Allow: /regions/yaroslavl.html
+Allow: /regions/vladivostok.html
+Allow: /regions/makhachkala.html
+Allow: /regions/tomsk.html
+Allow: /regions/orenburg.html
+Allow: /regions/kemerovo.html
 
 # Статьи блога
 Allow: /blog/vyvod-personala-bezopasno.html

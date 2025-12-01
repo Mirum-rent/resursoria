@@ -50,7 +50,7 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
 
-        .city-stats {
+        .spb-stats {
             background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
             color: white;
             padding: 60px 0;
@@ -87,16 +87,6 @@
             margin-bottom: 30px;
             border-left: 4px solid var(--secondary-color);
         }
-
-        @media (max-width: 768px) {
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
     </style>
 </head>
 <body>
@@ -130,8 +120,8 @@
             <p><strong>Работаем с петербургскими компаниями с 2015 года</strong>. Легальный вывод персонала за штат, снижение налоговой нагрузки до 40%, полная защита от проверок МВД, ФНС и ГИТ Санкт-Петербурга.</p>
             
             <div style="margin-top: 30px;">
-                <a href="#calculator-cta" class="btn btn-primary">Рассчитать экономию для СПб</a>
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required>Менеджер по Санкт-Петербургу</a>
+                <a href="#calculator" class="btn btn-primary">Рассчитать экономию для СПб</a>
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required>📞 Менеджер по Санкт-Петербургу</a>
             </div>
         </div>
     </section>
@@ -152,7 +142,7 @@
                 </div>
                 
                 <div class="feature-card">
-                    <h3>🌏 Мигранты в Санкт-Петербурге</h3>
+                    <h3>🌍 Мигранты в Санкт-Петербурге</h3>
                     <p>Легализация иностранных работников с учетом требований УВМ Санкт-Петербурга и Ленинградской области. Быстрое оформление патентов и разрешений.</p>
                 </div>
 
@@ -164,7 +154,7 @@
         </div>
     </section>
 
-    <section class="city-stats">
+    <section class="spb-stats">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 20px; color: white;">Ресурсория в Санкт-Петербурге в цифрах</h2>
             
@@ -193,51 +183,56 @@
         <h2 style="text-align: center; margin-bottom: 40px;">Кейсы компаний из Санкт-Петербурга</h2>
         
         <div class="case-card">
-            <h3>🚀 Строительная компания "СПБ-строй"</h3>
+            <h3>🚀 Строительная компания "Северный Город"</h3>
             <p><strong>Задача:</strong> Вывод 250 строителей за штат с сохранением графика работ на объектах СПб</p>
             <p><strong>Решение:</strong> Полная легализация за 5 дней с учетом специфики строительной отрасли Санкт-Петербурга</p>
             <p><strong>Результат:</strong> Экономия 1.2 млн руб/мес, успешное прохождение проверки Комитета по строительству</p>
         </div>
 
         <div class="case-card">
-            <h3>🏪 Сеть супермаркетов "Магазин у дома"</h3>
+            <h3>🏪 Сеть супермаркетов "Петербургские Продукты"</h3>
             <p><strong>Задача:</strong> Легализация 120 мигрантов из Средней Азии для работы в 15 магазинах СПб</p>
             <p><strong>Решение:</strong> Комплексное оформление с медицинскими книжками и регистрацией в Санкт-Петербурге</p>
             <p><strong>Результат:</strong> Полное соответствие требованиям Роспотребнадзора Санкт-Петербурга</p>
         </div>
     </section>
 
-    <!-- КАЛЬКУЛЯТОР CTA БЛОК -->
-    <section id="calculator-cta" style="padding: 80px 0; background: #f8f9fa;">
+    <section id="calculator" style="padding: 80px 0; background: #f8f9fa;">
         <div class="container">
-            <div style="text-align: center; margin: 40px 0;">
-                <h3>Рассчитайте точную экономию для вашего бизнеса в Санкт-Петербурге</h3>
-                <p style="margin: 20px 0; font-size: 1.1rem;">Узнайте, сколько вы сможете сэкономить на налогах и административных расходах</p>
-                <a href="/calculator.html" class="btn btn-whatsapp" style="font-size: 1.2rem; padding: 15px 30px;">
-                    🧮 Открыть калькулятор экономии
-                </a>
-                <div style="margin-top: 20px; font-size: 0.9rem; color: #666;">
-                    Простой расчет за 2 минуты • Точные цифры • Без регистрации
+            <h2 style="text-align: center; margin-bottom: 40px;">Калькулятор экономии для Санкт-Петербурга</h2>
+            
+            <div style="background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); margin-bottom: 40px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                    <div>
+                        <label for="spb-salary">Средняя зарплата в СПб (руб):</label>
+                        <input type="number" id="spb-salary" value="65000" min="10000" step="5000" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: var(--border-radius);">
+                    </div>
+                    <div>
+                        <label for="spb-employees">Количество сотрудников:</label>
+                        <input type="number" id="spb-employees" value="10" min="1" max="1000" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: var(--border-radius);">
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                    <h4>Штатные сотрудники в СПб</h4>
+                    <div id="spb-result-staff"></div>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); border: 2px solid var(--success-color);">
+                    <h4>Наш аутстаффинг в СПб</h4>
+                    <div id="spb-result-outstaffing"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA WHATSAPP БЛОК -->
     <section style="padding: 60px 0; background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; text-align: center;">
         <div class="container">
             <h2>👨‍💼 Ваш менеджер в Санкт-Петербурге</h2>
             <p><strong>Мария Иванова</strong> - специалист по работе с клиентами Санкт-Петербурга</p>
             <p>Знает все особенности ведения бизнеса в Северной столице</p>
-            
-            <div style="margin-top: 30px;">
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.1rem; padding: 12px 25px;">
-                    📱 Написать Марии в WhatsApp
-                </a>
-                <div style="margin-top: 15px; font-size: 0.9rem;">
-                    Пишите в любое время - отвечаем сразу, как появляется возможность!
-                </div>
-            </div>
+            <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="margin-top: 20px;">📱 Написать Марии в WhatsApp</a>
         </div>
     </section>
 
@@ -275,23 +270,60 @@
         </div>
     </footer>
 
-    <!-- Кнопки -->
-    <div class="whatsapp-float">
-        <a href="https://wa.me/79581118514" class="whatsapp-link" data-consent-required>
-            <span>💬 Написать в WhatsApp</span>
-        </a>
-    </div>
-
-    <div class="scroll-to-top" id="scrollToTop">↑</div>
-
-    <div id="cookieNotice" class="cookie-notice">
-        <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
-        <div class="cookie-buttons">
-            <button id="cookieAccept" class="cookie-btn cookie-accept">Принять</button>
-            <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
-        </div>
-    </div>
-
-    <script src="/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const spbSalary = document.getElementById('spb-salary');
+            const spbEmployees = document.getElementById('spb-employees');
+            
+            function calculateSPB() {
+                const salary = parseFloat(spbSalary.value) || 0;
+                const employees = parseInt(spbEmployees.value) || 1;
+                
+                const totalSalary = salary * employees;
+                const staffTax = totalSalary * 0.43;
+                const staffNet = totalSalary - staffTax;
+                const ourTax = totalSalary * 0.12;
+                const ourNet = totalSalary - ourTax;
+                const saving = staffTax - ourTax;
+                const savingPercent = ((saving / staffTax) * 100).toFixed(1);
+                
+                const formatCurrency = (amount) => {
+                    return new Intl.NumberFormat('ru-RU', {
+                        style: 'currency',
+                        currency: 'RUB',
+                        minimumFractionDigits: 0
+                    }).format(amount);
+                };
+                
+                const staffElement = document.getElementById('spb-result-staff');
+                const ourElement = document.getElementById('spb-result-outstaffing');
+                
+                if (staffElement) {
+                    staffElement.innerHTML = `
+                        <div style="font-size: 1.2rem; font-weight: bold; color: var(--accent-color);">${formatCurrency(totalSalary)}</div>
+                        <div>Налоги: ${formatCurrency(staffTax)}</div>
+                        <div>Чистыми: ${formatCurrency(staffNet)}</div>
+                    `;
+                }
+                
+                if (ourElement) {
+                    ourElement.innerHTML = `
+                        <div style="font-size: 1.2rem; font-weight: bold; color: var(--success-color);">${formatCurrency(totalSalary)}</div>
+                        <div>Налоги: ${formatCurrency(ourTax)}</div>
+                        <div>Чистыми: ${formatCurrency(ourNet)}</div>
+                        <div style="color: var(--success-color); font-weight: bold; margin-top: 10px;">
+                            Экономия: ${formatCurrency(saving)} (${savingPercent}%)
+                        </div>
+                    `;
+                }
+            }
+            
+            if (spbSalary && spbEmployees) {
+                spbSalary.addEventListener('input', calculateSPB);
+                spbEmployees.addEventListener('input', calculateSPB);
+                calculateSPB();
+            }
+        });
+    </script>
 </body>
 </html>

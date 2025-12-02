@@ -11,7 +11,13 @@
     <meta name="robots" content="index, follow" />
     
     <!-- Ключевые слова -->
-    <meta name="keywords" content="калькулятор аутстаффинга, расчет экономии на персонале, сравнение налоговой нагрузки, ФОТ оптимизация">
+    <meta name="keywords" content="калькулятор аутстаффинга, расчет экономии на персонале, сравнение налоговой нагрузки, ФОТ оптимизация, экономия на налогах">
+    
+    <!-- Гео-метатеги -->
+    <meta name="geo.region" content="RU-MOW">
+    <meta name="geo.placename" content="Moscow">
+    <meta name="geo.position" content="55.755826;37.6173">
+    <meta name="ICBM" content="55.755826, 37.6173">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -22,7 +28,11 @@
     
     <!-- Фавиконки -->
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1a3a5f">
     
     <!-- Подключаем CSS -->
     <link rel="stylesheet" href="/css/style.css">
@@ -85,6 +95,12 @@
             padding: 30px;
             border-radius: 15px;
             border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .input-group:hover {
+            border-color: #25D366;
+            transform: translateY(-3px);
         }
 
         .input-group label {
@@ -130,6 +146,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             border: 2px solid #e2e8f0;
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .result-card:hover {
@@ -158,6 +175,7 @@
             font-size: 0.9em;
             font-weight: 600;
             transform: rotate(45deg);
+            z-index: 1;
         }
 
         .result-title {
@@ -194,30 +212,40 @@
             border-radius: 15px;
             text-align: center;
             margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
         }
 
         .saving-title {
             font-size: 1.8em;
             font-weight: 700;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .saving-amount {
             font-size: 3.5em;
             font-weight: 800;
             margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
         }
 
         .saving-percent {
             font-size: 1.8em;
             font-weight: 600;
             opacity: 0.9;
+            position: relative;
+            z-index: 1;
         }
 
         .saving-yearly {
             font-size: 1.4em;
             margin-top: 15px;
             opacity: 0.8;
+            position: relative;
+            z-index: 1;
         }
 
         .comparison-section {
@@ -245,6 +273,11 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .comparison-item:hover {
+            transform: translateY(-5px);
         }
 
         .comparison-item.our {
@@ -262,7 +295,6 @@
         .comparison-amount {
             font-size: 1.8em;
             font-weight: 700;
-            color: #25D366;
         }
 
         .comparison-item.staff .comparison-amount {
@@ -275,6 +307,10 @@
 
         .comparison-item.selfemployed .comparison-amount {
             color: #38b2ac;
+        }
+
+        .comparison-item.our .comparison-amount {
+            color: #25D366;
         }
 
         /* Новые стили для сравнения с самозанятыми */
@@ -308,6 +344,12 @@
             background: white;
             border-radius: 10px;
             border-left: 4px solid #25D366;
+            transition: all 0.3s ease;
+        }
+
+        .comparison-advantage:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         /* Стили для опасного пункта */
@@ -323,6 +365,7 @@
         .advantage-icon {
             font-size: 1.8em;
             flex-shrink: 0;
+            margin-top: 3px;
         }
 
         .advantage-content strong {
@@ -335,6 +378,7 @@
             margin: 0;
             color: #718096;
             font-size: 0.95em;
+            line-height: 1.4;
         }
 
         .comparison-warning {
@@ -342,6 +386,7 @@
             color: #e53e3e;
             margin-top: 8px;
             font-weight: 600;
+            display: block;
         }
 
         .advantages-section {
@@ -349,6 +394,7 @@
             padding: 40px;
             border-radius: 15px;
             border: 2px solid #e2e8f0;
+            margin-bottom: 40px;
         }
 
         .advantages-title {
@@ -372,6 +418,12 @@
             border-left: 4px solid #25D366;
             font-size: 1.2em;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .cta-section {
@@ -390,6 +442,8 @@
             border-radius: 50px;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .cta-button:hover {
@@ -397,28 +451,166 @@
             box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
         }
 
-        @media (max-width: 768px) {
-            .input-section,
-            .results-section,
-            .comparison-grid {
-                grid-template-columns: 1fr;
+        /* СРОЧНЫЙ CTA БАННЕР */
+        .urgent-cta {
+            background: linear-gradient(135deg, #e63946, #ff6b6b);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            margin: 40px auto;
+            border-radius: var(--border-radius);
+            max-width: 1200px;
+        }
+
+        .urgent-cta p {
+            margin: 0 0 15px 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .urgent-cta a {
+            display: inline-block;
+            background: white;
+            color: #e63946;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .urgent-cta a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* КНОПКА WHATSAPP С АНИМАЦИЕЙ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+        }
+
+        .whatsapp-link-pulse {
+            display: flex;
+            align-items: center;
+            background: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .whatsapp-link-pulse span {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .whatsapp-link-pulse:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* УЛУЧШЕННОЕ COOKIE УВЕДОМЛЕНИЕ */
+        .cookie-notice {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: var(--dark-color);
+            color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            z-index: 1001;
+            max-width: 500px;
+            display: none;
+        }
+
+        .cookie-notice.visible {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
             }
-            
-            .calculator-header h1 {
-                font-size: 2em;
+            to {
+                transform: translateY(0);
+                opacity: 1;
             }
-            
-            .result-amount {
-                font-size: 2.2em;
-            }
-            
-            .saving-amount {
-                font-size: 2.5em;
-            }
-            
-            .comparison-advantages-grid {
-                grid-template-columns: 1fr;
-            }
+        }
+
+        .cookie-notice p {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .cookie-btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .cookie-accept {
+            background: var(--whatsapp-color);
+            color: white;
+            flex: 2;
+        }
+
+        .cookie-accept:hover {
+            background: #1da851;
+        }
+
+        .cookie-reject {
+            background: transparent;
+            color: #ccc;
+            border: 1px solid #ccc;
+            flex: 1;
+        }
+
+        .cookie-reject:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .cookie-links {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            text-align: center;
+        }
+
+        .cookie-links a {
+            color: #ccc;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+
+        .cookie-links a:hover {
+            color: white;
         }
 
         /* Стили для хедера и футера */
@@ -440,6 +632,140 @@
         .footer {
             margin-top: 0;
         }
+
+        @media (max-width: 768px) {
+            .input-section,
+            .results-section,
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .calculator-header h1 {
+                font-size: 2em;
+            }
+            
+            .calculator-header p {
+                font-size: 1.1em;
+            }
+            
+            .calculator-body {
+                padding: 25px;
+            }
+            
+            .input-group {
+                padding: 20px;
+            }
+            
+            .input-group label {
+                font-size: 1.2em;
+            }
+            
+            .input-group input {
+                font-size: 1.1em;
+                padding: 12px 15px;
+            }
+            
+            .result-amount {
+                font-size: 2.2em;
+            }
+            
+            .saving-amount {
+                font-size: 2.5em;
+            }
+            
+            .comparison-advantages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .urgent-cta {
+                padding: 20px 15px;
+                margin: 20px 15px;
+            }
+            
+            .urgent-cta p {
+                font-size: 1.1rem;
+            }
+            
+            .whatsapp-link-pulse {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .whatsapp-link-pulse span {
+                margin-right: 8px;
+                font-size: 1.3rem;
+            }
+            
+            .cookie-notice {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+            }
+            
+            .cookie-buttons {
+                flex-direction: column;
+            }
+            
+            .cookie-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .calculator-container {
+                border-radius: 15px;
+            }
+            
+            .calculator-header {
+                padding: 30px 20px;
+            }
+            
+            .calculator-header h1 {
+                font-size: 1.6em;
+            }
+            
+            .result-card {
+                padding: 20px;
+            }
+            
+            .result-card.our::before {
+                top: 15px;
+                right: -40px;
+                font-size: 0.7em;
+                padding: 6px 35px;
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1.2em;
+                width: 100%;
+            }
+            
+            .whatsapp-link-pulse span {
+                display: none;
+            }
+            
+            .whatsapp-link-pulse {
+                padding: 15px;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                justify-content: center;
+            }
+            
+            .whatsapp-link-pulse::after {
+                content: '💬';
+                font-size: 1.5rem;
+            }
+        }
     </style>
 
     <!-- Микроразметка -->
@@ -451,7 +777,11 @@
         "description": "Интерактивный калькулятор для расчета экономии при использовании услуг аутстаффинга персонала",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Any",
-        "permissions": "none"
+        "permissions": "none",
+        "offers": {
+            "@type": "Offer",
+            "description": "Расчет экономии на налогах при аутстаффинге персонала"
+        }
     }
     </script>
 </head>
@@ -481,6 +811,14 @@
             <a href="https://www.avito.ru/brands/i359809882" class="btn btn-primary" style="margin-left: 20px;">Мы на Авито</a>
         </div>
     </header>
+
+    <!-- СРОЧНЫЙ CTA БАННЕР -->
+    <div class="urgent-cta" style="max-width: 1200px; margin: 30px auto; border-radius: 15px;">
+        <p>⚡ <strong>СРОЧНАЯ КОНСУЛЬТАЦИЯ</strong> | Ответ в WhatsApp за 5 минут</p>
+        <a href="https://wa.me/79581118514" data-consent-required>
+            📱 Написать в WhatsApp СЕЙЧАС
+        </a>
+    </div>
 
     <!-- Калькулятор -->
     <div class="calculator-container">
@@ -620,12 +958,32 @@
             </div>
 
             <div class="cta-section">
-                <a href="https://wa.me/79581118514" class="cta-button">
+                <a href="https://wa.me/79581118514" class="cta-button" data-consent-required>
                     📱 Получить индивидуальный расчет
                 </a>
+                <p style="margin-top: 20px; color: #718096; font-size: 0.9rem;">
+                    Отправьте параметры вашей компании в WhatsApp для точного расчета
+                </p>
             </div>
         </div>
     </div>
+
+    <!-- ФИНАЛЬНЫЙ CTA -->
+    <section style="background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; padding: 80px 0; text-align: center; margin-top: 40px; border-radius: 15px;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 20px;">Нужен точный расчет для вашей компании?</h2>
+            <p style="margin: 20px 0; font-size: 1.1rem;">Отправьте параметры в WhatsApp — мы рассчитаем экономию за 10 минут</p>
+            
+            <div style="max-width: 400px; margin: 0 auto;">
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: block; margin-bottom: 15px;">
+                    📱 Отправить данные для расчета
+                </a>
+                <p style="font-size: 0.9rem; opacity: 0.9;">
+                    Укажите: количество сотрудников, среднюю зарплату, регион работы
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- Футер -->
     <footer class="footer">
@@ -668,22 +1026,28 @@
         </div>
     </footer>
 
-    <!-- Кнопка WhatsApp -->
+    <!-- Кнопка WhatsApp с анимацией -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/79581118514" class="whatsapp-link" data-consent-required>
-            <span>💬 Написать в WhatsApp</span>
+        <a href="https://wa.me/79581118514" class="whatsapp-link-pulse" data-consent-required>
+            <span>💬</span>
+            Бесплатный расчет
         </a>
     </div>
 
     <!-- Кнопка "Наверх" -->
     <div class="scroll-to-top" id="scrollToTop">↑</div>
 
-    <!-- Уведомление о куках -->
+    <!-- УЛУЧШЕННОЕ УВЕДОМЛЕНИЕ О COOKIE -->
     <div id="cookieNotice" class="cookie-notice">
-        <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
+        <p>🍪 <strong>Используем файлы cookie для улучшения работы сайта.</strong> WhatsApp доступен только после вашего согласия на обработку данных.</p>
         <div class="cookie-buttons">
-            <button id="cookieAccept" class="cookie-btn cookie-accept">Принять</button>
-            <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+            <button id="cookieAccept" class="cookie-btn cookie-accept">✅ Принять и открыть WhatsApp</button>
+            <button id="cookieReject" class="cookie-btn cookie-reject">❌ Отклонить</button>
+        </div>
+        <div class="cookie-links">
+            <a href="/privacy.html">Политика конфиденциальности</a>
+            <span>|</span>
+            <a href="#" id="cookieSettings">Настройки</a>
         </div>
     </div>
 
@@ -705,6 +1069,21 @@
                 
                 salaryInput.addEventListener('input', () => this.calculate());
                 employeesInput.addEventListener('input', () => this.calculate());
+                
+                // Добавляем анимацию при изменении
+                salaryInput.addEventListener('input', () => this.animateChange('salary'));
+                employeesInput.addEventListener('input', () => this.animateChange('employees'));
+            }
+            
+            animateChange(fieldId) {
+                const input = document.getElementById(fieldId);
+                input.style.transform = 'scale(1.05)';
+                input.style.boxShadow = '0 0 0 3px rgba(37, 211, 102, 0.3)';
+                
+                setTimeout(() => {
+                    input.style.transform = 'scale(1)';
+                    input.style.boxShadow = '';
+                }, 300);
             }
 
             calculate() {
@@ -721,6 +1100,9 @@
                 this.displayResults(results);
                 this.updateComparison(results);
                 this.updateSaving(results);
+                
+                // Анимация изменений
+                this.animateResults();
             }
 
             calculateStaff(salaryNet, employees) {
@@ -805,31 +1187,35 @@
 
             displayResults(results) {
                 // Основные результаты
-                document.getElementById('result-staff').textContent = this.formatCurrency(results.staff.total);
-                document.getElementById('result-our').textContent = this.formatCurrency(results.our.total);
+                this.animateNumberChange('result-staff', this.formatCurrency(results.staff.total));
+                this.animateNumberChange('result-our', this.formatCurrency(results.our.total));
                 
                 // Детализация для штатных
                 const staffDetails = document.querySelector('.result-card.staff .result-details');
-                staffDetails.innerHTML = `
-                    • НДФЛ 13%: ${this.formatCurrency(results.staff.breakdown.ndfl)}<br>
-                    • Страховые взносы 30%: ${this.formatCurrency(results.staff.breakdown.insurance)}<br>
-                    • Общая налоговая нагрузка: 43%
-                `;
+                if (staffDetails) {
+                    staffDetails.innerHTML = `
+                        • НДФЛ 13%: ${this.formatCurrency(results.staff.breakdown.ndfl)}<br>
+                        • Страховые взносы 30%: ${this.formatCurrency(results.staff.breakdown.insurance)}<br>
+                        • Общая налоговая нагрузка: 43%
+                    `;
+                }
                 
                 // Детализация для нашего сервиса
                 const ourDetails = document.querySelector('.result-card.our .result-details');
-                ourDetails.innerHTML = `
-                    • Налоги подрядчика: ${this.formatCurrency(results.our.breakdown.ourTax)}<br>
-                    • Наша комиссия 15%: ${this.formatCurrency(results.our.breakdown.ourCommission)}<br>
-                    • Общая нагрузка: 24%
-                `;
+                if (ourDetails) {
+                    ourDetails.innerHTML = `
+                        • Налоги подрядчика: ${this.formatCurrency(results.our.breakdown.ourTax)}<br>
+                        • Наша комиссия 15%: ${this.formatCurrency(results.our.breakdown.ourCommission)}<br>
+                        • Общая нагрузка: 24%
+                    `;
+                }
             }
 
             updateComparison(results) {
-                document.getElementById('comparison-staff').textContent = this.formatCurrency(results.staff.total);
-                document.getElementById('comparison-gph').textContent = this.formatCurrency(results.gph.total);
-                document.getElementById('comparison-selfemployed').textContent = this.formatCurrency(results.selfemployed.total);
-                document.getElementById('comparison-our').textContent = this.formatCurrency(results.our.total);
+                this.animateNumberChange('comparison-staff', this.formatCurrency(results.staff.total));
+                this.animateNumberChange('comparison-gph', this.formatCurrency(results.gph.total));
+                this.animateNumberChange('comparison-selfemployed', this.formatCurrency(results.selfemployed.total));
+                this.animateNumberChange('comparison-our', this.formatCurrency(results.our.total));
             }
 
             updateSaving(results) {
@@ -839,9 +1225,44 @@
                 const savingPercent = ((saving / staffTotal) * 100).toFixed(1);
                 const yearlySaving = saving * 12;
 
-                document.getElementById('saving-amount').textContent = this.formatCurrency(saving);
-                document.getElementById('saving-percent').textContent = `${savingPercent}% экономии`;
-                document.getElementById('saving-yearly').textContent = `${this.formatCurrency(yearlySaving)} в год`;
+                this.animateNumberChange('saving-amount', this.formatCurrency(saving));
+                this.animateNumberChange('saving-percent', `${savingPercent}% экономии`);
+                this.animateNumberChange('saving-yearly', `${this.formatCurrency(yearlySaving)} в год`);
+            }
+            
+            animateNumberChange(elementId, newValue) {
+                const element = document.getElementById(elementId);
+                if (!element) return;
+                
+                // Анимация изменения числа
+                element.style.transform = 'scale(1.1)';
+                element.style.color = '#e63946';
+                
+                setTimeout(() => {
+                    element.textContent = newValue;
+                    element.style.transform = 'scale(1)';
+                    element.style.color = '';
+                }, 150);
+            }
+            
+            animateResults() {
+                // Анимация для карточек результатов
+                const resultCards = document.querySelectorAll('.result-card');
+                resultCards.forEach(card => {
+                    card.style.transform = 'translateY(-5px)';
+                    setTimeout(() => {
+                        card.style.transform = '';
+                    }, 300);
+                });
+                
+                // Анимация для секции экономии
+                const savingSection = document.querySelector('.saving-section');
+                if (savingSection) {
+                    savingSection.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        savingSection.style.transform = '';
+                    }, 300);
+                }
             }
 
             formatCurrency(amount) {
@@ -856,7 +1277,179 @@
 
         // Инициализация калькулятора
         document.addEventListener('DOMContentLoaded', function() {
-            new TaxCalculator();
+            const calculator = new TaxCalculator();
+            
+            // Обработка cookie уведомления
+            const cookieNotice = document.getElementById('cookieNotice');
+            const cookieAccept = document.getElementById('cookieAccept');
+            const cookieReject = document.getElementById('cookieReject');
+            const cookieSettings = document.getElementById('cookieSettings');
+            
+            // Проверяем, было ли уже принято решение по cookie
+            const cookieDecision = localStorage.getItem('cookieDecision');
+            if (!cookieDecision) {
+                // Показываем уведомление через 3 секунды
+                setTimeout(() => {
+                    cookieNotice.classList.add('visible');
+                }, 3000);
+            }
+            
+            // Обработка принятия cookie
+            cookieAccept.addEventListener('click', function() {
+                localStorage.setItem('cookieDecision', 'accepted');
+                localStorage.setItem('cookieDecisionDate', new Date().toISOString());
+                cookieNotice.classList.remove('visible');
+                
+                // Разблокируем WhatsApp ссылки
+                document.querySelectorAll('[data-consent-required]').forEach(link => {
+                    link.removeAttribute('data-consent-required');
+                });
+                
+                // Показываем сообщение
+                const message = document.createElement('div');
+                message.innerHTML = `
+                    <div style="position: fixed; top: 20px; right: 20px; background: #25D366; color: white; padding: 15px 25px; border-radius: 10px; z-index: 1002; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                        ✅ WhatsApp теперь доступен!
+                    </div>
+                `;
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    message.style.opacity = '0';
+                    setTimeout(() => message.remove(), 300);
+                }, 3000);
+            });
+            
+            // Обработка отклонения cookie
+            cookieReject.addEventListener('click', function() {
+                localStorage.setItem('cookieDecision', 'rejected');
+                localStorage.setItem('cookieDecisionDate', new Date().toISOString());
+                cookieNotice.classList.remove('visible');
+                
+                const message = document.createElement('div');
+                message.innerHTML = `
+                    <div style="position: fixed; top: 20px; right: 20px; background: #718096; color: white; padding: 15px 25px; border-radius: 10px; z-index: 1002; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                        ❌ WhatsApp заблокирован
+                    </div>
+                `;
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    message.style.opacity = '0';
+                    setTimeout(() => message.remove(), 300);
+                }, 3000);
+            });
+            
+            // Настройки cookie
+            cookieSettings.addEventListener('click', function(e) {
+                e.preventDefault();
+                const settings = confirm(
+                    'Настройки cookie:\n\n' +
+                    '✅ Необходимые cookie: включены всегда\n' +
+                    '📊 Аналитические cookie: для улучшения сайта\n' +
+                    '🎯 Маркетинговые cookie: для персонализации\n\n' +
+                    'Хотите включить все cookie для полного доступа к сайту?'
+                );
+                
+                if (settings) {
+                    cookieAccept.click();
+                }
+            });
+            
+            // Блокировка WhatsApp ссылок до согласия
+            document.addEventListener('click', function(e) {
+                const whatsappLink = e.target.closest('[data-consent-required]');
+                if (whatsappLink && !localStorage.getItem('cookieDecision')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Показываем cookie уведомление
+                    cookieNotice.classList.add('visible');
+                    
+                    // Прокручиваем к уведомлению
+                    cookieNotice.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                    
+                    // Фокусируемся на кнопке принятия
+                    setTimeout(() => {
+                        cookieAccept.focus();
+                    }, 500);
+                }
+            });
+            
+            // Открываем WhatsApp если согласие уже дано
+            document.querySelectorAll('[data-consent-required]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (localStorage.getItem('cookieDecision') === 'accepted') {
+                        // Открываем WhatsApp в новом окне
+                        window.open(this.href, '_blank', 'noopener,noreferrer');
+                        e.preventDefault();
+                        
+                        // Показываем сообщение об отправке
+                        const message = document.createElement('div');
+                        message.innerHTML = `
+                            <div style="position: fixed; top: 20px; right: 20px; background: #25D366; color: white; padding: 15px 25px; border-radius: 10px; z-index: 1002; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                                📱 Открываю WhatsApp...
+                            </div>
+                        `;
+                        document.body.appendChild(message);
+                        
+                        setTimeout(() => {
+                            message.style.opacity = '0';
+                            setTimeout(() => message.remove(), 300);
+                        }, 2000);
+                    }
+                });
+            });
+            
+            // Сохраняем последние значения калькулятора
+            const saveCalculatorValues = () => {
+                const salary = document.getElementById('salary').value;
+                const employees = document.getElementById('employees').value;
+                localStorage.setItem('calculatorSalary', salary);
+                localStorage.setItem('calculatorEmployees', employees);
+            };
+            
+            // Восстанавливаем сохраненные значения
+            const savedSalary = localStorage.getItem('calculatorSalary');
+            const savedEmployees = localStorage.getItem('calculatorEmployees');
+            
+            if (savedSalary) {
+                document.getElementById('salary').value = savedSalary;
+            }
+            if (savedEmployees) {
+                document.getElementById('employees').value = savedEmployees;
+            }
+            
+            // Пересчитываем если есть сохраненные значения
+            if (savedSalary || savedEmployees) {
+                calculator.calculate();
+            }
+            
+            // Сохраняем значения при изменении
+            document.getElementById('salary').addEventListener('input', saveCalculatorValues);
+            document.getElementById('employees').addEventListener('input', saveCalculatorValues);
+            
+            // Кнопка "Наверх"
+            const scrollBtn = document.getElementById('scrollToTop');
+            if (scrollBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollBtn.classList.add('visible');
+                    } else {
+                        scrollBtn.classList.remove('visible');
+                    }
+                });
+                
+                scrollBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
         });
     </script>
 

@@ -1,5 +1,3 @@
-[file name]: /js/main.js
-[file content begin]
 /**
  * Main JavaScript for Resursoria website
  * Version: 2.12.2025
@@ -16,14 +14,13 @@ class PrivacyManager {
 
     init() {
         console.log('PrivacyManager initialized');
-        this.checkCookieConsent();
         this.setupEventListeners();
+        this.checkCookieConsent();
         this.setupScrollToTop();
         this.setupSmoothScroll();
         this.setupWhatsAppTracking();
-        this.setupMobileMenu();
-        this.setupLazyLoading();
         this.setupAccessibility();
+        this.setupForms();
     }
 
     // Cookie Management
@@ -65,23 +62,26 @@ class PrivacyManager {
 
     checkCookieConsent() {
         const consent = this.getCookie(this.cookieName);
-        if (consent === null) {
-            setTimeout(() => this.showCookieNotice(), 1000);
+        const notice = document.getElementById('cookieNotice');
+        
+        if (consent === null && notice) {
+            // Показываем уведомление с задержкой
+            setTimeout(() => {
+                notice.classList.add('visible');
+                notice.setAttribute('aria-hidden', 'false');
+                this.trapFocus(notice);
+                
+                // Блокируем элементы до согласия
+                document.body.classList.add('cookies-blocked');
+            }, 1000);
         } else if (consent === 'accepted') {
             this.enableAnalytics();
             this.enableForms();
+            document.body.classList.remove('cookies-blocked');
         } else if (consent === 'rejected') {
             this.disableAnalytics();
             this.disableForms();
-        }
-    }
-
-    showCookieNotice() {
-        const notice = document.getElementById('cookieNotice');
-        if (notice) {
-            notice.classList.add('visible');
-            notice.setAttribute('aria-hidden', 'false');
-            this.trapFocus(notice);
+            document.body.classList.add('cookies-blocked');
         }
     }
 
@@ -98,7 +98,11 @@ class PrivacyManager {
         this.hideCookieNotice();
         this.enableAnalytics();
         this.enableForms();
+        document.body.classList.remove('cookies-blocked');
         this.showToast('Спасибо! Настройки сохранены.', 'success');
+        
+        // Включаем все элементы
+        this.enableAllElements();
     }
 
     rejectCookies() {
@@ -106,29 +110,69 @@ class PrivacyManager {
         this.hideCookieNotice();
         this.disableAnalytics();
         this.disableForms();
-        this.showToast('Настройки сохранены. Файлы cookie отключены.', 'info');
+        document.body.classList.add('cookies-blocked');
+        this.showToast('Файлы cookie отключены. Некоторые функции могут быть недоступны.', 'info');
+    }
+
+    enableAllElements() {
+        // Включаем все кнопки WhatsApp
+        const whatsappElements = document.querySelectorAll('[data-consent-required], .btn-whatsapp, .whatsapp-link');
+        whatsappElements.forEach(el => {
+            el.style.opacity = '1';
+            el.style.pointerEvents = 'auto';
+            el.removeAttribute('aria-disabled');
+        });
+        
+        // Включаем формы
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.style.opacity = '1';
+            form.style.pointerEvents = 'auto';
+            form.removeAttribute('aria-disabled');
+        });
     }
 
     showToast(message, type = 'info') {
+        // Удаляем старые тосты
+        const oldToasts = document.querySelectorAll('.toast');
+        oldToasts.forEach(toast => toast.remove());
+        
         const toast = document.createElement('div');
         toast.className = `toast toast-${type}`;
         toast.textContent = message;
         toast.setAttribute('role', 'alert');
         toast.setAttribute('aria-live', 'polite');
         
+        // Стили для тоста
+        toast.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            background: ${type === 'success' ? 'var(--success-color)' : 
+                         type === 'warning' ? 'var(--warning-color)' : 
+                         'var(--secondary-color)'};
+            color: white;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            z-index: 1002;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            max-width: 350px;
+        `;
+        
         document.body.appendChild(toast);
         
         setTimeout(() => {
-            toast.classList.add('show');
+            toast.style.transform = 'translateY(0)';
+            toast.style.opacity = '1';
         }, 10);
         
         setTimeout(() => {
-            toast.classList.remove('show');
-            setTimeout(() => {
-                if (toast.parentNode) {
-                    toast.parentNode.removeChild(toast);
-                }
-            }, 300);
+            toast.style.transform = 'translateY(100%)';
+            toast.style.opacity = '0';
+            setTimeout(() => toast.remove(), 300);
         }, 3000);
     }
 
@@ -148,9 +192,6 @@ class PrivacyManager {
         if (typeof ym !== 'undefined') {
             ym('setUserProperties', { cookie_consent: 'accepted' });
         }
-        
-        // Send pageview if analytics were blocked
-        this.sendDelayedPageview();
     }
 
     disableAnalytics() {
@@ -163,21 +204,10 @@ class PrivacyManager {
             });
         }
         
+        // Удаляем cookies аналитики
         this.deleteCookie('_ga');
         this.deleteCookie('_gid');
         this.deleteCookie('_ym_uid');
-    }
-
-    sendDelayedPageview() {
-        if (typeof gtag !== 'undefined') {
-            setTimeout(() => {
-                gtag('event', 'page_view', {
-                    page_title: document.title,
-                    page_location: window.location.href,
-                    page_path: window.location.pathname
-                });
-            }, 100);
-        }
     }
 
     // Forms Management
@@ -188,13 +218,6 @@ class PrivacyManager {
             form.style.pointerEvents = 'auto';
             form.removeAttribute('aria-disabled');
         });
-        
-        const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
-        whatsappLinks.forEach(link => {
-            link.style.pointerEvents = 'auto';
-            link.style.opacity = '1';
-            link.removeAttribute('aria-disabled');
-        });
     }
 
     disableForms() {
@@ -203,13 +226,6 @@ class PrivacyManager {
             form.style.opacity = '0.5';
             form.style.pointerEvents = 'none';
             form.setAttribute('aria-disabled', 'true');
-        });
-        
-        const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
-        whatsappLinks.forEach(link => {
-            link.style.pointerEvents = 'none';
-            link.style.opacity = '0.5';
-            link.setAttribute('aria-disabled', 'true');
         });
     }
 
@@ -239,28 +255,6 @@ class PrivacyManager {
             });
         }
 
-        // Form consent validation
-        document.addEventListener('submit', (e) => {
-            const form = e.target;
-            const consentCheckbox = form.querySelector('.consent-checkbox input[type="checkbox"]');
-            
-            if (consentCheckbox && !consentCheckbox.checked) {
-                e.preventDefault();
-                this.showConsentError(consentCheckbox);
-                
-                // Scroll to checkbox
-                consentCheckbox.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-                
-                // Focus checkbox
-                setTimeout(() => {
-                    consentCheckbox.focus();
-                }, 500);
-            }
-        });
-
         // Cookie notice close on ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
@@ -270,37 +264,6 @@ class PrivacyManager {
                 }
             }
         });
-    }
-
-    showConsentError(checkbox) {
-        let errorElement = checkbox.parentNode.querySelector('.consent-error');
-        if (!errorElement) {
-            errorElement = document.createElement('div');
-            errorElement.className = 'consent-error';
-            errorElement.style.cssText = `
-                color: var(--accent-color);
-                font-size: 0.9rem;
-                margin-top: 8px;
-                padding: 8px 12px;
-                background: rgba(230, 57, 70, 0.1);
-                border-radius: var(--border-radius);
-                border-left: 3px solid var(--accent-color);
-            `;
-            errorElement.textContent = 'Необходимо дать согласие на обработку персональных данных';
-            errorElement.setAttribute('role', 'alert');
-            checkbox.parentNode.appendChild(errorElement);
-        }
-        
-        setTimeout(() => {
-            if (errorElement && errorElement.parentNode) {
-                errorElement.classList.add('fade-out');
-                setTimeout(() => {
-                    if (errorElement.parentNode) {
-                        errorElement.parentNode.removeChild(errorElement);
-                    }
-                }, 300);
-            }
-        }, 5000);
     }
 
     // Scroll to Top
@@ -381,46 +344,66 @@ class PrivacyManager {
     // WhatsApp Tracking
     setupWhatsAppTracking() {
         document.addEventListener('click', (e) => {
-            const whatsappLink = e.target.closest('a[href*="wa.me"]');
+            const whatsappLink = e.target.closest('a[href*="wa.me"], .btn-whatsapp, .whatsapp-link');
             if (!whatsappLink) return;
+            
+            // Проверяем, заблокирован ли элемент
+            if (whatsappLink.style.pointerEvents === 'none' || 
+                whatsappLink.getAttribute('aria-disabled') === 'true') {
+                e.preventDefault();
+                e.stopPropagation();
+                return;
+            }
             
             const consent = this.getCookie(this.cookieName);
             
-            // If no consent, show notice and prevent click
+            // Если нет согласия, показываем уведомление и блокируем
             if (consent !== 'accepted') {
                 e.preventDefault();
                 e.stopPropagation();
                 
                 if (consent === null) {
-                    this.showCookieNotice();
+                    const notice = document.getElementById('cookieNotice');
+                    if (notice) {
+                        notice.classList.add('visible');
+                        notice.setAttribute('aria-hidden', 'false');
+                        this.trapFocus(notice);
+                    }
                 } else {
                     this.showToast('Для перехода в WhatsApp необходимо принять файлы cookie', 'warning');
                 }
                 return;
             }
             
-            // Track click if consent given
+            // Трекинг клика если согласие дано
             const href = whatsappLink.href;
             const linkText = whatsappLink.textContent.trim() || 'WhatsApp link';
             const pageLocation = window.location.pathname;
+            
+            // Добавляем параметры для трекинга
+            const trackingParams = new URLSearchParams({
+                source: 'website',
+                page: pageLocation,
+                medium: 'whatsapp_button',
+                campaign: 'organic',
+                content: linkText
+            });
+            
+            const whatsappUrl = new URL(href);
+            whatsappUrl.searchParams.set('text', 
+                `Здравствуйте! Пишу с сайта resursoria.ru\nСтраница: ${pageLocation}\n\nМеня интересуют услуги аутстаффинга. Пожалуйста, предоставьте консультацию.`
+            );
+            
+            // Открываем WhatsApp
+            window.open(whatsappUrl.toString(), '_blank', 'noopener,noreferrer');
             
             // Google Analytics
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'whatsapp_click', {
                     'event_category': 'engagement',
                     'event_label': `${pageLocation} - ${linkText}`,
-                    'event_callback': () => {
-                        // Open WhatsApp after tracking
-                        setTimeout(() => {
-                            window.open(href, '_blank', 'noopener,noreferrer');
-                        }, 100);
-                    }
+                    'value': 1
                 });
-            } else {
-                // If no GA, open directly with safety delay
-                setTimeout(() => {
-                    window.open(href, '_blank', 'noopener,noreferrer');
-                }, 50);
             }
             
             // Yandex Metrica
@@ -430,67 +413,7 @@ class PrivacyManager {
                     link: linkText
                 });
             }
-            
-            // Prevent default if we're handling the click
-            if (typeof gtag !== 'undefined') {
-                e.preventDefault();
-            }
         });
-    }
-
-    // Mobile Menu (placeholder for future implementation)
-    setupMobileMenu() {
-        // This will be implemented when mobile menu is added to HTML
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        if (mobileMenuToggle) {
-            console.log('Mobile menu toggle found - setup here');
-        }
-    }
-
-    // Lazy Loading
-    setupLazyLoading() {
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        
-                        if (img.dataset.src) {
-                            img.src = img.dataset.src;
-                        }
-                        
-                        if (img.dataset.srcset) {
-                            img.srcset = img.dataset.srcset;
-                        }
-                        
-                        img.classList.add('loaded');
-                        img.removeAttribute('data-src');
-                        img.removeAttribute('data-srcset');
-                        
-                        // Dispatch load event
-                        img.dispatchEvent(new Event('load'));
-                        
-                        observer.unobserve(img);
-                    }
-                });
-            }, {
-                rootMargin: '50px 0px',
-                threshold: 0.1
-            });
-            
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        } else {
-            // Fallback for older browsers
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                img.src = img.dataset.src;
-                if (img.dataset.srcset) {
-                    img.srcset = img.dataset.srcset;
-                }
-                img.classList.add('loaded');
-            });
-        }
     }
 
     // Accessibility
@@ -503,17 +426,25 @@ class PrivacyManager {
         document.body.insertBefore(skipLink, document.body.firstChild);
         
         // Add main content id if not exists
-        const mainContent = document.querySelector('main') || document.querySelector('.main-content');
+        const mainContent = document.querySelector('main') || document.querySelector('.main-content') || document.querySelector('.container');
         if (mainContent && !mainContent.id) {
             mainContent.id = 'main-content';
         }
-        
-        // Trap focus in cookie notice
-        this.setupFocusTrap();
     }
 
-    setupFocusTrap() {
-        // Will be implemented when needed
+    setupForms() {
+        // Обработка чекбоксов согласия
+        document.querySelectorAll('.consent-checkbox input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                const form = checkbox.closest('form');
+                if (form) {
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    if (submitBtn) {
+                        submitBtn.disabled = !e.target.checked;
+                    }
+                }
+            });
+        });
     }
 
     trapFocus(element) {
@@ -526,7 +457,7 @@ class PrivacyManager {
             const firstElement = focusableElements[0];
             const lastElement = focusableElements[focusableElements.length - 1];
             
-            element.addEventListener('keydown', (e) => {
+            const keydownHandler = (e) => {
                 if (e.key === 'Tab') {
                     if (e.shiftKey) {
                         if (document.activeElement === firstElement) {
@@ -540,12 +471,24 @@ class PrivacyManager {
                         }
                     }
                 }
-            });
+            };
+            
+            element.addEventListener('keydown', keydownHandler);
             
             // Focus first element
             setTimeout(() => {
                 firstElement.focus();
             }, 50);
+            
+            // Cleanup
+            element._keydownHandler = keydownHandler;
+        }
+    }
+
+    removeFocusTrap(element) {
+        if (element._keydownHandler) {
+            element.removeEventListener('keydown', element._keydownHandler);
+            delete element._keydownHandler;
         }
     }
 }
@@ -556,8 +499,8 @@ class SiteUtils {
         this.setupPhoneLinks();
         this.setupExternalLinks();
         this.setupCurrentYear();
-        this.setupFormEnhancements();
         this.setupErrorHandling();
+        this.setupActiveNav();
     }
 
     static setupPhoneLinks() {
@@ -609,15 +552,16 @@ class SiteUtils {
         }
     }
 
-    static setupFormEnhancements() {
-        // Add loading states to forms
-        document.querySelectorAll('form').forEach(form => {
-            const submitButton = form.querySelector('button[type="submit"]');
-            if (submitButton) {
-                form.addEventListener('submit', () => {
-                    submitButton.disabled = true;
-                    submitButton.innerHTML = '<span class="spinner"></span> Отправка...';
-                });
+    static setupActiveNav() {
+        // Устанавливаем активный пункт меню на основе текущей страницы
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        navLinks.forEach(link => {
+            const linkPath = new URL(link.href).pathname;
+            if (linkPath === currentPath || 
+                (currentPath.includes(linkPath) && linkPath !== '/')) {
+                link.classList.add('active');
             }
         });
     }
@@ -632,8 +576,6 @@ class SiteUtils {
                 colno: e.colno,
                 error: e.error
             });
-            
-            // Don't show to user, just log
         });
 
         // Unhandled promise rejections
@@ -643,147 +585,25 @@ class SiteUtils {
     }
 }
 
-// Performance Monitoring
-class PerformanceMonitor {
-    static init() {
-        if ('performance' in window) {
-            // Log page load performance
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    const perfData = performance.getEntriesByType('navigation')[0];
-                    if (perfData) {
-                        console.log('Performance metrics:', {
-                            'DNS lookup': perfData.domainLookupEnd - perfData.domainLookupStart,
-                            'TCP connect': perfData.connectEnd - perfData.connectStart,
-                            'TTFB': perfData.responseStart - perfData.requestStart,
-                            'DOM load': perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart,
-                            'Page load': perfData.loadEventEnd - perfData.loadEventStart,
-                            'Total time': perfData.duration
-                        });
-                    }
-                }, 0);
-            });
-        }
-    }
-}
-
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM Content Loaded - Initializing Resursoria');
     
     // Initialize managers
-    new PrivacyManager();
+    window.privacyManager = new PrivacyManager();
     SiteUtils.init();
-    PerformanceMonitor.init();
-    
-    // Add CSS for dynamic elements
-    const dynamicStyles = document.createElement('style');
-    dynamicStyles.textContent = `
-        /* Toast notifications */
-        .toast {
-            position: fixed;
-            bottom: 100px;
-            right: 25px;
-            background: var(--dark-color);
-            color: white;
-            padding: 12px 20px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            z-index: 1002;
-            transform: translateY(100%);
-            opacity: 0;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            max-width: 350px;
-        }
-        
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .toast-success {
-            background: var(--success-color);
-        }
-        
-        .toast-warning {
-            background: var(--warning-color);
-        }
-        
-        .toast-info {
-            background: var(--secondary-color);
-        }
-        
-        /* Loading spinner */
-        .spinner {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
-            margin-right: 8px;
-            vertical-align: middle;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        /* Lazy loading */
-        img.lazy {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        img.lazy.loaded {
-            opacity: 1;
-        }
-        
-        /* Fade animations */
-        .fade-out {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        /* Print styles enhancement */
-        @media print {
-            .no-print {
-                display: none !important;
-            }
-            
-            a[href]:after {
-                content: " (" attr(href) ")";
-                font-size: 0.9em;
-                font-weight: normal;
-            }
-            
-            .btn, .whatsapp-float, .scroll-to-top {
-                display: none !important;
-            }
-        }
-        
-        /* Reduced motion */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-            
-            .spinner {
-                animation: none;
-                border: none;
-                background: white;
-            }
-        }
-    `;
-    document.head.appendChild(dynamicStyles);
     
     // Dispatch custom event for other scripts
     document.dispatchEvent(new CustomEvent('resursoria:ready'));
+    
+    // Убираем preloader если есть
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            setTimeout(() => preloader.remove(), 300);
+        }, 500);
+    }
 });
 
 // Handle browser back/forward with smooth scroll
@@ -797,30 +617,6 @@ window.addEventListener('popstate', function() {
     }
 });
 
-// Service Worker Registration (Progressive Web App)
-if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('ServiceWorker registered:', registration.scope);
-            })
-            .catch(function(error) {
-                console.log('ServiceWorker registration failed:', error);
-            });
-    });
-}
-
-// Offline detection
-window.addEventListener('online', function() {
-    console.log('App is online');
-    document.documentElement.classList.remove('offline');
-});
-
-window.addEventListener('offline', function() {
-    console.log('App is offline');
-    document.documentElement.classList.add('offline');
-});
-
 // Viewport units fix for mobile
 function setVH() {
     const vh = window.innerHeight * 0.01;
@@ -830,4 +626,3 @@ function setVH() {
 window.addEventListener('resize', setVH);
 window.addEventListener('orientationchange', setVH);
 setVH(); // Initial call
-[file content end]

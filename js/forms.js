@@ -1,5 +1,3 @@
-[file name]: /js/forms.js
-[file content begin]
 /**
  * Form Manager for Resursoria website
  * Version: 2.12.2025
@@ -32,7 +30,33 @@ class FormManager {
                 form.setAttribute('novalidate', '');
             }
             
+            // Проверяем согласие на обработку данных
+            const consentCheckbox = form.querySelector('.consent-checkbox input[type="checkbox"]');
+            if (consentCheckbox) {
+                consentCheckbox.required = true;
+                
+                // Отключаем кнопку отправки если чекбокс не отмечен
+                const submitBtn = form.querySelector('button[type="submit"]');
+                if (submitBtn && !consentCheckbox.checked) {
+                    submitBtn.disabled = true;
+                }
+                
+                consentCheckbox.addEventListener('change', (e) => {
+                    if (submitBtn) {
+                        submitBtn.disabled = !e.target.checked;
+                    }
+                });
+            }
+            
             form.addEventListener('submit', (e) => {
+                // Проверяем согласие на куки
+                const consent = window.privacyManager?.getCookie('resursoria_consent');
+                if (consent !== 'accepted') {
+                    e.preventDefault();
+                    window.privacyManager?.showToast('Для отправки формы необходимо принять файлы cookie', 'warning');
+                    return;
+                }
+                
                 if (!this.validateForm(form)) {
                     e.preventDefault();
                     this.showFormErrors(form);
@@ -49,25 +73,7 @@ class FormManager {
                     this.clearError(input);
                     this.updateFieldStatus(input);
                 });
-                
-                // Add focus styling
-                input.addEventListener('focus', () => {
-                    input.parentElement.classList.add('focused');
-                });
-                
-                input.addEventListener('blur', () => {
-                    input.parentElement.classList.remove('focused');
-                });
             });
-            
-            // Add loading indicator
-            const submitBtn = form.querySelector('button[type="submit"]');
-            if (submitBtn && !submitBtn.querySelector('.spinner')) {
-                const spinner = document.createElement('span');
-                spinner.className = 'spinner';
-                spinner.style.display = 'none';
-                submitBtn.prepend(spinner);
-            }
         });
     }
 
@@ -80,18 +86,6 @@ class FormManager {
                 isValid = false;
             }
         });
-
-        // Consent checkbox validation
-        const consentCheckbox = form.querySelector('.consent-checkbox input[type="checkbox"]');
-        if (consentCheckbox && !consentCheckbox.checked) {
-            this.showError(consentCheckbox, 'Необходимо дать согласие на обработку персональных данных');
-            isValid = false;
-        }
-
-        // Custom validation for specific forms
-        if (form.id === 'calculator-form') {
-            isValid = this.validateCalculatorForm(form) && isValid;
-        }
 
         return isValid;
     }
@@ -125,56 +119,8 @@ class FormManager {
             return false;
         }
 
-        // Number validation
-        if (type === 'number' && field.hasAttribute('min') && field.hasAttribute('max')) {
-            const min = parseFloat(field.getAttribute('min'));
-            const max = parseFloat(field.getAttribute('max'));
-            const numValue = parseFloat(value);
-            
-            if (value && (numValue < min || numValue > max)) {
-                this.showError(field, `Введите число от ${min} до ${max}`);
-                return false;
-            }
-        }
-
-        // Select validation
-        if (type === 'select-one' && field.hasAttribute('required') && value === '') {
-            this.showError(field, 'Пожалуйста, выберите вариант');
-            return false;
-        }
-
         this.clearError(field);
         return true;
-    }
-
-    validateCalculatorForm(form) {
-        let isValid = true;
-        
-        // Check employee count
-        const employeeCount = form.querySelector('[name="employee_count"]');
-        if (employeeCount && employeeCount.value) {
-            const count = parseInt(employeeCount.value);
-            if (count < 1) {
-                this.showError(employeeCount, 'Количество сотрудников должно быть не менее 1');
-                isValid = false;
-            }
-            if (count > 1000) {
-                this.showError(employeeCount, 'Для количества сотрудников более 1000 свяжитесь с нами напрямую');
-                isValid = false;
-            }
-        }
-        
-        // Check average salary
-        const avgSalary = form.querySelector('[name="average_salary"]');
-        if (avgSalary && avgSalary.value) {
-            const salary = parseFloat(avgSalary.value);
-            if (salary < 15000) {
-                this.showError(avgSalary, 'Средняя зарплата должна быть не менее 15,000 ₽');
-                isValid = false;
-            }
-        }
-        
-        return isValid;
     }
 
     // Validation helpers
@@ -208,13 +154,8 @@ class FormManager {
         errorElement.setAttribute('role', 'alert');
         errorElement.setAttribute('aria-live', 'polite');
         
-        // Insert after field or in parent
-        const parent = field.parentElement;
-        if (parent.classList.contains('form-group') || parent.classList.contains('input-group')) {
-            parent.appendChild(errorElement);
-        } else {
-            field.after(errorElement);
-        }
+        // Insert after field
+        field.parentNode.appendChild(errorElement);
         
         // Focus first error
         if (!this.firstError) {
@@ -230,10 +171,10 @@ class FormManager {
         field.classList.remove('error');
         field.removeAttribute('aria-invalid');
         
-        const parent = field.parentElement;
-        const errorElement = parent.querySelector('.error-message') || field.nextElementSibling;
+        const parent = field.parentNode;
+        const errorElement = parent.querySelector('.error-message');
         
-        if (errorElement && errorElement.classList.contains('error-message')) {
+        if (errorElement) {
             errorElement.remove();
         }
     }
@@ -277,7 +218,7 @@ class FormManager {
                 
                 // If empty, set to +7 (
                 if (value.length === 0) {
-                    e.target.value = '+7 (';
+                    e.target.value = '';
                     return;
                 }
                 
@@ -309,26 +250,9 @@ class FormManager {
                 }, 0);
             });
 
-            // Handle backspace
-            input.addEventListener('keydown', (e) => {
-                if (e.key === 'Backspace') {
-                    const cursorPosition = input.selectionStart;
-                    if (cursorPosition <= 4) { // Before first digit
-                        e.preventDefault();
-                    } else if (input.value[cursorPosition - 1] === '-' || 
-                               input.value[cursorPosition - 1] === ')' ||
-                               input.value[cursorPosition - 1] === '(' ||
-                               input.value[cursorPosition - 1] === ' ') {
-                        // Skip formatting characters
-                        e.preventDefault();
-                        input.selectionStart = input.selectionEnd = cursorPosition - 1;
-                    }
-                }
-            });
-            
             // Format on blur if incomplete
             input.addEventListener('blur', () => {
-                if (input.value && input.value.length < 6) {
+                if (input.value && input.value.replace(/\D/g, '').length < 10) {
                     input.value = '';
                 }
             });
@@ -351,22 +275,20 @@ class FormManager {
         const formData = new FormData(form);
         const submitButton = form.querySelector('button[type="submit"]');
         const originalText = submitButton ? submitButton.innerHTML : 'Отправить';
-        const spinner = submitButton ? submitButton.querySelector('.spinner') : null;
 
         // Show loading state
         if (submitButton) {
             submitButton.disabled = true;
-            submitButton.innerHTML = '<span class="spinner"></span> Отправка...';
-            if (spinner) spinner.style.display = 'inline-block';
+            submitButton.innerHTML = '⏳ Отправка...';
         }
 
-        // Add timestamp
+        // Add tracking data
         formData.append('submission_time', new Date().toISOString());
         formData.append('page_url', window.location.href);
-        formData.append('user_agent', navigator.userAgent);
+        formData.append('form_name', form.getAttribute('name') || form.id || 'contact_form');
 
         try {
-            // Simulate API call - replace with actual endpoint
+            // Здесь будет реальный API call
             const response = await this.mockApiCall(formData);
             
             if (response.success) {
@@ -375,6 +297,15 @@ class FormManager {
                 
                 // Track conversion
                 this.trackConversion(form, formData);
+                
+                // Сбрасываем чекбокс согласия
+                const consentCheckbox = form.querySelector('.consent-checkbox input[type="checkbox"]');
+                if (consentCheckbox) {
+                    consentCheckbox.checked = false;
+                    if (submitButton) {
+                        submitButton.disabled = true;
+                    }
+                }
             } else {
                 this.showErrorMessage(form, 'Ошибка отправки. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.');
             }
@@ -386,7 +317,6 @@ class FormManager {
             if (submitButton) {
                 submitButton.disabled = false;
                 submitButton.innerHTML = originalText;
-                if (spinner) spinner.style.display = 'none';
             }
         }
     }
@@ -412,16 +342,17 @@ class FormManager {
     }
 
     showSuccessMessage(form, message) {
-        let successElement = form.querySelector('.form-success');
-        if (!successElement) {
-            successElement = document.createElement('div');
-            successElement.className = 'form-success';
-            form.prepend(successElement);
-        }
+        // Удаляем старые сообщения
+        const oldMessages = form.querySelectorAll('.form-success, .form-error');
+        oldMessages.forEach(msg => msg.remove());
         
+        const successElement = document.createElement('div');
+        successElement.className = 'form-success';
         successElement.textContent = message;
         successElement.setAttribute('role', 'alert');
         successElement.setAttribute('aria-live', 'polite');
+        
+        form.prepend(successElement);
         
         // Scroll to success message
         successElement.scrollIntoView({
@@ -431,16 +362,16 @@ class FormManager {
 
         // Hide after 5 seconds
         setTimeout(() => {
-            successElement.classList.add('fade-out');
-            setTimeout(() => {
-                if (successElement.parentNode) {
-                    successElement.parentNode.removeChild(successElement);
-                }
-            }, 300);
+            successElement.style.opacity = '0';
+            setTimeout(() => successElement.remove(), 300);
         }, 5000);
     }
 
     showErrorMessage(form, message) {
+        // Удаляем старые сообщения
+        const oldMessages = form.querySelectorAll('.form-success, .form-error');
+        oldMessages.forEach(msg => msg.remove());
+        
         const errorElement = document.createElement('div');
         errorElement.className = 'form-error';
         errorElement.textContent = message;
@@ -457,12 +388,8 @@ class FormManager {
 
         // Remove after 5 seconds
         setTimeout(() => {
-            errorElement.classList.add('fade-out');
-            setTimeout(() => {
-                if (errorElement.parentNode) {
-                    errorElement.parentNode.removeChild(errorElement);
-                }
-            }, 300);
+            errorElement.style.opacity = '0';
+            setTimeout(() => errorElement.remove(), 300);
         }, 5000);
     }
 
@@ -478,12 +405,6 @@ class FormManager {
                 'event_value': 1,
                 'form_type': formType
             });
-            
-            gtag('event', 'conversion', {
-                'send_to': 'AW-123456789/AbC-D_EFgH12IjKlMnOpQ', // Replace with actual ID
-                'value': 1.0,
-                'currency': 'RUB'
-            });
         }
         
         // Yandex Metrica
@@ -493,14 +414,10 @@ class FormManager {
                 type: formType
             });
         }
-        
-        // Facebook Pixel
-        if (typeof fbq !== 'undefined') {
-            fbq('track', 'Lead');
-        }
     }
 
     handleFormSubmission(form, e) {
+        // Если форма не AJAX, просто трекаем
         const formName = form.getAttribute('name') || form.id || 'unknown_form';
         
         console.log('Form submitted (non-AJAX):', formName);
@@ -513,40 +430,14 @@ class FormManager {
                 'value': 1
             });
         }
+        
+        // Показываем сообщение об успехе перед переходом
+        this.showSuccessMessage(form, '✅ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
     }
 
     // Input Enhancements
     setupInputEnhancements() {
-        // Add floating labels
-        document.querySelectorAll('.form-group, .input-group').forEach(group => {
-            const input = group.querySelector('input, select, textarea');
-            const label = group.querySelector('label');
-            
-            if (input && label) {
-                // Check if already has value
-                if (input.value) {
-                    group.classList.add('has-value');
-                }
-                
-                input.addEventListener('input', () => {
-                    if (input.value) {
-                        group.classList.add('has-value');
-                    } else {
-                        group.classList.remove('has-value');
-                    }
-                });
-                
-                input.addEventListener('focus', () => {
-                    group.classList.add('focused');
-                });
-                
-                input.addEventListener('blur', () => {
-                    group.classList.remove('focused');
-                });
-            }
-        });
-        
-        // Character counters for textareas
+        // Add character counters for textareas
         document.querySelectorAll('textarea[maxlength]').forEach(textarea => {
             const maxLength = parseInt(textarea.getAttribute('maxlength'));
             const counter = document.createElement('div');
@@ -584,6 +475,16 @@ class FormManager {
             form.querySelectorAll('.error').forEach(el => {
                 el.classList.remove('error');
             });
+            
+            // Сбрасываем чекбокс согласия
+            const consentCheckbox = form.querySelector('.consent-checkbox input[type="checkbox"]');
+            if (consentCheckbox) {
+                consentCheckbox.checked = false;
+                const submitBtn = form.querySelector('button[type="submit"]');
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                }
+            }
         }
     }
 
@@ -648,88 +549,4 @@ document.addEventListener('DOMContentLoaded', function() {
     window.formUtils = FormUtils;
     
     console.log('FormManager initialized');
-    
-    // Add form-related CSS
-    const formStyles = document.createElement('style');
-    formStyles.textContent = `
-        /* Form enhancements */
-        .form-group,
-        .input-group {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        
-        .form-group.focused label,
-        .input-group.focused label {
-            color: var(--secondary-color);
-        }
-        
-        .form-group.has-value label,
-        .input-group.has-value label {
-            transform: translateY(-20px) scale(0.9);
-        }
-        
-        /* Character counter */
-        .char-counter {
-            font-size: 0.8rem;
-            color: #666;
-            text-align: right;
-            margin-top: 5px;
-            transition: color 0.3s ease;
-        }
-        
-        /* Form messages */
-        .form-error {
-            background: rgba(230, 57, 70, 0.1);
-            color: var(--accent-color);
-            padding: 12px 15px;
-            border-radius: var(--border-radius);
-            margin: 15px 0;
-            border-left: 3px solid var(--accent-color);
-            animation: slideIn 0.3s ease;
-        }
-        
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Input states */
-        input.filled,
-        select.filled,
-        textarea.filled {
-            border-color: var(--success-color);
-        }
-        
-        /* Calculator form specific */
-        #calculator-form .form-group {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: var(--border-radius);
-        }
-        
-        #calculator-form .result {
-            background: linear-gradient(135deg, var(--success-color), #2a9d8f);
-            color: white;
-            padding: 20px;
-            border-radius: var(--border-radius);
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-    `;
-    document.head.appendChild(formStyles);
 });
-
-// Export for module usage
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { FormManager, FormUtils };
-}
-[file content end]

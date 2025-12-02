@@ -1,40 +1,39 @@
-<!-- /sitemap.xml -->
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Основные страницы -->
     <url>
         <loc>https://resursoria.ru/</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/services.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/calculator.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/contacts.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/privacy.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
@@ -42,91 +41,91 @@
     <!-- Города-миллионники -->
     <url>
         <loc>https://resursoria.ru/regions/moscow.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/saint-petersburg.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/novosibirsk.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/ekaterinburg.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/kazan.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/nizhny-novgorod.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/chelyabinsk.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/samara.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/omsk.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/rostov-on-don.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/ufa.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/krasnoyarsk.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/voronezh.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/perm.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/volgograd.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -134,91 +133,91 @@
     <!-- Города 500+ тыс. -->
     <url>
         <loc>https://resursoria.ru/regions/krasnodar.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/saratov.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/tyumen.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/tolyatti.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/izhevsk.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/barnaul.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/ulyanovsk.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/irkutsk.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/habarovsk.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/yaroslavl.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/vladivostok.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/makhachkala.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/tomsk.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/orenburg.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/regions/kemerovo.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -228,37 +227,37 @@
     <!-- Блог -->
     <url>
         <loc>https://resursoria.ru/blog.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/blog/vyvod-personala-bezopasno.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/blog/shtrafy-2025.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/blog/snizhenie-nalogov.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/blog/legalizaciya-migrantov.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://resursoria.ru/blog/vybor-chaz.html</loc>
-        <lastmod>2025-12-01</lastmod>
+        <lastmod>2025-12-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>

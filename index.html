@@ -221,14 +221,95 @@
 
         /* Профессиональный CTA */
         .professional-cta {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
             margin: 60px auto;
-            max-width: 1200px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .professional-cta h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .professional-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Социальное доказательство */
         .social-proof-modern {
-            margin: 60px auto;
-            max-width: 1200px;
+            background: #f8f9fa;
+            padding: 80px 40px;
+            border-radius: var(--border-radius);
+            margin: 80px auto;
+        }
+
+        .social-proof-stats-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-item-modern {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .stat-item-modern:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number-modern {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: block;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label-modern {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .testimonial-modern {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border-left: 4px solid var(--secondary-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-text-modern {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author-modern {
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: right;
+            font-size: 1rem;
         }
 
         @media (max-width: 768px) {
@@ -256,6 +337,10 @@
                 font-size: 2rem;
             }
             
+            .calculator-cta p {
+                font-size: 1.1rem;
+            }
+            
             .professional-cta {
                 margin: 40px 15px;
                 padding: 30px 20px;
@@ -264,6 +349,10 @@
             .social-proof-modern {
                 margin: 40px 15px;
                 padding: 40px 20px;
+            }
+            
+            .social-proof-stats-modern {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -299,7 +388,7 @@
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/">Главная</a></li>
+                    <li><a href="/" class="active">Главная</a></li>
                     <li><a href="/services.html">Услуги</a></li>
                     <li><a href="/calculator.html">Калькулятор</a></li>
                     <li><a href="/regions/">Регионы</a></li>
@@ -348,7 +437,7 @@
                 </div>
 
                 <div style="margin-top: 20px; font-size: 0.9rem; opacity: 0.9;">
-                    <p>Пишите в любое время — отвечаем оперативно в рабочее время</p>
+                    <p>Пишите в любое время — отвечаем оперативно, консультируем 24/7</p>
                 </div>
             </div>
         </div>
@@ -358,7 +447,7 @@
     <section class="professional-cta container">
         <h3>📞 Получите консультацию специалиста</h3>
         <p>Наши эксперты с 12-летним опытом ответят на все вопросы об аутстаффинге и помогут рассчитать экономию для вашей компании</p>
-        <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.1rem; padding: 15px 35px;">
+        <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 15px 40px;">
             📱 Получить консультацию
         </a>
     </section>
@@ -389,7 +478,7 @@
 
     <!-- Социальное доказательство -->
     <section class="social-proof-modern container">
-        <h3 style="text-align: center; margin-bottom: 40px; color: var(--primary-color);">Нам доверяют</h3>
+        <h3 style="text-align: center; margin-bottom: 40px; color: var(--primary-color); font-size: 2rem;">Нам доверяют</h3>
         
         <div class="social-proof-stats-modern">
             <div class="stat-item-modern">
@@ -442,7 +531,7 @@
             <div class="blog-grid">
                 <div class="blog-card">
                     <div class="blog-content">
-                        <div class="blog-meta">16.11.2025 • Аутстаффинг</div>
+                        <div class="blog-meta" style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">16.11.2025 • Аутстаффинг</div>
                         <h3>Почему вывод персонала за штат - это безопасно и выгодно</h3>
                         <p>Узнайте, как легально снизить налоговую нагрузку до 40% и защитить бизнес от проверок.</p>
                         <a href="/blog/vyvod-personala-bezopasno.html" class="btn btn-primary">Читать статью</a>
@@ -450,7 +539,7 @@
                 </div>
                 <div class="blog-card">
                     <div class="blog-content">
-                        <div class="blog-meta">15.11.2025 • Мигранты</div>
+                        <div class="blog-meta" style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">15.11.2025 • Мигранты</div>
                         <h3>Штрафы за нелегальных работников в 2025 году</h3>
                         <p>Актуальные размеры штрафов и как избежать проверок. Легализуем мигрантов за 1 день.</p>
                         <a href="/blog/shtrafy-2025.html" class="btn btn-primary">Читать статью</a>
@@ -463,15 +552,17 @@
     <!-- ФИНАЛЬНЫЙ CTA -->
     <section style="background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; padding: 80px 0; text-align: center;">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 20px;">Готовы оптимизировать кадровые процессы?</h2>
-            <p style="margin: 20px 0; font-size: 1.1rem;">Напишите нам в WhatsApp — наш специалист свяжется с вами в ближайшее время</p>
+            <h2 style="color: white; margin-bottom: 20px; font-size: 2rem;">Готовы оптимизировать кадровые процессы?</h2>
+            <p style="margin: 20px 0; font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Напишите нам в WhatsApp — наш специалист свяжется с вами в ближайшее время
+            </p>
             
             <div style="max-width: 400px; margin: 0 auto;">
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: block; margin-bottom: 15px;">
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: inline-block; margin-bottom: 15px;">
                     📱 Написать в WhatsApp
                 </a>
                 <p style="font-size: 0.9rem; opacity: 0.9;">
-                    Отправьте сообщение — мы ответим в рабочее время
+                    Отправьте сообщение — мы ответим в рабочее время (консультируем 24/7)
                 </p>
             </div>
         </div>
@@ -505,7 +596,7 @@
                     <h3>Контакты</h3>
                     <ul class="footer-links">
                         <li>📞 <a href="tel:+79581118514">+7 (958) 111-85-14</a></li>
-                        <li>📱 <a href="https://wa.me/79581118514">WhatsApp</a></li>
+                        <li>📱 <a href="https://wa.me/79581118514" data-consent-required>WhatsApp</a></li>
                         <li>📧 <a href="mailto:MatserviceMirum@yandex.ru">MatserviceMirum@yandex.ru</a></li>
                     </ul>
                 </div>
@@ -513,7 +604,7 @@
             
             <div class="footer-bottom">
                 <p>© 2025 Ресурсория. Все права защищены. Оператор обработки данных - ООО "МИРУМ"</p>
-                <p><a href="/privacy.html" style="color: #ccc;">Политика конфиденциальности</a></p>
+                <p><a href="/privacy.html">Политика конфиденциальности</a></p>
             </div>
         </div>
     </footer>
@@ -530,14 +621,47 @@
 
     <!-- Уведомление о куках -->
     <div id="cookieNotice" class="cookie-notice">
-        <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
-        <div class="cookie-buttons">
-            <button id="cookieAccept" class="cookie-btn cookie-accept">Принять</button>
-            <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+        <div class="container">
+            <p>
+                🍪 Мы используем файлы cookie для улучшения работы сайта. 
+                Продолжая использование сайта, вы соглашаетесь с 
+                <a href="/privacy.html" style="color: var(--whatsapp-color); text-decoration: underline;">обработкой персональных данных</a> 
+                и нашей 
+                <a href="/privacy.html" style="color: var(--whatsapp-color); text-decoration: underline;">политикой конфиденциальности</a>.
+            </p>
+            <div class="cookie-buttons">
+                <button id="cookieAccept" class="cookie-btn cookie-accept">Принять всё</button>
+                <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+            </div>
         </div>
     </div>
 
     <!-- Подключаем JavaScript -->
     <script src="/js/main.js"></script>
+    <script src="/js/forms.js"></script>
+    
+    <script>
+        // Инициализация калькулятора на главной странице (если есть)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Кнопка "Наверх"
+            const scrollBtn = document.getElementById('scrollToTop');
+            if (scrollBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollBtn.classList.add('visible');
+                    } else {
+                        scrollBtn.classList.remove('visible');
+                    }
+                });
+                
+                scrollBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

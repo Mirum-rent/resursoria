@@ -84,6 +84,7 @@
             padding: 25px;
             border-radius: var(--border-radius);
             margin: 25px 0;
+            border-left: 4px solid var(--success-color);
         }
 
         .service-navigation {
@@ -94,6 +95,7 @@
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             margin-bottom: 30px;
+            z-index: 100;
         }
 
         .service-nav-links {
@@ -101,6 +103,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
+            justify-content: center;
         }
 
         .service-nav-links a {
@@ -111,11 +114,13 @@
             border-radius: 25px;
             transition: var(--transition);
             font-size: 0.9rem;
+            font-weight: 500;
         }
 
         .service-nav-links a:hover {
             background: var(--secondary-color);
             color: white;
+            transform: translateY(-2px);
         }
 
         .calculator-cta {
@@ -130,6 +135,13 @@
         .calculator-cta h3 {
             color: white;
             margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .calculator-cta p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
         }
 
         .cta-button-large {
@@ -152,23 +164,132 @@
         }
 
         .consultation-form {
-            background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
             padding: 40px;
             border-radius: var(--border-radius);
             margin-top: 40px;
         }
 
+        .consultation-form h3 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .consultation-form .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .consultation-form input,
+        .consultation-form select {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        .consultation-form input:focus,
+        .consultation-form select:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+        }
+
         /* Профессиональный CTA */
         .professional-cta {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
             margin: 60px auto;
-            max-width: 1200px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .professional-cta h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .professional-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Социальное доказательство */
         .social-proof-modern {
-            margin: 60px auto;
-            max-width: 1200px;
+            background: #f8f9fa;
+            padding: 80px 40px;
+            border-radius: var(--border-radius);
+            margin: 80px auto;
+        }
+
+        .social-proof-stats-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-item-modern {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .stat-item-modern:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number-modern {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: block;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label-modern {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .testimonial-modern {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border-left: 4px solid var(--secondary-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-text-modern {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author-modern {
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: right;
+            font-size: 1rem;
         }
 
         @media (max-width: 768px) {
@@ -182,6 +303,12 @@
             
             .service-nav-links {
                 flex-direction: column;
+                align-items: center;
+            }
+            
+            .service-nav-links a {
+                width: 100%;
+                text-align: center;
             }
             
             .professional-cta {
@@ -192,6 +319,14 @@
             .social-proof-modern {
                 margin: 40px 15px;
                 padding: 40px 20px;
+            }
+            
+            .social-proof-stats-modern {
+                grid-template-columns: 1fr;
+            }
+            
+            .consultation-form .form-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -230,7 +365,7 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="/">Главная</a></li>
-                    <li><a href="/services.html">Услуги</a></li>
+                    <li><a href="/services.html" class="active">Услуги</a></li>
                     <li><a href="/calculator.html">Калькулятор</a></li>
                     <li><a href="/regions/">Регионы</a></li>
                     <li><a href="/blog.html">Блог</a></li>
@@ -253,7 +388,7 @@
     <section class="professional-cta container">
         <h3>📞 Получите консультацию специалиста</h3>
         <p>Наши эксперты с 12-летним опытом ответят на все вопросы и помогут подобрать оптимальное решение для вашей компании</p>
-        <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.1rem; padding: 15px 35px;">
+        <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 15px 40px;">
             📱 Получить консультацию
         </a>
     </section>
@@ -296,11 +431,19 @@
 
             <div class="service-benefits">
                 <h4>🎯 Преимущества аутстаффинга:</h4>
-                <ul>
-                    <li><strong>Легальная оптимизация налогов</strong> - снижение нагрузки с 43% до 9-12%</li>
-                    <li><strong>Полный кадровый аутсорсинг</strong> - мы берем на себя все обязательства</li>
-                    <li><strong>Защита при проверках</strong> - все общение с проверяющими органами на нас</li>
-                    <li><strong>Сохранение контроля</strong> - вы продолжаете руководить сотрудниками как прежде</li>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                        <strong>Легальная оптимизация налогов</strong> - снижение нагрузки с 43% до 9-12%
+                    </li>
+                    <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                        <strong>Полный кадровый аутсорсинг</strong> - мы берем на себя все обязательства
+                    </li>
+                    <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                        <strong>Защита при проверках</strong> - все общение с проверяющими органами на нас
+                    </li>
+                    <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                        <strong>Сохранение контроля</strong> - вы продолжаете руководить сотрудниками как прежде
+                    </li>
                 </ul>
             </div>
 
@@ -357,7 +500,7 @@
 
         <!-- Социальное доказательство -->
         <section class="social-proof-modern container">
-            <h3 style="text-align: center; margin-bottom: 40px; color: var(--primary-color);">Результаты нашей работы</h3>
+            <h3 style="text-align: center; margin-bottom: 40px; color: var(--primary-color); font-size: 2rem;">Результаты нашей работы</h3>
             
             <div class="social-proof-stats-modern">
                 <div class="stat-item-modern">
@@ -401,11 +544,11 @@
         <!-- Форма для консультации -->
         <div class="consultation-form">
             <h3>📞 Получите бесплатную консультацию</h3>
-            <form id="serviceForm">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
-                    <input type="text" name="name" placeholder="Ваше имя" required style="padding: 12px; border: none; border-radius: var(--border-radius);">
-                    <input type="tel" name="phone" placeholder="Телефон" required style="padding: 12px; border: none; border-radius: var(--border-radius);">
-                    <select name="service" required style="padding: 12px; border: none; border-radius: var(--border-radius);">
+            <form id="serviceForm" data-consent-required>
+                <div class="form-grid">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="tel" name="phone" placeholder="Телефон" required>
+                    <select name="service" required>
                         <option value="">Выберите услугу</option>
                         <option value="outstaffing">Аутстаффинг</option>
                         <option value="rent">Аренда персонала</option>
@@ -415,13 +558,18 @@
                 
                 <div class="consent-checkbox">
                     <input type="checkbox" id="service-consent" required>
-                    <label for="service-consent" style="color: white;">
-                        Даю согласие на обработку персональных данных в соответствии с 
-                        <a href="/privacy.html" style="color: white; text-decoration: underline;">политикой конфиденциальности</a>
+                    <label for="service-consent">
+                        Я соглашаюсь на обработку персональных данных в соответствии с 
+                        <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a> 
+                        и подтверждаю, что ознакомлен с 
+                        <a href="/privacy.html" target="_blank">Положением об обработке ПДн</a>.
+                        Данные хранятся в течение 3 лет с момента окончания взаимодействия.
                     </label>
                 </div>
                 
-                <button type="submit" class="btn btn-primary" style="width: 100%; background: var(--accent-color); padding: 15px; font-size: 1.1rem;">Получить консультацию</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%; background: var(--accent-color); padding: 15px; font-size: 1.1rem; font-weight: bold;">
+                    Получить консультацию
+                </button>
             </form>
         </div>
     </section>
@@ -429,15 +577,17 @@
     <!-- ФИНАЛЬНЫЙ CTA -->
     <section style="background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; padding: 80px 0; text-align: center;">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 20px;">Нужна профессиональная консультация?</h2>
-            <p style="margin: 20px 0; font-size: 1.1rem;">Напишите нам в WhatsApp — наш специалист свяжется с вами в ближайшее время</p>
+            <h2 style="color: white; margin-bottom: 20px; font-size: 2rem;">Нужна профессиональная консультация?</h2>
+            <p style="margin: 20px 0; font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Напишите нам в WhatsApp — наш специалист свяжется с вами в ближайшее время
+            </p>
             
             <div style="max-width: 400px; margin: 0 auto;">
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: block; margin-bottom: 15px;">
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: inline-block; margin-bottom: 15px;">
                     📱 Написать в WhatsApp
                 </a>
                 <p style="font-size: 0.9rem; opacity: 0.9;">
-                    Отправьте сообщение — мы ответим в рабочее время
+                    Отправьте сообщение — мы ответим в рабочее время (консультируем 24/7)
                 </p>
             </div>
         </div>
@@ -450,6 +600,12 @@
                 <div class="footer-section">
                     <h3>Ресурсория</h3>
                     <p>Кадровый аутсорсинг и аутстаффинг с 2013 года</p>
+                    <div style="margin-top: 20px;">
+                        <p><strong>Оператор обработки данных:</strong></p>
+                        <p>ООО "МИРУМ"</p>
+                        <p>ИНН: 3019008619</p>
+                        <p>ОГРН: 1133023000665</p>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h3>Навигация</h3>
@@ -457,6 +613,7 @@
                         <li><a href="/">Главная</a></li>
                         <li><a href="/services.html">Услуги</a></li>
                         <li><a href="/calculator.html">Калькулятор</a></li>
+                        <li><a href="/regions/">Регионы</a></li>
                         <li><a href="/blog.html">Блог</a></li>
                         <li><a href="/contacts.html">Контакты</a></li>
                     </ul>
@@ -464,15 +621,15 @@
                 <div class="footer-section">
                     <h3>Контакты</h3>
                     <ul class="footer-links">
-                        <li><a href="tel:+79581118514">+7 (958) 111-85-14</a></li>
-                        <li><a href="https://wa.me/79581118514">WhatsApp</a></li>
-                        <li><a href="mailto:MatserviceMirum@yandex.ru">Email</a></li>
+                        <li>📞 <a href="tel:+79581118514">+7 (958) 111-85-14</a></li>
+                        <li>📱 <a href="https://wa.me/79581118514" data-consent-required>WhatsApp</a></li>
+                        <li>📧 <a href="mailto:MatserviceMirum@yandex.ru">MatserviceMirum@yandex.ru</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>© 2025 Ресурсория. ООО "МИРУМ". Все права защищены.</p>
-                <p><a href="/privacy.html" style="color: #ccc;">Политика конфиденциальности</a></p>
+                <p><a href="/privacy.html">Политика конфиденциальности</a></p>
             </div>
         </div>
     </footer>
@@ -489,62 +646,28 @@
 
     <!-- Уведомление о куках -->
     <div id="cookieNotice" class="cookie-notice">
-        <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
-        <div class="cookie-buttons">
-            <button id="cookieAccept" class="cookie-btn cookie-accept">Принять</button>
-            <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+        <div class="container">
+            <p>
+                🍪 Мы используем файлы cookie для улучшения работы сайта. 
+                Продолжая использование сайта, вы соглашаетесь с 
+                <a href="/privacy.html" style="color: var(--whatsapp-color); text-decoration: underline;">обработкой персональных данных</a> 
+                и нашей 
+                <a href="/privacy.html" style="color: var(--whatsapp-color); text-decoration: underline;">политикой конфиденциальности</a>.
+            </p>
+            <div class="cookie-buttons">
+                <button id="cookieAccept" class="cookie-btn cookie-accept">Принять всё</button>
+                <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+            </div>
         </div>
     </div>
 
     <!-- Подключаем JavaScript -->
     <script src="/js/main.js"></script>
+    <script src="/js/forms.js"></script>
     
     <!-- Скрипт для формы -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Обработка формы услуг
-            const serviceForm = document.getElementById('serviceForm');
-            if (serviceForm) {
-                serviceForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Простая валидация
-                    const name = serviceForm.querySelector('input[name="name"]').value;
-                    const phone = serviceForm.querySelector('input[name="phone"]').value;
-                    const service = serviceForm.querySelector('select[name="service"]').value;
-                    const consent = document.getElementById('service-consent').checked;
-                    
-                    if (!name || !phone || !service || !consent) {
-                        alert('Пожалуйста, заполните все поля и дайте согласие');
-                        return;
-                    }
-                    
-                    // Показываем успешное сообщение
-                    const successMessage = document.createElement('div');
-                    successMessage.className = 'form-success';
-                    successMessage.innerHTML = `
-                        <div style="background: #e8f5e9; color: #2a9d8f; padding: 15px; border-radius: var(--border-radius); margin: 20px 0; text-align: center;">
-                            ✅ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
-                        </div>
-                    `;
-                    
-                    serviceForm.parentNode.insertBefore(successMessage, serviceForm);
-                    
-                    // Сбросить форму
-                    serviceForm.reset();
-                    
-                    // Скрыть сообщение через 5 секунд
-                    setTimeout(() => {
-                        successMessage.style.opacity = '0';
-                        setTimeout(() => {
-                            if (successMessage.parentNode) {
-                                successMessage.parentNode.removeChild(successMessage);
-                            }
-                        }, 300);
-                    }, 5000);
-                });
-            }
-            
             // Кнопка "Наверх"
             const scrollBtn = document.getElementById('scrollToTop');
             if (scrollBtn) {
@@ -563,6 +686,25 @@
                     });
                 });
             }
+            
+            // Плавная прокрутка к якорям
+            document.querySelectorAll('.service-nav-links a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('.main-header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>

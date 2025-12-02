@@ -364,8 +364,28 @@
 
         /* Профессиональный CTA */
         .professional-cta {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
             margin: 60px auto;
-            max-width: 1200px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .professional-cta h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .professional-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @media (max-width: 768px) {
@@ -400,6 +420,14 @@
                 margin: 40px 15px;
                 padding: 30px 20px;
             }
+            
+            .result-card.our::before {
+                position: relative;
+                top: 0;
+                right: 0;
+                display: inline-block;
+                margin-bottom: 15px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -418,14 +446,6 @@
             
             .result-card {
                 padding: 20px;
-            }
-            
-            .result-card.our::before {
-                position: relative;
-                top: 0;
-                right: 0;
-                display: inline-block;
-                margin-bottom: 15px;
             }
         }
     </style>
@@ -482,7 +502,7 @@
     <section class="professional-cta container">
         <h3>📞 Нужен точный расчет для вашей компании?</h3>
         <p>Наши эксперты проведут детальный анализ и подготовят индивидуальный расчет экономии</p>
-        <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.1rem; padding: 15px 35px;">
+        <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 15px 40px;">
             📱 Получить индивидуальный расчет
         </a>
     </section>
@@ -591,11 +611,13 @@
     <!-- ФИНАЛЬНЫЙ CTA -->
     <section style="background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; padding: 80px 0; text-align: center;">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 20px;">Нужен детальный расчет экономии?</h2>
-            <p style="margin: 20px 0; font-size: 1.1rem;">Напишите нам в WhatsApp — наш специалист подготовит индивидуальный расчет</p>
+            <h2 style="color: white; margin-bottom: 20px; font-size: 2rem;">Нужен детальный расчет экономии?</h2>
+            <p style="margin: 20px 0; font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Напишите нам в WhatsApp — наш специалист подготовит индивидуальный расчет
+            </p>
             
             <div style="max-width: 400px; margin: 0 auto;">
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: block; margin-bottom: 15px;">
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: inline-block; margin-bottom: 15px;">
                     📱 Написать в WhatsApp
                 </a>
                 <p style="font-size: 0.9rem; opacity: 0.9;">
@@ -633,7 +655,7 @@
                     <h3>Контакты</h3>
                     <ul class="footer-links">
                         <li>📞 <a href="tel:+79581118514">+7 (958) 111-85-14</a></li>
-                        <li>📱 <a href="https://wa.me/79581118514">WhatsApp</a></li>
+                        <li>📱 <a href="https://wa.me/79581118514" data-consent-required>WhatsApp</a></li>
                         <li>📧 <a href="mailto:MatserviceMirum@yandex.ru">MatserviceMirum@yandex.ru</a></li>
                     </ul>
                 </div>
@@ -641,7 +663,7 @@
             
             <div class="footer-bottom">
                 <p>© 2025 Ресурсория. Все права защищены. Оператор обработки данных - ООО "МИРУМ"</p>
-                <p><a href="/privacy.html" style="color: #ccc;">Политика конфиденциальности</a></p>
+                <p><a href="/privacy.html">Политика конфиденциальности</a></p>
             </div>
         </div>
     </footer>
@@ -658,10 +680,18 @@
 
     <!-- Уведомление о куках -->
     <div id="cookieNotice" class="cookie-notice">
-        <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
-        <div class="cookie-buttons">
-            <button id="cookieAccept" class="cookie-btn cookie-accept">Принять</button>
-            <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+        <div class="container">
+            <p>
+                🍪 Мы используем файлы cookie для улучшения работы сайта. 
+                Продолжая использование сайта, вы соглашаетесь с 
+                <a href="/privacy.html" style="color: var(--whatsapp-color); text-decoration: underline;">обработкой персональных данных</a> 
+                и нашей 
+                <a href="/privacy.html" style="color: var(--whatsapp-color); text-decoration: underline;">политикой конфиденциальности</a>.
+            </p>
+            <div class="cookie-buttons">
+                <button id="cookieAccept" class="cookie-btn cookie-accept">Принять всё</button>
+                <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+            </div>
         </div>
     </div>
 
@@ -683,6 +713,82 @@
                 
                 salaryInput.addEventListener('input', () => this.calculate());
                 employeesInput.addEventListener('input', () => this.calculate());
+                
+                // Добавляем кнопки для быстрого изменения
+                this.addQuickButtons();
+            }
+
+            addQuickButtons() {
+                const salaryContainer = document.querySelector('#salary').parentNode;
+                const employeesContainer = document.querySelector('#employees').parentNode;
+                
+                // Кнопки для зарплаты
+                const salaryButtons = document.createElement('div');
+                salaryButtons.className = 'quick-buttons';
+                salaryButtons.style.cssText = `
+                    display: flex;
+                    gap: 10px;
+                    margin-top: 10px;
+                    justify-content: center;
+                `;
+                
+                [30000, 50000, 80000, 100000].forEach(salary => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.textContent = `${salary/1000} тыс.`;
+                    btn.style.cssText = `
+                        padding: 5px 10px;
+                        background: #e2e8f0;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                        transition: var(--transition);
+                    `;
+                    btn.addEventListener('click', () => {
+                        document.getElementById('salary').value = salary;
+                        this.calculate();
+                    });
+                    btn.addEventListener('mouseenter', () => btn.style.background = '#cbd5e0');
+                    btn.addEventListener('mouseleave', () => btn.style.background = '#e2e8f0');
+                    salaryButtons.appendChild(btn);
+                });
+                
+                salaryContainer.appendChild(salaryButtons);
+                
+                // Кнопки для количества сотрудников
+                const employeesButtons = document.createElement('div');
+                employeesButtons.className = 'quick-buttons';
+                employeesButtons.style.cssText = `
+                    display: flex;
+                    gap: 10px;
+                    margin-top: 10px;
+                    justify-content: center;
+                `;
+                
+                [5, 10, 25, 50].forEach(count => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.textContent = `${count}`;
+                    btn.style.cssText = `
+                        padding: 5px 10px;
+                        background: #e2e8f0;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                        transition: var(--transition);
+                    `;
+                    btn.addEventListener('click', () => {
+                        document.getElementById('employees').value = count;
+                        this.calculate();
+                    });
+                    btn.addEventListener('mouseenter', () => btn.style.background = '#cbd5e0');
+                    btn.addEventListener('mouseleave', () => btn.style.background = '#e2e8f0');
+                    employeesButtons.appendChild(btn);
+                });
+                
+                employeesContainer.appendChild(employeesButtons);
             }
 
             calculate() {
@@ -853,5 +959,6 @@
 
     <!-- Подключаем общий JavaScript -->
     <script src="/js/main.js"></script>
+    <script src="/js/forms.js"></script>
 </body>
 </html>

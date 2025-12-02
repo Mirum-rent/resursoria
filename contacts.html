@@ -174,17 +174,30 @@
             box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
         }
 
-        .form-success {
-            background: #e8f5e9;
-            color: var(--success-color);
-            padding: 15px;
+        /* Профессиональный CTA */
+        .professional-cta {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 50px 40px;
             border-radius: var(--border-radius);
-            margin: 20px 0;
-            display: none;
+            text-align: center;
+            margin: 60px auto;
+            box-shadow: var(--box-shadow);
         }
 
-        .form-success.visible {
-            display: block;
+        .professional-cta h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .professional-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @media (max-width: 768px) {
@@ -202,6 +215,19 @@
             
             .form-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .info-section {
+                padding: 25px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .professional-cta {
+                margin: 40px 15px;
+                padding: 30px 20px;
             }
         }
     </style>
@@ -249,7 +275,7 @@
                     <li><a href="/services.html">Услуги</a></li>
                     <li><a href="/regions/">Регионы</a></li>
                     <li><a href="/blog.html">Блог</a></li>
-                    <li><a href="/contacts.html">Контакты</a></li>
+                    <li><a href="/contacts.html" class="active">Контакты</a></li>
                 </ul>
             </nav>
             <a href="https://www.avito.ru/brands/i359809882" class="btn btn-primary" style="margin-left: 20px;">Мы на Авито</a>
@@ -264,6 +290,15 @@
         </div>
     </section>
 
+    <!-- Профессиональный CTA -->
+    <section class="professional-cta container">
+        <h3>📞 Получите консультацию специалиста</h3>
+        <p>Наши эксперты с 12-летним опытом ответят на все вопросы об аутстаффинге и помогут подобрать оптимальное решение для вашей компании</p>
+        <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 15px 40px;">
+            📱 Получить консультацию
+        </a>
+    </section>
+
     <!-- Контакты -->
     <section class="contacts container">
         <div class="contact-grid">
@@ -272,7 +307,7 @@
                 <div class="contact-icon">📱</div>
                 <h3>WhatsApp</h3>
                 <p>Самый быстрый способ связи. Отправляйте документы, получайте консультацию, задавайте вопросы.</p>
-                <div class="contact-response">Отвечаем быстро в любое время</div>
+                <div class="contact-response">Отвечаем быстро в любое время (24/7)</div>
                 <p><strong>+7 (958) 111-85-14</strong></p>
                 <a href="https://wa.me/79581118514" class="contact-link" data-consent-required>Написать в WhatsApp</a>
             </div>
@@ -300,7 +335,7 @@
 
         <!-- Информационный блок -->
         <div class="info-section">
-            <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary-color);">📋 Реквизиты и информация</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary-color); font-size: 2rem;">📋 Реквизиты и информация</h2>
             <div class="info-grid">
                 <div class="info-item">
                     <h4>🏢 Оператор обработки данных</h4>
@@ -319,7 +354,7 @@
                     <h4>🕘 Время работы</h4>
                     <p><strong>Пн-Пт: 9:00-18:00</strong></p>
                     <p>Сб: 10:00-16:00 (по предварительной записи)</p>
-                    <p>Вс: выходной</p>
+                    <p>Вс: выходной (отвечаем в WhatsApp)</p>
                 </div>
                 <div class="info-item">
                     <h4>🚀 Сроки оказания услуг</h4>
@@ -332,13 +367,13 @@
 
         <!-- Форма обратной связи -->
         <div class="consultation-form">
-            <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary-color);">📝 Заявка на консультацию</h2>
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary-color); font-size: 2rem;">📝 Заявка на консультацию</h2>
             
-            <div class="form-success" id="formSuccess">
+            <div class="form-success" id="formSuccess" style="display: none;">
                 ✅ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
             </div>
 
-            <form id="contactForm" data-validate="true">
+            <form id="contactForm" data-consent-required>
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="name">Ваше имя *</label>
@@ -377,12 +412,15 @@
                 <div class="consent-checkbox">
                     <input type="checkbox" id="contact-consent" required>
                     <label for="contact-consent">
-                        Даю согласие на обработку персональных данных в соответствии с 
-                        <a href="/privacy.html">политикой конфиденциальности</a>
+                        Я соглашаюсь на обработку персональных данных в соответствии с 
+                        <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a> 
+                        и подтверждаю, что ознакомлен с 
+                        <a href="/privacy.html" target="_blank">Положением об обработке ПДн</a>.
+                        Данные хранятся в течение 3 лет с момента окончания взаимодействия.
                     </label>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem; font-weight: bold;">
                     📨 Отправить заявку
                 </button>
             </form>
@@ -390,11 +428,13 @@
 
         <!-- CTA блок -->
         <div style="text-align: center; margin-top: 50px; padding: 40px; background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; border-radius: var(--border-radius);">
-            <h2 style="color: white; margin-bottom: 20px;">🚀 Готовы начать сотрудничество?</h2>
-            <p style="margin: 20px 0; font-size: 1.1rem;">Напишите нам в WhatsApp для быстрой консультации</p>
+            <h2 style="color: white; margin-bottom: 20px; font-size: 2rem;">🚀 Готовы начать сотрудничество?</h2>
+            <p style="margin: 20px 0; font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Напишите нам в WhatsApp для быстрой консультации
+            </p>
             
             <div style="max-width: 400px; margin: 0 auto;">
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: block; margin-bottom: 15px;">
+                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: inline-block; margin-bottom: 15px;">
                     📱 Написать в WhatsApp
                 </a>
                 <p style="font-size: 0.9rem; opacity: 0.9;">
@@ -432,16 +472,16 @@
                 <div class="footer-section">
                     <h3>Контакты</h3>
                     <ul class="footer-links">
-                        <li><a href="tel:+79581118514">+7 (958) 111-85-14</a></li>
-                        <li><a href="https://wa.me/79581118514">WhatsApp</a></li>
-                        <li><a href="mailto:MatserviceMirum@yandex.ru">Email</a></li>
+                        <li>📞 <a href="tel:+79581118514">+7 (958) 111-85-14</a></li>
+                        <li>📱 <a href="https://wa.me/79581118514" data-consent-required>WhatsApp</a></li>
+                        <li>📧 <a href="mailto:MatserviceMirum@yandex.ru">Email</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>© 2025 Ресурсория. ООО "МИРУМ". Все права защищены.</p>
-                <p><a href="/privacy.html" style="color: #ccc;">Политика конфиденциальности</a></p>
+                <p><a href="/privacy.html">Политика конфиденциальности</a></p>
             </div>
         </div>
     </footer>
@@ -457,15 +497,124 @@
 
     <!-- Уведомление о куках -->
     <div id="cookieNotice" class="cookie-notice">
-        <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
-        <div class="cookie-buttons">
-            <button id="cookieAccept" class="cookie-btn cookie-accept">Принять</button>
-            <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+        <div class="container">
+            <p>
+                🍪 Мы используем файлы cookie для улучшения работы сайта. 
+                Продолжая использование сайта, вы соглашаетесь с 
+                <a href="/privacy.html" style="color: var(--whatsapp-color); text-decoration: underline;">обработкой персональных данных</a> 
+                и нашей 
+                <a href="/privacy.html" style="color: var(--whatsapp-color); text-decoration: underline;">политикой конфиденциальности</a>.
+            </p>
+            <div class="cookie-buttons">
+                <button id="cookieAccept" class="cookie-btn cookie-accept">Принять всё</button>
+                <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+            </div>
         </div>
     </div>
 
     <!-- Подключаем JavaScript -->
     <script src="/js/main.js"></script>
     <script src="/js/forms.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Кнопка "Наверх"
+            const scrollBtn = document.getElementById('scrollToTop');
+            if (scrollBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        scrollBtn.classList.add('visible');
+                    } else {
+                        scrollBtn.classList.remove('visible');
+                    }
+                });
+                
+                scrollBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Обработка формы контактов
+            const contactForm = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+            
+            if (contactForm) {
+                // Инициализация маски телефона
+                const phoneInput = document.getElementById('phone');
+                if (phoneInput) {
+                    phoneInput.addEventListener('input', function(e) {
+                        let value = e.target.value.replace(/\D/g, '');
+                        
+                        if (value.length === 0) {
+                            e.target.value = '';
+                            return;
+                        }
+                        
+                        if (value[0] === '7' || value[0] === '8') {
+                            value = value.substring(1);
+                        }
+                        
+                        let formattedValue = '+7 (';
+                        
+                        if (value.length > 0) {
+                            formattedValue += value.substring(0, 3);
+                        }
+                        if (value.length > 3) {
+                            formattedValue += ') ' + value.substring(3, 6);
+                        }
+                        if (value.length > 6) {
+                            formattedValue += '-' + value.substring(6, 8);
+                        }
+                        if (value.length > 8) {
+                            formattedValue += '-' + value.substring(8, 10);
+                        }
+                        
+                        e.target.value = formattedValue;
+                    });
+                }
+                
+                // Обработка отправки формы
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Простая валидация
+                    const name = document.getElementById('name').value;
+                    const phone = document.getElementById('phone').value;
+                    const email = document.getElementById('email').value;
+                    const service = document.getElementById('service').value;
+                    const consent = document.getElementById('contact-consent').checked;
+                    
+                    if (!name || !phone || !email || !service || !consent) {
+                        alert('Пожалуйста, заполните все обязательные поля и дайте согласие');
+                        return;
+                    }
+                    
+                    // Показать сообщение об успехе
+                    formSuccess.style.display = 'block';
+                    
+                    // Прокрутить к сообщению
+                    formSuccess.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                    
+                    // Очистить форму
+                    contactForm.reset();
+                    
+                    // Скрыть сообщение через 5 секунд
+                    setTimeout(() => {
+                        formSuccess.style.opacity = '0';
+                        setTimeout(() => {
+                            formSuccess.style.display = 'none';
+                            formSuccess.style.opacity = '1';
+                        }, 300);
+                    }, 5000);
+                });
+            }
+        });
+    </script>
 </body>
 </html>

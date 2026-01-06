@@ -6,21 +6,63 @@
     <title>Аутстаффинг персонала в Уфе | Аренда сотрудников | Ресурсория</title>
     <meta name="description" content="✅ Аутстаффинг персонала в Уфе. Вывод сотрудников за штат через ЧАЗ. Снижение налогов до 40%. Легализация мигрантов. Бесплатный расчет экономии.">
     
-    <link rel="canonical" href="https://resursoria.ru/regions/ufa.html" />
-    <meta name="robots" content="index, follow" />
+    <!-- ОБНОВЛЕНО: Каноническая ссылка на основной сайт -->
+    <link rel="canonical" href="https://arenda-kovrov-mirum.ru/outstaffing.html" />
+    
+    <!-- ОБНОВЛЕНО: Запрет индексации -->
+    <meta name="robots" content="noindex, nofollow" />
+    
+    <!-- ОБНОВЛЕНО: OG-теги перенаправлены на основной сайт -->
+    <meta property="og:title" content="Аутстаффинг персонала в Уфе | МИРУМ" />
+    <meta property="og:description" content="✅ Аутстаффинг персонала в Уфе. Вывод сотрудников за штат через ЧАЗ. Снижение налогов до 40%." />
+    <meta property="og:url" content="https://arenda-kovrov-mirum.ru/outstaffing.html" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" />
+    
+    <!-- ОБНОВЛЕНО: Гео-теги с основной информацией -->
     <meta name="geo.region" content="RU-BA">
     <meta name="geo.placename" content="Ufa">
     <meta name="geo.position" content="54.735147;55.958727">
     <meta name="ICBM" content="54.735147, 55.958727">
     
+    <!-- ОБНОВЛЕНО: Основной цвет сайта МИРУМ -->
     <link rel="stylesheet" href="/css/style.css">
     
     <style>
+        /* ОБНОВЛЕНО: Цветовая схема приведена к основному сайту */
+        :root {
+            --primary-color: #16a085;
+            --secondary-color: #1abc9c;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
         .hero {
-            background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
             color: white;
             padding: 100px 0 80px;
             text-align: center;
+            position: relative;
+        }
+
+        /* НОВЫЙ БЛОК: Информация о переносе */
+        .migration-notice {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
+
+        .migration-notice a {
+            color: #ffd700;
+            text-decoration: underline;
+            font-weight: bold;
         }
 
         .region-features {
@@ -42,7 +84,7 @@
             box-shadow: var(--box-shadow);
             text-align: center;
             transition: var(--transition);
-            border-top: 4px solid var(--secondary-color);
+            border-top: 4px solid var(--primary-color);
         }
 
         .feature-card:hover {
@@ -51,7 +93,7 @@
         }
 
         .city-stats {
-            background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
             color: white;
             padding: 60px 0;
             text-align: center;
@@ -85,11 +127,72 @@
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             margin-bottom: 30px;
-            border-left: 4px solid var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* ОБНОВЛЕНО: Кнопки с основным цветом */
+        .btn-primary {
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(22, 160, 133, 0.3);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .btn-primary, .btn-whatsapp {
+                display: block;
+                margin: 10px 0;
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- НОВЫЙ БЛОК: Уведомление о переносе -->
+    <div class="migration-notice">
+        <div class="container">
+            <strong>⚠️ ВНИМАНИЕ:</strong> Этот сайт больше не обновляется. 
+            <strong>Вся информация по аутстаффингу в Уфе перенесена на основной сайт компании МИРУМ.</strong>
+            <a href="https://arenda-kovrov-mirum.ru/outstaffing.html?city=ufa">Перейти на основной сайт →</a>
+        </div>
+    </div>
+
     <nav class="breadcrumbs container">
         <a href="/">Главная</a> > 
         <a href="/regions/">Регионы</a> >
@@ -98,16 +201,18 @@
 
     <header class="main-header">
         <div class="header-container container">
-            <a href="/" class="logo">
-                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" alt="Ресурсория - аутстаффинг в Уфе">
+            <!-- ОБНОВЛЕНО: Логотип ведет на основной сайт -->
+            <a href="https://arenda-kovrov-mirum.ru" class="logo">
+                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" alt="МИРУМ - аутстаффинг в Уфе">
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/services.html">Услуги</a></li>
-                    <li><a href="/regions/">Регионы</a></li>
-                    <li><a href="/blog.html">Блог</a></li>
-                    <li><a href="/contacts.html">Контакты</a></li>
+                    <!-- ОБНОВЛЕНО: Ссылки ведут на основной сайт -->
+                    <li><a href="https://arenda-kovrov-mirum.ru">Главная</a></li>
+                    <li><a href="https://arenda-kovrov-mirum.ru/services.html">Услуги</a></li>
+                    <li><a href="https://arenda-kovrov-mirum.ru/regions/">Регионы</a></li>
+                    <li><a href="https://arenda-kovrov-mirum.ru/blog.html">Блог</a></li>
+                    <li><a href="https://arenda-kovrov-mirum.ru/contacts.html">Контакты</a></li>
                 </ul>
             </nav>
             <a href="https://www.avito.ru/brands/i359809882" class="btn btn-primary" style="margin-left: 20px;">Мы на Авито</a>
@@ -117,11 +222,20 @@
     <section class="hero">
         <div class="container">
             <h1>Аутстаффинг персонала в Уфе</h1>
-            <p><strong>Работаем с уфимскими компаниями с 2014 года</strong>. Легальный вывод персонала за штат, снижение налоговой нагрузки до 40%, полная защита от проверок в столице Башкортостана.</p>
+            <p><strong>⚠️ САЙТ ПЕРЕНЕСЕН:</strong> Полная информация по аутстаффингу в Уфе теперь на основном сайте компании МИРУМ.</p>
+            <p>Работаем с уфимскими компаниями с 2014 года. Легальный вывод персонала за штат, снижение налоговой нагрузки до 40%.</p>
             
             <div style="margin-top: 30px;">
-                <a href="#calculator" class="btn btn-primary">Рассчитать экономию для Уфы</a>
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required>📞 Менеджер по Уфе</a>
+                <!-- ОБНОВЛЕНО: CTA ведут в WhatsApp с предзаполненным сообщением -->
+                <a href="https://wa.me/79581118514?text=Здравствуйте!%20Меня%20интересует%20аутстаффинг%20в%20Уфе.%20Подскажите,%20пожалуйста,%20подробности." 
+                   class="btn btn-primary" 
+                   data-consent-required>
+                    📱 Консультация по Уфе
+                </a>
+                <a href="https://arenda-kovrov-mirum.ru/outstaffing.html?city=ufa" 
+                   class="btn btn-whatsapp">
+                    🌐 Основной сайт МИРУМ
+                </a>
             </div>
         </div>
     </section>
@@ -197,42 +311,52 @@
         </div>
     </section>
 
+    <!-- ОБНОВЛЕНО: Заменен калькулятор на CTA блок -->
     <section id="calculator" style="padding: 80px 0; background: #f8f9fa;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 40px;">Калькулятор экономии для Уфы</h2>
+            <h2 style="text-align: center; margin-bottom: 40px;">Расчет экономии для Уфы</h2>
             
-            <div style="background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); margin-bottom: 40px;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
-                    <div>
-                        <label for="ufa-salary">Средняя зарплата в УФА (руб):</label>
-                        <input type="number" id="ufa-salary" value="54000" min="10000" step="5000" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: var(--border-radius);">
-                    </div>
-                    <div>
-                        <label for="ufa-employees">Количество сотрудников:</label>
-                        <input type="number" id="ufa-employees" value="10" min="1" max="1000" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: var(--border-radius);">
-                    </div>
+            <div style="background: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); margin-bottom: 40px; text-align: center;">
+                <h3>⚠️ Калькулятор экономии перенесен</h3>
+                <p>Теперь вы можете рассчитать экономию от аутстаффинга на основном сайте компании МИРУМ.</p>
+                <a href="https://arenda-kovrov-mirum.ru/calculator.html?city=ufa" class="btn btn-primary" style="margin-top: 20px;">
+                    🧮 Открыть калькулятор на основном сайте
+                </a>
+                <div style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+                    Точный расчет экономии для вашего бизнеса в Уфе
                 </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
-                    <h4>Штатные сотрудники в УФА</h4>
-                    <div id="ufa-result-staff"></div>
-                </div>
-                <div style="background: white; padding: 20px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); border: 2px solid var(--success-color);">
-                    <h4>Наш аутстаффинг в УФА</h4>
-                    <div id="ufa-result-outstaffing"></div>
-                </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <h4>Нужна помощь с расчетами?</h4>
+                <p>Наши специалисты бесплатно рассчитают экономию для вашей компании</p>
+                <a href="https://wa.me/79581118514?text=Здравствуйте!%20Нужна%20помощь%20с%20расчетом%20экономии%20от%20аутстаффинга%20в%20Уфе.%20Можете%20помочь?" 
+                   class="btn btn-whatsapp" 
+                   data-consent-required
+                   style="margin-top: 15px;">
+                    📱 Бесплатный расчет экономии
+                </a>
             </div>
         </div>
     </section>
 
-    <section style="padding: 60px 0; background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; text-align: center;">
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%); color: white; text-align: center;">
         <div class="container">
             <h2>👨‍💼 Ваш менеджер в Уфе</h2>
             <p><strong>Рамиль Башкиров</strong> - специалист по работе с клиентами Республики Башкортостан</p>
             <p>Знает все особенности ведения бизнеса в Уфе и Башкортостане</p>
-            <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="margin-top: 20px;">📱 Написать Рамилю в WhatsApp</a>
+            
+            <div style="margin-top: 30px;">
+                <a href="https://wa.me/79581118514?text=Здравствуйте,%20Рамиль!%20Меня%20интересует%20аутстаффинг%20в%20Уфе.%20Можете%20рассказать%20подробнее?" 
+                   class="btn btn-whatsapp" 
+                   data-consent-required 
+                   style="font-size: 1.1rem; padding: 12px 25px; background: white; color: #25d366;">
+                    💬 Написать Рамилю в WhatsApp
+                </a>
+                <div style="margin-top: 15px; font-size: 0.9rem;">
+                    Консультируем по всем вопросам аутстаффинга в Уфе
+                </div>
+            </div>
         </div>
     </section>
 
@@ -240,8 +364,11 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-section">
-                    <h3>Ресурсория в Уфе</h3>
-                    <p>Аутстаффинг и аренда персонала в Уфе с 2014 года</p>
+                    <h3>Аутстаффинг в Уфе</h3>
+                    <p>Услуги аутстаффинга теперь на основном сайте компании МИРУМ</p>
+                    <a href="https://arenda-kovrov-mirum.ru/outstaffing.html?city=ufa" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">
+                        Перейти на основной сайт
+                    </a>
                 </div>
                 
                 <div class="footer-section">
@@ -266,64 +393,34 @@
             
             <div class="footer-bottom">
                 <p>© 2025 Ресурсория. ООО "МИРУМ". Все права защищены.</p>
+                <p style="font-size: 0.9rem; margin-top: 10px; color: #666;">
+                    <strong>Внимание:</strong> Этот сайт больше не обновляется. Вся информация по аутстаффингу перенесена на 
+                    <a href="https://arenda-kovrov-mirum.ru" style="color: var(--primary-color);">основной сайт компании МИРУМ</a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const ufaSalary = document.getElementById('ufa-salary');
-            const ufaEmployees = document.getElementById('ufa-employees');
-            
-            function calculateUFA() {
-                const salary = parseFloat(ufaSalary.value) || 0;
-                const employees = parseInt(ufaEmployees.value) || 1;
-                
-                const totalSalary = salary * employees;
-                const staffTax = totalSalary * 0.43;
-                const staffNet = totalSalary - staffTax;
-                const ourTax = totalSalary * 0.12;
-                const ourNet = totalSalary - ourTax;
-                const saving = staffTax - ourTax;
-                const savingPercent = ((saving / staffTax) * 100).toFixed(1);
-                
-                const formatCurrency = (amount) => {
-                    return new Intl.NumberFormat('ru-RU', {
-                        style: 'currency',
-                        currency: 'RUB',
-                        minimumFractionDigits: 0
-                    }).format(amount);
-                };
-                
-                const staffElement = document.getElementById('ufa-result-staff');
-                const ourElement = document.getElementById('ufa-result-outstaffing');
-                
-                if (staffElement) {
-                    staffElement.innerHTML = `
-                        <div style="font-size: 1.2rem; font-weight: bold; color: var(--accent-color);">${formatCurrency(totalSalary)}</div>
-                        <div>Налоги: ${formatCurrency(staffTax)}</div>
-                        <div>Чистыми: ${formatCurrency(staffNet)}</div>
-                    `;
-                }
-                
-                if (ourElement) {
-                    ourElement.innerHTML = `
-                        <div style="font-size: 1.2rem; font-weight: bold; color: var(--success-color);">${formatCurrency(totalSalary)}</div>
-                        <div>Налоги: ${formatCurrency(ourTax)}</div>
-                        <div>Чистыми: ${formatCurrency(ourNet)}</div>
-                        <div style="color: var(--success-color); font-weight: bold; margin-top: 10px;">
-                            Экономия: ${formatCurrency(saving)} (${savingPercent}%)
-                        </div>
-                    `;
-                }
-            }
-            
-            if (ufaSalary && ufaEmployees) {
-                ufaSalary.addEventListener('input', calculateUFA);
-                ufaEmployees.addEventListener('input', calculateUFA);
-                calculateUFA();
-            }
-        });
-    </script>
+    <!-- ОБНОВЛЕНО: WhatsApp кнопка с предзаполненным сообщением -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/79581118514?text=Здравствуйте!%20Увидел%20информацию%20про%20аутстаффинг%20в%20Уфе.%20Можете%20проконсультировать?" 
+           class="whatsapp-link" 
+           data-consent-required>
+            <span>💬 Консультация по Уфе</span>
+        </a>
+    </div>
+
+    <div class="scroll-to-top" id="scrollToTop">↑</div>
+
+    <div id="cookieNotice" class="cookie-notice">
+        <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
+        <div class="cookie-buttons">
+            <button id="cookieAccept" class="cookie-btn cookie-accept">Принять</button>
+            <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+        </div>
+    </div>
+
+    <!-- УДАЛЕН: Встроенный JavaScript калькулятор (согласно ТЗ) -->
+    <script src="/js/main.js"></script>
 </body>
 </html>

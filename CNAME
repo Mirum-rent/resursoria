@@ -1,1 +1,4 @@
-resursoria.ru
+Тип: CNAME
+Имя: www
+Значение: mirum-rent.github.io
+TTL: 3600

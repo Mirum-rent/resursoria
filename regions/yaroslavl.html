@@ -6,21 +6,63 @@
     <title>Аутстаффинг персонала в Ярославле | Аренда сотрудников | Ресурсория</title>
     <meta name="description" content="✅ Аутстаффинг персонала в Ярославле. Вывод сотрудников за штат через ЧАЗ. Снижение налогов до 40%. Легализация мигрантов. Бесплатный расчет экономии.">
     
-    <link rel="canonical" href="https://resursoria.ru/regions/yaroslavl.html" />
-    <meta name="robots" content="index, follow" />
+    <!-- ОБНОВЛЕНО: Каноническая ссылка на основной сайт -->
+    <link rel="canonical" href="https://arenda-kovrov-mirum.ru/outstaffing.html" />
+    
+    <!-- ОБНОВЛЕНО: Запрет индексации -->
+    <meta name="robots" content="noindex, nofollow" />
+    
+    <!-- ОБНОВЛЕНО: OG-теги перенаправлены на основной сайт -->
+    <meta property="og:title" content="Аутстаффинг персонала в Ярославле | МИРУМ" />
+    <meta property="og:description" content="✅ Аутстаффинг персонала в Ярославле. Вывод сотрудников за штат через ЧАЗ. Снижение налогов до 40%." />
+    <meta property="og:url" content="https://arenda-kovrov-mirum.ru/outstaffing.html" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" />
+    
+    <!-- ОБНОВЛЕНО: Гео-теги с основной информацией -->
     <meta name="geo.region" content="RU-YAR">
     <meta name="geo.placename" content="Yaroslavl">
     <meta name="geo.position" content="57.626569;39.893787">
     <meta name="ICBM" content="57.626569, 39.893787">
     
+    <!-- ОБНОВЛЕНО: Основной цвет сайта МИРУМ -->
     <link rel="stylesheet" href="/css/style.css">
     
     <style>
+        /* ОБНОВЛЕНО: Цветовая схема приведена к основному сайту */
+        :root {
+            --primary-color: #16a085;
+            --secondary-color: #1abc9c;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
         .hero {
-            background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
             color: white;
             padding: 100px 0 80px;
             text-align: center;
+            position: relative;
+        }
+
+        /* НОВЫЙ БЛОК: Информация о переносе */
+        .migration-notice {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
+
+        .migration-notice a {
+            color: #ffd700;
+            text-decoration: underline;
+            font-weight: bold;
         }
 
         .region-features {
@@ -42,7 +84,7 @@
             box-shadow: var(--box-shadow);
             text-align: center;
             transition: var(--transition);
-            border-top: 4px solid var(--secondary-color);
+            border-top: 4px solid var(--primary-color);
         }
 
         .feature-card:hover {
@@ -51,7 +93,7 @@
         }
 
         .city-stats {
-            background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
             color: white;
             padding: 60px 0;
             text-align: center;
@@ -85,7 +127,43 @@
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             margin-bottom: 30px;
-            border-left: 4px solid var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* ОБНОВЛЕНО: Кнопки с основным цветом */
+        .btn-primary {
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(22, 160, 133, 0.3);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -96,10 +174,25 @@
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .btn-primary, .btn-whatsapp {
+                display: block;
+                margin: 10px 0;
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- НОВЫЙ БЛОК: Уведомление о переносе -->
+    <div class="migration-notice">
+        <div class="container">
+            <strong>⚠️ ВНИМАНИЕ:</strong> Этот сайт больше не обновляется. 
+            <strong>Вся информация по аутстаффингу в Ярославле перенесена на основной сайт компании МИРУМ.</strong>
+            <a href="https://arenda-kovrov-mirum.ru/outstaffing.html?city=yaroslavl">Перейти на основной сайт →</a>
+        </div>
+    </div>
+
     <nav class="breadcrumbs container">
         <a href="/">Главная</a> > 
         <a href="/regions/">Регионы</a> >
@@ -108,16 +201,18 @@
 
     <header class="main-header">
         <div class="header-container container">
-            <a href="/" class="logo">
-                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" alt="Ресурсория - аутстаффинг в Ярославле">
+            <!-- ОБНОВЛЕНО: Логотип ведет на основной сайт -->
+            <a href="https://arenda-kovrov-mirum.ru" class="logo">
+                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" alt="МИРУМ - аутстаффинг в Ярославле">
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/services.html">Услуги</a></li>
-                    <li><a href="/regions/">Регионы</a></li>
-                    <li><a href="/blog.html">Блог</a></li>
-                    <li><a href="/contacts.html">Контакты</a></li>
+                    <!-- ОБНОВЛЕНО: Ссылки ведут на основной сайт -->
+                    <li><a href="https://arenda-kovrov-mirum.ru">Главная</a></li>
+                    <li><a href="https://arenda-kovrov-mirum.ru/services.html">Услуги</a></li>
+                    <li><a href="https://arenda-kovrov-mirum.ru/regions/">Регионы</a></li>
+                    <li><a href="https://arenda-kovrov-mirum.ru/blog.html">Блог</a></li>
+                    <li><a href="https://arenda-kovrov-mirum.ru/contacts.html">Контакты</a></li>
                 </ul>
             </nav>
             <a href="https://www.avito.ru/brands/i359809882" class="btn btn-primary" style="margin-left: 20px;">Мы на Авито</a>
@@ -127,11 +222,20 @@
     <section class="hero">
         <div class="container">
             <h1>Аутстаффинг персонала в Ярославле</h1>
-            <p><strong>Работаем с ярославскими компаниями с 2015 года</strong>. Легальный вывод персонала за штат, снижение налоговой нагрузки до 40%, полная защита от проверок.</p>
+            <p><strong>⚠️ САЙТ ПЕРЕНЕСЕН:</strong> Полная информация по аутстаффингу в Ярославле теперь на основном сайте компании МИРУМ.</p>
+            <p>Работаем с ярославскими компаниями с 2015 года. Легальный вывод персонала за штат, снижение налоговой нагрузки до 40%.</p>
             
             <div style="margin-top: 30px;">
-                <a href="#calculator-cta" class="btn btn-primary">Рассчитать экономию для Ярославля</a>
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required>Ярославский менеджер</a>
+                <!-- ОБНОВЛЕНО: CTA ведут в WhatsApp с предзаполненным сообщением -->
+                <a href="https://wa.me/79581118514?text=Здравствуйте!%20Меня%20интересует%20аутстаффинг%20в%20Ярославле.%20Подскажите,%20пожалуйста,%20подробности." 
+                   class="btn btn-primary" 
+                   data-consent-required>
+                    📱 Консультация по Ярославлю
+                </a>
+                <a href="https://arenda-kovrov-mirum.ru/outstaffing.html?city=yaroslavl" 
+                   class="btn btn-whatsapp">
+                    🌐 Основной сайт МИРУМ
+                </a>
             </div>
         </div>
     </section>
@@ -214,46 +318,53 @@
         </div>
     </section>
 
-    <!-- КАЛЬКУЛЯТОР CTA БЛОК -->
+    <!-- ОБНОВЛЕНО: Заменен блок калькулятора на CTA -->
     <section id="calculator-cta" style="padding: 80px 0; background: #f8f9fa;">
         <div class="container">
             <div style="text-align: center; margin: 40px 0;">
-                <h3>Рассчитайте точную экономию для вашего бизнеса в Ярославле</h3>
-                <p style="margin: 20px 0; font-size: 1.1rem;">Узнайте, сколько вы сможете сэкономить на налогах и административных расходах</p>
-                <a href="/calculator.html" class="btn btn-whatsapp" style="font-size: 1.2rem; padding: 15px 30px;">
-                    🧮 Открыть калькулятор экономии
+                <h3>Расчет экономии для Ярославля</h3>
+                <p style="margin: 20px 0; font-size: 1.1rem;">Калькулятор экономии теперь доступен на основном сайте компании МИРУМ</p>
+                <a href="https://arenda-kovrov-mirum.ru/calculator.html?city=yaroslavl" class="btn btn-whatsapp" style="font-size: 1.2rem; padding: 15px 30px;">
+                    🧮 Открыть калькулятор на основном сайте
                 </a>
                 <div style="margin-top: 20px; font-size: 0.9rem; color: #666;">
-                    Простой расчет за 2 минуты • Точные цифры • Без регистрации
+                    Точный расчет экономии • Бесплатная консультация • Для Ярославля
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA WHATSAPP БЛОК -->
-    <section style="padding: 60px 0; background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; text-align: center;">
+    <!-- ОБНОВЛЕНО: CTA блок с основной информацией -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%); color: white; text-align: center;">
         <div class="container">
-            <h2>👨‍💼 Ваш менеджер в Ярославле</h2>
+            <h2>👨‍💼 Консультация по Ярославлю</h2>
             <p><strong>Павел Орлов</strong> - специалист по работе с клиентами Ярославля и Ярославской области</p>
             <p>Знает все особенности нефтехимической промышленности и автомобилестроения региона</p>
             
             <div style="margin-top: 30px;">
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.1rem; padding: 12px 25px;">
-                    📱 Написать Павлу в WhatsApp
+                <a href="https://wa.me/79581118514?text=Здравствуйте,%20Павел!%20Меня%20интересует%20аутстаффинг%20в%20Ярославле.%20Можете%20рассказать%20подробнее?" 
+                   class="btn btn-whatsapp" 
+                   data-consent-required 
+                   style="font-size: 1.1rem; padding: 12px 25px; background: white; color: #25d366;">
+                    💬 Написать Павлу в WhatsApp
                 </a>
                 <div style="margin-top: 15px; font-size: 0.9rem;">
-                    Пишите в любое время - отвечаем сразу, как появляется возможность!
+                    Консультируем по всем вопросам аутстаффинга в Ярославле
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ОБНОВЛЕНО: Футер с ссылками на основной сайт -->
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
                 <div class="footer-section">
-                    <h3>Ресурсория в Ярославле</h3>
-                    <p>Аутстаффинг и аренда персонала в Ярославле с 2015 года</p>
+                    <h3>Аутстаффинг в Ярославле</h3>
+                    <p>Услуги аутстаффинга теперь на основном сайте компании МИРУМ</p>
+                    <a href="https://arenda-kovrov-mirum.ru/outstaffing.html?city=yaroslavl" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">
+                        Перейти на основной сайт
+                    </a>
                 </div>
                 
                 <div class="footer-section">
@@ -278,14 +389,20 @@
             
             <div class="footer-bottom">
                 <p>© 2025 Ресурсория. ООО "МИРУМ". Все права защищены.</p>
+                <p style="font-size: 0.9rem; margin-top: 10px; color: #666;">
+                    <strong>Внимание:</strong> Этот сайт больше не обновляется. Вся информация по аутстаффингу перенесена на 
+                    <a href="https://arenda-kovrov-mirum.ru" style="color: var(--primary-color);">основной сайт компании МИРУМ</a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Кнопки -->
+    <!-- ОБНОВЛЕНО: WhatsApp кнопка с предзаполненным сообщением -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/79581118514" class="whatsapp-link" data-consent-required>
-            <span>💬 Написать в WhatsApp</span>
+        <a href="https://wa.me/79581118514?text=Здравствуйте!%20Увидел%20информацию%20про%20аутстаффинг%20в%20Ярославле.%20Можете%20проконсультировать?" 
+           class="whatsapp-link" 
+           data-consent-required>
+            <span>💬 Консультация по Ярославлю</span>
         </a>
     </div>
 

@@ -1,0 +1,167 @@
+/* mobile.css - МОБИЛЬНАЯ ОПТИМИЗАЦИЯ */
+/* Версия: 6.0 (05.01.2026) */
+
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Скрываем десктопное меню, показываем бургер */
+    .desktop-nav {
+        display: none !important;
+    }
+    
+    .header-contacts {
+        display: none !important;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .mobile-nav {
+        display: block;
+    }
+    
+    /* Логотип */
+    .logo img {
+        width: 120px;
+    }
+    
+    /* Хедер */
+    .main-header {
+        height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .main-header.hidden {
+        transform: translateY(-100%);
+    }
+    
+    .header-container {
+        padding: 10px 0;
+        height: 60px;
+    }
+    
+    /* Скрываем хлебные крошки на мобильных */
+    .breadcrumbs {
+        display: none;
+    }
+    
+    /* Плавающие кнопки */
+    .telegram-float {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .telegram-link span {
+        display: none;
+    }
+    
+    .telegram-link {
+        padding: 15px;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        justify-content: center;
+    }
+    
+    .telegram-link i {
+        font-size: 1.8rem;
+        margin: 0;
+    }
+    
+    .scroll-to-top {
+        bottom: 90px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Уведомление о куках */
+    .cookie-notice .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cookie-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .cookie-btn {
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .logo img {
+        width: 100px;
+    }
+    
+    .cookie-notice p {
+        min-width: auto;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .regions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Увеличение зон клика для мобильных */
+@media (max-width: 768px) {
+    .btn, 
+    .cookie-btn,
+    .mobile-menu a,
+    .footer-links a,
+    .telegram-link,
+    .scroll-to-top {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    input, 
+    select, 
+    textarea {
+        font-size: 16px !important; /* Предотвращает зум в iOS */
+    }
+    
+    /* Улучшение читаемости */
+    h1 { font-size: 1.8rem !important; }
+    h2 { font-size: 1.5rem !important; }
+    h3 { font-size: 1.3rem !important; }
+    p, li { font-size: 1rem !important; line-height: 1.6 !important; }
+    
+    /* Улучшение отступов */
+    section {
+        padding: 40px 0 !important;
+    }
+    
+    .section-title {
+        margin-bottom: 30px !important;
+    }
+}

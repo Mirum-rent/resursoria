@@ -1,90 +1,315 @@
-# Переименуйте этот файл в .htaccess после загрузки на сервер
+# ============================================
+# .htaccess для сайта resursoria.ru
+# Версия: 3.0 (06.01.2026)
+# Цель: Настройки для сайта, который больше не индексируется
+# Основной сайт: https://arenda-kovrov-mirum.ru/outstaffing.html
+# ============================================
 
-# Основные настройки
+# Включение движка перезаписи
 RewriteEngine On
+RewriteBase /
+
+# ============================================
+# РЕДИРЕКТЫ НА ОСНОВНОЙ САЙТ
+# ============================================
+
+# Главный редирект всего сайта на основной
+RewriteCond %{HTTP_HOST} ^(www\.)?resursoria\.ru$ [NC]
+RewriteRule ^(.*)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+
+# Дополнительные редиректы конкретных страниц для сохранения ссылочной массы
+RewriteRule ^index\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^default\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^home\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+
+# Редиректы для основных страниц
+RewriteRule ^services\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^calculator\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^contacts\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^about\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^pricing\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+
+# Редиректы для блога
+RewriteRule ^blog\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^blog/(.*)\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^articles/(.*)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^news/(.*)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+
+# Редиректы для региональных страниц
+RewriteRule ^regions/?(.*)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^cities/?(.*)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^goroda/?(.*)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+
+# Редиректы для устаревших URL
+RewriteRule ^outstaffing\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^arenda-personala\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+RewriteRule ^chaz\.(html|php)$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=301,L]
+
+# ============================================
+# ТЕХНИЧЕСКИЕ РЕДИРЕКТЫ
+# ============================================
+
+# Редирект с HTTP на HTTPS (на всякий случай)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # Редирект с www на без www
-RewriteCond %{HTTP_HOST} ^www\.resursoria\.ru$ [NC]
-RewriteRule ^(.*)$ https://resursoria.ru/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 
-# Редирект с HTTP на HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Удаление слеша в конце URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [R=301,L]
 
-# Кэширование статических файлов
+# Удаление дублей index.html, index.php
+RewriteCond %{THE_REQUEST} /index\.(html|php) [NC]
+RewriteRule ^(.*)index\.(html|php)$ /$1 [R=301,L]
+
+# ============================================
+# КЭШИРОВАНИЕ И ОПТИМИЗАЦИЯ
+# ============================================
+
+# Включение кэширования
 <IfModule mod_expires.c>
+    # Включение модуля
     ExpiresActive On
-    ExpiresByType image/jpg "access plus 1 month"
+    
+    # Изображения
     ExpiresByType image/jpeg "access plus 1 month"
-    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
     ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
     ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # CSS и JavaScript
     ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/pdf "access plus 1 month"
     ExpiresByType text/javascript "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
     ExpiresByType application/x-javascript "access plus 1 month"
-    ExpiresByType image/x-icon "access plus 1 year"
-    ExpiresByType application/xml "access plus 0 seconds"
+    
+    # Шрифты
+    ExpiresByType font/ttf "access plus 1 month"
+    ExpiresByType font/otf "access plus 1 month"
+    ExpiresByType font/woff "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 month"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+    
+    # Другие файлы
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    
+    # HTML не кэшируем
     ExpiresByType text/html "access plus 0 seconds"
+    
+    # По умолчанию
     ExpiresDefault "access plus 2 days"
 </IfModule>
 
 # Сжатие GZIP
 <IfModule mod_deflate.c>
+    # Включение сжатия
+    SetOutputFilter DEFLATE
+    
+    # Типы файлов для сжатия
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
     AddOutputFilterByType DEFLATE text/xml
     AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
     AddOutputFilterByType DEFLATE application/xml
     AddOutputFilterByType DEFLATE application/xhtml+xml
     AddOutputFilterByType DEFLATE application/rss+xml
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
     AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/font-woff
+    AddOutputFilterByType DEFLATE application/font-woff2
+    
+    # Исключения для старых браузеров
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    
+    # Убедимся, что прокси не портят заголовки
+    Header append Vary User-Agent
 </IfModule>
 
-# Безопасность заголовков
+# ============================================
+# БЕЗОПАСНОСТЬ
+# ============================================
+
 <IfModule mod_headers.c>
-    # XSS Protection
+    # Защита от XSS
     Header always set X-XSS-Protection "1; mode=block"
     
-    # Clickjacking Protection
+    # Защита от кликджекинга
     Header always set X-Frame-Options "SAMEORIGIN"
     
-    # MIME Type Protection
+    # Защита от MIME-спуфинга
     Header always set X-Content-Type-Options "nosniff"
     
-    # Referrer Policy
+    # Политика реферера
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     
-    # HSTS
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # HSTS (HTTP Strict Transport Security)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
     
-    # CSP
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://wa.me https://www.google-analytics.com; frame-ancestors 'self';"
+    # Content Security Policy
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://wa.me; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://wa.me; frame-ancestors 'self';"
+    
+    # Feature Policy
+    Header always set Feature-Policy "camera 'none'; microphone 'none'; geolocation 'none'"
+    
+    # Предотвращение кэширования конфиденциальных данных
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+        Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
+    </FilesMatch>
 </IfModule>
 
-# Обработка ошибок
-ErrorDocument 404 /404.html
-ErrorDocument 500 /500.html
+# ============================================
+# ОБРАБОТКА ОШИБОК
+# ============================================
 
-# Запрет доступа к敏感 файлам
-<FilesMatch "\.(env|json|config|md|gitignore|gitattributes|lock)$">
+# Пользовательские страницы ошибок
+ErrorDocument 400 /errors/400.html
+ErrorDocument 401 /errors/401.html
+ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /errors/404.html
+ErrorDocument 500 /errors/500.html
+ErrorDocument 503 /errors/503.html
+
+# Если страницы ошибок не существуют - редирект на основной сайт
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^errors/.*$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=302,L]
+
+# ============================================
+# ЗАЩИТА ФАЙЛОВ И ДИРЕКТОРИЙ
+# ============================================
+
+# Запрет доступа к системным файлам
+<FilesMatch "\.(env|json|config|md|gitignore|gitattributes|lock|sql|bak|old|log)$">
     Order allow,deny
     Deny from all
 </FilesMatch>
 
-<Files "(.htaccess|.htpasswd)">
+# Защита .htaccess и .htpasswd
+<Files "^(\.htaccess|\.htpasswd)$">
     Order allow,deny
     Deny from all
 </Files>
 
-# Оптимизация для мобильных устройств
-<IfModule mod_rewrite.c>
-    # Mobile redirect
-    RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|iemobile|iphone|ipod|#opera mobile|palmos|webos" [NC]
-    RewriteCond %{HTTP_HOST} ^resursoria\.ru$ [NC]
-    RewriteRule ^$ https://resursoria.ru/ [L,R=302]
+# Защита директорий
+Options -Indexes
 
+# Запрет доступа к служебным директориям
+RedirectMatch 403 ^/admin/.*$
+RedirectMatch 403 ^/includes/.*$
+RedirectMatch 403 ^/config/.*$
+RedirectMatch 403 ^/system/.*$
+RedirectMatch 403 ^/backup/.*$
+RedirectMatch 403 ^/sql/.*$
+RedirectMatch 403 ^/database/.*$
+RedirectMatch 403 ^/logs/.*$
+RedirectMatch 403 ^/tmp/.*$
+RedirectMatch 403 ^/temp/.*$
+
+# Защита от горячих ссылок (hotlinking)
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?resursoria\.ru/.*$ [NC]
+RewriteRule \.(jpg|jpeg|png|gif|css|js)$ - [F,L]
+
+# ============================================
+# ОПТИМИЗАЦИЯ ДЛЯ МОБИЛЬНЫХ
+# ============================================
+
+# Принудительная мобильная версия (опционально)
+# <IfModule mod_rewrite.c>
+#     RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|iemobile|iphone|ipod|opera mobile|palmos|webos" [NC]
+#     RewriteRule ^$ https://arenda-kovrov-mirum.ru/outstaffing.html [R=302,L]
+# </IfModule>
+
+# ============================================
+# НАСТРОЙКИ ДЛЯ РОБОТОВ
+# ============================================
+
+# Убедимся, что robots.txt доступен
+<Files "robots.txt">
+    Header set Content-Type "text/plain; charset=UTF-8"
+</Files>
+
+# Убедимся, что sitemap.xml редиректит на основной сайт
+RewriteRule ^sitemap\.xml$ https://arenda-kovrov-mirum.ru/sitemap.xml [R=301,L]
+
+# Убедимся, что humans.txt доступен
+<Files "humans.txt">
+    Header set Content-Type "text/plain; charset=UTF-8"
+</Files>
+
+# ============================================
+# КОММЕНТАРИИ ДЛЯ ВЕБ-МАСТЕРА
+# ============================================
+
+# Этот файл .htaccess настроен для сайта, который больше не индексируется.
+# Все запросы перенаправляются на основной сайт компании.
+# 
+# Основные функции:
+# 1. Редирект всех запросов на https://arenda-kovrov-mirum.ru/outstaffing.html
+# 2. Защита от горячих ссылок
+# 3. Кэширование статических файлов
+# 4. Безопасные заголовки
+# 5. Защита системных файлов
+# 
+# Дата настройки: 06.01.2026
+# Причина перенаправления: Консолидация контента на основном сайте
+# Контакт для вопросов: matservice@yandex.ru
+
+# ============================================
+# ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ
+# ============================================
+
+# Настройки кодировки
+AddDefaultCharset UTF-8
+
+# Запрет выполнения PHP в определенных директориях
+<IfModule mod_php.c>
+    php_flag engine off
 </IfModule>
+
+# Установка часового пояса (для логов)
+SetEnv TZ Europe/Moscow
+
+# Увеличение лимитов для загрузки файлов (если нужно)
+# php_value upload_max_filesize 10M
+# php_value post_max_size 12M
+# php_value max_execution_time 300
+# php_value max_input_time 300
+
+# ============================================
+# ФИНАЛЬНЫЕ ПРАВИЛА
+# ============================================
+
+# Разрешаем доступ к статическим файлам
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|eot)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Запрещаем доступ к PHP файлам, кроме index.php
+<FilesMatch "\.php$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+<Files "index.php">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# ============================================
+# КОНЕЦ ФАЙЛА .htaccess
+# ============================================

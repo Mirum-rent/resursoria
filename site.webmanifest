@@ -1,105 +1,49 @@
 {
-    "name": "Аутстаффинг и аренда персонала | МИРУМ",
-    "short_name": "Аутстаффинг МИРУМ",
-    "description": "Услуги аутстаффинга и аренды персонала через аккредитованные ЧАЗ. Снижение налогов до 40%, защита от проверок.",
+    "name": "Аутстаффинг персонала | МИРУМ",
+    "short_name": "Аутстаффинг",
+    "description": "Услуги аутстаффинга и аренды персонала через ЧАЗ",
     
     "start_url": "https://arenda-kovrov-mirum.ru/outstaffing.html",
     "scope": "/",
     "display": "standalone",
-    "background_color": "#1a3a5f",
-    "theme_color": "#1a3a5f",
+    "background_color": "#16a085",
+    "theme_color": "#16a085",
     "orientation": "portrait-primary",
     "lang": "ru",
-    "dir": "ltr",
     
     "icons": [
         {
-            "src": "https://arenda-kovrov-mirum.ru/images/icons/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any maskable"
+            "src": "https://arenda-kovrov-mirum.ru/img/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
         },
         {
-            "src": "https://arenda-kovrov-mirum.ru/images/icons/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any maskable"
+            "src": "https://arenda-kovrov-mirum.ru/img/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
         },
         {
-            "src": "https://arenda-kovrov-mirum.ru/images/icons/apple-touch-icon.png",
+            "src": "https://arenda-kovrov-mirum.ru/img/apple-touch-icon.png",
             "sizes": "180x180",
-            "type": "image/png",
-            "purpose": "any"
-        }
-    ],
-    
-    "screenshots": [
+            "type": "image/png"
+        },
         {
-            "src": "https://arenda-kovrov-mirum.ru/images/screenshots/desktop-1280x720.png",
-            "sizes": "1280x720",
-            "type": "image/png",
-            "form_factor": "wide",
-            "label": "Главная страница аутстаффинга"
+            "src": "https://arenda-kovrov-mirum.ru/img/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
         }
     ],
     
-    "categories": ["business", "productivity"],
+    "categories": ["business"],
     
     "shortcuts": [
         {
-            "name": "Услуги аутстаффинга",
-            "short_name": "Услуги",
-            "description": "Наши услуги аутстаффинга и аренды персонала",
-            "url": "https://arenda-kovrov-mirum.ru/outstaffing.html",
-            "icons": [
-                {
-                    "src": "https://arenda-kovrov-mirum.ru/images/icons/shortcut-96x96.png",
-                    "sizes": "96x96",
-                    "type": "image/png"
-                }
-            ]
-        },
-        {
-            "name": "Калькулятор экономии",
-            "short_name": "Калькулятор",
-            "description": "Рассчитайте экономию на налогах",
-            "url": "https://arenda-kovrov-mirum.ru/outstaffing.html#calculator",
-            "icons": [
-                {
-                    "src": "https://arenda-kovrov-mirum.ru/images/icons/calculator-96x96.png",
-                    "sizes": "96x96",
-                    "type": "image/png"
-                }
-            ]
-        },
-        {
-            "name": "Контакты",
-            "short_name": "Контакты",
-            "description": "Свяжитесь с нами для консультации",
-            "url": "https://arenda-kovrov-mirum.ru/contacts.html",
-            "icons": [
-                {
-                    "src": "https://arenda-kovrov-mirum.ru/images/icons/contact-96x96.png",
-                    "sizes": "96x96",
-                    "type": "image/png"
-                }
-            ]
+            "name": "Аутстаффинг",
+            "short_name": "Аутстаффинг",
+            "description": "Услуги аутстаффинга персонала",
+            "url": "/outstaffing.html"
         }
     ],
     
-    "related_applications": [
-        {
-            "platform": "web",
-            "url": "https://arenda-kovrov-mirum.ru/outstaffing.html"
-        }
-    ],
-    
-    "prefer_related_applications": false,
-    
-    "protocol_handlers": [
-        {
-            "protocol": "web+mirum",
-            "url": "https://arenda-kovrov-mirum.ru/outstaffing.html"
-        }
-    ]
+    "prefer_related_applications": false
 }

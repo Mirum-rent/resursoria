@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты | Аутстаффинг персонала в Москве | Ресурсория</title>
-    <meta name="description" content="📞 Контакты для связи: +7 (958) 111-85-14. WhatsApp, телефон, email. Аутстаффинг и аренда персонала в Москве и по всей России.">
+    <title>Контакты | Ресурсория (перенос на основной сайт)</title>
+    <meta name="description" content="Контент о аутстаффинге перенесен на основной сайт arenda-kovrov-mirum.ru. Свяжитесь с нами в WhatsApp для консультации.">
     
-    <!-- SEO метатеги -->
-    <link rel="canonical" href="https://resursoria.ru/contacts.html" />
-    <meta name="robots" content="index, follow" />
+    <!-- SEO метатеги (ОБНОВЛЕНО) -->
+    <link rel="canonical" href="https://arenda-kovrov-mirum.ru/outstaffing.html" />
+    <meta name="robots" content="noindex, nofollow" />
     
     <!-- Гео-метатеги -->
     <meta name="geo.region" content="RU-MOW">
@@ -16,11 +16,11 @@
     <meta name="geo.position" content="55.755826;37.6173">
     <meta name="ICBM" content="55.755826, 37.6173">
     
-    <!-- Open Graph -->
+    <!-- Open Graph (ОБНОВЛЕНО) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Контакты | Аутстаффинг персонала в Москве | Ресурсория">
-    <meta property="og:description" content="📞 Контакты для связи: +7 (958) 111-85-14. WhatsApp, телефон, email. Аутстаффинг и аренда персонала в Москве и по всей России.">
-    <meta property="og:url" content="https://resursoria.ru/contacts.html">
+    <meta property="og:title" content="Контакты | Перенос на основной сайт">
+    <meta property="og:description" content="Контент о аутстаффинге перенесен на основной сайт. Свяжитесь для консультации.">
+    <meta property="og:url" content="https://arenda-kovrov-mirum.ru/outstaffing.html">
     <meta property="og:image" content="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/android-chrome-192x192.png">
     
     <!-- Фавиконки -->
@@ -32,8 +32,18 @@
     
     <!-- Дополнительные стили для страницы контактов -->
     <style>
+        :root {
+            --primary-color: #16a085; /* ОБНОВЛЕНО: фирменный цвет МИРУМ */
+            --secondary-color: #1abc9c; /* ОБНОВЛЕНО */
+            --whatsapp-color: #25D366;
+            --success-color: #27ae60;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
         .hero {
-            background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
             padding: 100px 0 80px;
             text-align: center;
@@ -171,7 +181,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--secondary-color);
-            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+            box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.1); /* ОБНОВЛЕНО */
         }
 
         /* Профессиональный CTA */
@@ -198,6 +208,36 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        /* Информационный блок о переносе */
+        .migration-notice {
+            background: #fef9e7;
+            border-left: 5px solid #f39c12;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: var(--border-radius);
+        }
+
+        .migration-notice h3 {
+            color: #d35400;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Скрытый SEO текст */
+        .seo-hidden-text {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         @media (max-width: 768px) {
@@ -232,26 +272,40 @@
         }
     </style>
 
-    <!-- Микроразметка -->
+    <!-- Микроразметка (ОБНОВЛЕНА) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Ресурсория",
-        "description": "Услуги аутстаффинга и аренды персонала через аккредитованные ЧАЗ",
-        "url": "https://resursoria.ru",
-        "telephone": "+7-958-111-85-14",
-        "email": "MatserviceMirum@yandex.ru",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "Россия",
-            "addressLocality": "Москва"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
+        "@type": "WebPage",
+        "name": "Контакты для консультации по аутстаффингу",
+        "description": "Контакты для связи по вопросам аутстаффинга персонала. Контент перенесен на основной сайт компании МИРУМ.",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "МИРУМ",
+            "description": "Услуги аутстаффинга и аренды персонала через аккредитованные ЧАЗ",
+            "url": "https://arenda-kovrov-mirum.ru",
             "telephone": "+7-958-111-85-14",
-            "contactType": "customer service",
-            "availableLanguage": "Russian"
+            "email": "MatserviceMirum@yandex.ru",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "Россия",
+                "addressLocality": "Москва"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+7-958-111-85-14",
+                "contactType": "customer service",
+                "availableLanguage": "Russian",
+                "areaServed": "RU"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "МИРУМ",
+            "url": "https://arenda-kovrov-mirum.ru",
+            "sameAs": [
+                "https://arenda-kovrov-mirum.ru/outstaffing.html"
+            ]
         }
     }
     </script>
@@ -282,11 +336,27 @@
         </div>
     </header>
 
+    <!-- Информация о переносе -->
+    <div class="migration-notice container">
+        <h3>📢 <span>Важная информация!</span></h3>
+        <p><strong>Контент о аутстаффинге перенесен на основной сайт компании МИРУМ.</strong></p>
+        <p>Все услуги по аутстаффингу, аренде персонала и легализации мигрантов теперь доступны на основном сайте:</p>
+        <p style="margin: 15px 0; font-size: 1.1rem; font-weight: bold;">
+            <a href="https://arenda-kovrov-mirum.ru/outstaffing.html" style="color: var(--primary-color); text-decoration: underline;">
+                https://arenda-kovrov-mirum.ru/outstaffing.html
+            </a>
+        </p>
+        <p>Для связи используйте WhatsApp — самый быстрый способ получить консультацию.</p>
+    </div>
+
     <!-- Герой -->
     <section class="hero">
         <div class="container">
             <h1>Контакты</h1>
             <p>Свяжитесь с нами удобным способом - ответим в ближайшее время</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.9;">
+                Консультируем по WhatsApp 24/7
+            </p>
         </div>
     </section>
 
@@ -294,7 +364,7 @@
     <section class="professional-cta container">
         <h3>📞 Получите консультацию специалиста</h3>
         <p>Наши эксперты с 12-летним опытом ответят на все вопросы об аутстаффинге и помогут подобрать оптимальное решение для вашей компании</p>
-        <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 15px 40px;">
+        <a href="https://wa.me/79581118514?text=Здравствуйте!%20Нужна%20консультация%20по%20аутстаффингу.%20Можете%20проконсультировать?" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 15px 40px;">
             📱 Получить консультацию
         </a>
     </section>
@@ -309,14 +379,14 @@
                 <p>Самый быстрый способ связи. Отправляйте документы, получайте консультацию, задавайте вопросы.</p>
                 <div class="contact-response">Отвечаем быстро в любое время (24/7)</div>
                 <p><strong>+7 (958) 111-85-14</strong></p>
-                <a href="https://wa.me/79581118514" class="contact-link" data-consent-required>Написать в WhatsApp</a>
+                <a href="https://wa.me/79581118514?text=Здравствуйте!%20Пишу%20с%20сайта%20Ресурсория.%20Нужна%20консультация%20по%20аутстаффингу." class="contact-link" data-consent-required>Написать в WhatsApp</a>
             </div>
 
             <!-- Телефон -->
             <div class="contact-card">
                 <div class="contact-icon">📞</div>
                 <h3>Телефон / SMS</h3>
-                <p>Позвоните для срочной консультации или отправьте SMS.</p>
+                <p>Позвоните для срочной консультации или отправьте SMS. Лучше сразу написать в WhatsApp.</p>
                 <div class="contact-response">Лучше отправить SMS - перезвоним</div>
                 <p><strong>+7 (958) 111-85-14</strong></p>
                 <a href="tel:+79581118514" class="contact-link">Позвонить</a>
@@ -329,7 +399,7 @@
                 <p>Для официальных запросов, коммерческих предложений и отправки документов.</p>
                 <div class="contact-response">Ответ в течение рабочего дня</div>
                 <p><strong>MatserviceMirum@yandex.ru</strong></p>
-                <a href="mailto:MatserviceMirum@yandex.ru" class="contact-link">Написать email</a>
+                <a href="mailto:MatserviceMirum@yandex.ru?subject=Консультация%20по%20аутстаффингу&body=Здравствуйте!%20Пишу%20с%20сайта%20Ресурсория.%20Нужна%20консультация%20по%20аутстаффингу." class="contact-link">Написать email</a>
             </div>
         </div>
 
@@ -343,24 +413,36 @@
                     <p>ИНН: 3019008619</p>
                     <p>ОГРН: 1133023000665</p>
                     <p>КПП: 301901001</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                        Юридический адрес: 414056, г. Астрахань, ул. Латышева, д. 18, оф. 104
+                    </p>
                 </div>
                 <div class="info-item">
                     <h4>🌍 География работы</h4>
                     <p><strong>Москва и вся Россия</strong></p>
                     <p>Работаем с клиентами из всех регионов РФ</p>
                     <p>Удаленное оформление документов</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                        Основной сайт: arenda-kovrov-mirum.ru
+                    </p>
                 </div>
                 <div class="info-item">
                     <h4>🕘 Время работы</h4>
                     <p><strong>Пн-Пт: 9:00-18:00</strong></p>
                     <p>Сб: 10:00-16:00 (по предварительной записи)</p>
                     <p>Вс: выходной (отвечаем в WhatsApp)</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: var(--primary-color);">
+                        Консультации в WhatsApp: 24/7
+                    </p>
                 </div>
                 <div class="info-item">
                     <h4>🚀 Сроки оказания услуг</h4>
                     <p><strong>Аутстаффинг:</strong> 1-3 рабочих дня</p>
                     <p><strong>Легализация мигрантов:</strong> 1-2 дня</p>
                     <p><strong>Аренда персонала:</strong> 1-3 дня</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                        Все услуги оказываются через аккредитованные ЧАЗ
+                    </p>
                 </div>
             </div>
         </div>
@@ -370,7 +452,7 @@
             <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary-color); font-size: 2rem;">📝 Заявка на консультацию</h2>
             
             <div class="form-success" id="formSuccess" style="display: none;">
-                ✅ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
+                ✅ Спасибо! Открываю WhatsApp для отправки сообщения.
             </div>
 
             <form id="contactForm" data-consent-required>
@@ -420,21 +502,21 @@
                     </label>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem; font-weight: bold;">
-                    📨 Отправить заявку
+                <button type="button" id="whatsappSubmit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem; font-weight: bold; background: var(--whatsapp-color);">
+                    📨 Отправить через WhatsApp
                 </button>
             </form>
         </div>
 
         <!-- CTA блок -->
-        <div style="text-align: center; margin-top: 50px; padding: 40px; background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; border-radius: var(--border-radius);">
+        <div style="text-align: center; margin-top: 50px; padding: 40px; background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; border-radius: var(--border-radius);">
             <h2 style="color: white; margin-bottom: 20px; font-size: 2rem;">🚀 Готовы начать сотрудничество?</h2>
             <p style="margin: 20px 0; font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                 Напишите нам в WhatsApp для быстрой консультации
             </p>
             
             <div style="max-width: 400px; margin: 0 auto;">
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: inline-block; margin-bottom: 15px;">
+                <a href="https://wa.me/79581118514?text=Здравствуйте!%20Готовы%20начать%20сотрудничество%20по%20аутстаффингу.%20Нужна%20консультация." class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: inline-block; margin-bottom: 15px; background: var(--whatsapp-color);">
                     📱 Написать в WhatsApp
                 </a>
                 <p style="font-size: 0.9rem; opacity: 0.9;">
@@ -444,14 +526,22 @@
         </div>
     </section>
 
+    <!-- Скрытый текст для SEO -->
+    <div class="seo-hidden-text">
+        <h1>Контакты для связи по услугам аутстаффинга персонала</h1>
+        <p>Контакты компании МИРУМ для получения консультации по услугам аутстаффинга персонала, аренды сотрудников, легализации мигрантов. Телефон: +7 (958) 111-85-14, WhatsApp: +7 (958) 111-85-14, email: MatserviceMirum@yandex.ru. Компания предоставляет услуги через аккредитованные частные агентства занятости (ЧАЗ) с 2013 года. Оператор обработки персональных данных: ООО "МИРУМ", ИНН 3019008619, ОГРН 1133023000665. Работаем по всей России: Москва, Санкт-Петербург, Новосибирск, Екатеринбург, Казань, Нижний Новгород, Челябинск, Самара, Омск, Ростов-на-Дону, Уфа, Краснодар, Пермь, Воронеж, Волгоград, Саратов, Тюмень, Тольятти, Ижевск, Барнаул, Ульяновск, Иркутск, Хабаровск, Ярославль, Владивосток, Махачкала, Томск, Оренбург, Кемерово, Новокузнецк, Рязань, Астрахань, Набережные Челны, Пенза, Липецк, Киров, Чебоксары, Тула, Калининград, Курск, Улан-Удэ, Ставрополь, Магнитогорск, Сочи, Белгород, Нижний Тагил, Владимир, Архангельск, Смоленск, Калуга, Чита, Грозный, Стерлитамак, Кострома, Петрозаводск, Нижневартовск, Йошкар-Ола, Новороссийск. Контент о аутстаффинге перенесен на основной сайт компании МИРУМ: https://arenda-kovrov-mirum.ru/outstaffing.html</p>
+    </div>
+
     <!-- Футер -->
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
                 <div class="footer-section">
                     <h3>Ресурсория</h3>
-                    <p>Ваш надежный партнер в кадровом аутстаффинге и аренде персонала</p>
+                    <p>Контент о аутстаффинге перенесен на основной сайт компании МИРУМ</p>
                     <div style="margin-top: 20px;">
+                        <p><strong>Основной сайт:</strong></p>
+                        <p><a href="https://arenda-kovrov-mirum.ru/outstaffing.html" style="color: var(--primary-color);">arenda-kovrov-mirum.ru/outstaffing.html</a></p>
                         <p><strong>Оператор обработки данных:</strong></p>
                         <p>ООО "МИРУМ"</p>
                         <p>ИНН: 3019008619</p>
@@ -466,30 +556,31 @@
                         <li><a href="/services.html">Услуги</a></li>
                         <li><a href="/blog.html">Блог</a></li>
                         <li><a href="/contacts.html">Контакты</a></li>
+                        <li><a href="https://arenda-kovrov-mirum.ru">Основной сайт МИРУМ</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Контакты</h3>
+                    <h3>Контакты (WhatsApp 24/7)</h3>
                     <ul class="footer-links">
                         <li>📞 <a href="tel:+79581118514">+7 (958) 111-85-14</a></li>
-                        <li>📱 <a href="https://wa.me/79581118514" data-consent-required>WhatsApp</a></li>
+                        <li>📱 <a href="https://wa.me/79581118514" data-consent-required>Написать в WhatsApp</a></li>
                         <li>📧 <a href="mailto:MatserviceMirum@yandex.ru">Email</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>© 2025 Ресурсория. ООО "МИРУМ". Все права защищены.</p>
-                <p><a href="/privacy.html">Политика конфиденциальности</a></p>
+                <p>© 2025 Ресурсория. Контент перенесен на основной сайт компании МИРУМ. Все права защищены.</p>
+                <p><a href="/privacy.html">Политика конфиденциальности</a> | <a href="https://arenda-kovrov-mirum.ru">Основной сайт МИРУМ</a></p>
             </div>
         </div>
     </footer>
 
     <!-- Кнопки -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/79581118514" class="whatsapp-link" data-consent-required>
-            <span>💬 Написать в WhatsApp</span>
+        <a href="https://wa.me/79581118514?text=Здравствуйте!%20Пишу%20с%20страницы%20контактов%20Ресурсории.%20Нужна%20консультация." class="whatsapp-link" data-consent-required>
+            <span>💬 Консультация в WhatsApp</span>
         </a>
     </div>
 
@@ -501,9 +592,9 @@
             <p>
                 🍪 Мы используем файлы cookie для улучшения работы сайта. 
                 Продолжая использование сайта, вы соглашаетесь с 
-                <a href="/privacy.html" style="color: var(--whatsapp-color); text-decoration: underline;">обработкой персональных данных</a> 
+                <a href="/privacy.html" style="color: var(--primary-color); text-decoration: underline;">обработкой персональных данных</a> 
                 и нашей 
-                <a href="/privacy.html" style="color: var(--whatsapp-color); text-decoration: underline;">политикой конфиденциальности</a>.
+                <a href="/privacy.html" style="color: var(--primary-color); text-decoration: underline;">политикой конфиденциальности</a>.
             </p>
             <div class="cookie-buttons">
                 <button id="cookieAccept" class="cookie-btn cookie-accept">Принять всё</button>
@@ -537,11 +628,12 @@
                 });
             }
             
-            // Обработка формы контактов
+            // Обработка формы через WhatsApp
+            const whatsappSubmitBtn = document.getElementById('whatsappSubmit');
             const contactForm = document.getElementById('contactForm');
             const formSuccess = document.getElementById('formSuccess');
             
-            if (contactForm) {
+            if (whatsappSubmitBtn && contactForm) {
                 // Инициализация маски телефона
                 const phoneInput = document.getElementById('phone');
                 if (phoneInput) {
@@ -576,24 +668,48 @@
                     });
                 }
                 
-                // Обработка отправки формы
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Простая валидация
+                // Обработка отправки через WhatsApp
+                whatsappSubmitBtn.addEventListener('click', function() {
                     const name = document.getElementById('name').value;
                     const phone = document.getElementById('phone').value;
                     const email = document.getElementById('email').value;
+                    const company = document.getElementById('company').value || 'Не указано';
                     const service = document.getElementById('service').value;
+                    const message = document.getElementById('message').value || 'Нет дополнительного сообщения';
                     const consent = document.getElementById('contact-consent').checked;
                     
+                    // Валидация
                     if (!name || !phone || !email || !service || !consent) {
                         alert('Пожалуйста, заполните все обязательные поля и дайте согласие');
                         return;
                     }
                     
+                    // Формирование сообщения для WhatsApp
+                    const serviceNames = {
+                        'outstaffing': 'Аутстаффинг персонала',
+                        'rent': 'Аренда персонала',
+                        'migrants': 'Легализация мигрантов',
+                        'consulting': 'Кадровый консалтинг'
+                    };
+                    
+                    const serviceName = serviceNames[service] || service;
+                    
+                    const whatsappMessage = `Новая заявка с сайта Ресурсория (контакты):
+
+👤 Имя: ${name}
+📞 Телефон: ${phone}
+📧 Email: ${email}
+🏢 Компания: ${company}
+📋 Услуга: ${serviceName}
+💬 Сообщение: ${message}
+
+Прошу связаться для консультации.`;
+
+                    const encodedMessage = encodeURIComponent(whatsappMessage);
+                    
                     // Показать сообщение об успехе
                     formSuccess.style.display = 'block';
+                    formSuccess.textContent = '✅ Открываю WhatsApp для отправки сообщения...';
                     
                     // Прокрутить к сообщению
                     formSuccess.scrollIntoView({
@@ -601,19 +717,59 @@
                         block: 'center'
                     });
                     
-                    // Очистить форму
-                    contactForm.reset();
-                    
-                    // Скрыть сообщение через 5 секунд
+                    // Открыть WhatsApp через 1 секунду
                     setTimeout(() => {
-                        formSuccess.style.opacity = '0';
+                        window.open(`https://wa.me/79581118514?text=${encodedMessage}`, '_blank');
+                    }, 1000);
+                    
+                    // Очистить форму через 2 секунды
+                    setTimeout(() => {
+                        contactForm.reset();
+                        formSuccess.textContent = '✅ Сообщение отправлено! Мы свяжемся с вами в ближайшее время.';
+                        
+                        // Скрыть сообщение через 5 секунд
                         setTimeout(() => {
-                            formSuccess.style.display = 'none';
-                            formSuccess.style.opacity = '1';
-                        }, 300);
-                    }, 5000);
+                            formSuccess.style.opacity = '0';
+                            setTimeout(() => {
+                                formSuccess.style.display = 'none';
+                                formSuccess.style.opacity = '1';
+                            }, 300);
+                        }, 5000);
+                    }, 2000);
                 });
             }
+            
+            // Обновление WhatsApp ссылок при клике
+            document.querySelectorAll('.contact-link').forEach(link => {
+                if (link.getAttribute('href').includes('wa.me')) {
+                    link.addEventListener('click', function(e) {
+                        // Если уже содержит правильную ссылку, не перехватываем
+                        if (this.getAttribute('href').includes('?text=')) {
+                            return;
+                        }
+                        
+                        e.preventDefault();
+                        
+                        const card = this.closest('.contact-card');
+                        let message = 'Здравствуйте! Пишу с сайта Ресурсория. Нужна консультация по аутстаффингу.';
+                        
+                        if (card.classList.contains('whatsapp-card')) {
+                            message = 'Здравствуйте! Пишу с сайта Ресурсория (контакты). Хочу проконсультироваться по услугам аутстаффинга.';
+                        }
+                        
+                        const encodedMessage = encodeURIComponent(message);
+                        window.open(`https://wa.me/79581118514?text=${encodedMessage}`, '_blank');
+                    });
+                }
+            });
+            
+            // Обновление email ссылок
+            document.querySelectorAll('a[href^="mailto:"]').forEach(emailLink => {
+                if (!emailLink.getAttribute('href').includes('subject=')) {
+                    const currentHref = emailLink.getAttribute('href');
+                    emailLink.setAttribute('href', `${currentHref}?subject=Консультация%20по%20аутстаффингу&body=Здравствуйте!%20Пишу%20с%20сайта%20Ресурсория.%20Нужна%20консультация%20по%20аутстаффингу.`);
+                }
+            });
         });
     </script>
 </body>

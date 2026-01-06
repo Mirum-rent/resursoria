@@ -1,19 +1,19 @@
 /**
  * Main JavaScript for Resursoria website
- * Version: 2.12.2025
- * Features: Cookie consent, smooth scroll, WhatsApp tracking, accessibility
+ * Version: 3.01.2026 - ОБНОВЛЕНО ДЛЯ ПЕРЕНОСА НА ОСНОВНОЙ САЙТ
+ * Features: Cookie consent, WhatsApp консультации, доступность
  */
 
 class PrivacyManager {
     constructor() {
         this.cookieName = 'resursoria_consent';
-        this.cookieVersion = 'v2';
+        this.cookieVersion = 'v3';
         this.cookieExpiryDays = 365;
         this.init();
     }
 
     init() {
-        console.log('PrivacyManager initialized');
+        console.log('PrivacyManager initialized - Site migrated to arenda-kovrov-mirum.ru');
         this.setupEventListeners();
         this.checkCookieConsent();
         this.setupScrollToTop();
@@ -21,6 +21,7 @@ class PrivacyManager {
         this.setupWhatsAppTracking();
         this.setupAccessibility();
         this.setupForms();
+        this.setupMigrationNotice();
     }
 
     // Cookie Management
@@ -65,21 +66,16 @@ class PrivacyManager {
         const notice = document.getElementById('cookieNotice');
         
         if (consent === null && notice) {
-            // Показываем уведомление с задержкой
             setTimeout(() => {
                 notice.classList.add('visible');
                 notice.setAttribute('aria-hidden', 'false');
                 this.trapFocus(notice);
-                
-                // Блокируем элементы до согласия
                 document.body.classList.add('cookies-blocked');
             }, 1000);
         } else if (consent === 'accepted') {
-            this.enableAnalytics();
             this.enableForms();
             document.body.classList.remove('cookies-blocked');
         } else if (consent === 'rejected') {
-            this.disableAnalytics();
             this.disableForms();
             document.body.classList.add('cookies-blocked');
         }
@@ -96,10 +92,9 @@ class PrivacyManager {
     acceptCookies() {
         this.setCookie(this.cookieName, 'accepted', this.cookieExpiryDays);
         this.hideCookieNotice();
-        this.enableAnalytics();
         this.enableForms();
         document.body.classList.remove('cookies-blocked');
-        this.showToast('Спасибо! Настройки сохранены.', 'success');
+        this.showToast('✅ Спасибо! Файлы cookie приняты. Теперь можете использовать все функции сайта.');
         
         // Включаем все элементы
         this.enableAllElements();
@@ -108,14 +103,12 @@ class PrivacyManager {
     rejectCookies() {
         this.setCookie(this.cookieName, 'rejected', 30);
         this.hideCookieNotice();
-        this.disableAnalytics();
         this.disableForms();
         document.body.classList.add('cookies-blocked');
-        this.showToast('Файлы cookie отключены. Некоторые функции могут быть недоступны.', 'info');
+        this.showToast('ℹ️ Файлы cookie отключены. Для консультации напишите в WhatsApp: +7 (958) 111-85-14', 'info');
     }
 
     enableAllElements() {
-        // Включаем все кнопки WhatsApp
         const whatsappElements = document.querySelectorAll('[data-consent-required], .btn-whatsapp, .whatsapp-link');
         whatsappElements.forEach(el => {
             el.style.opacity = '1';
@@ -123,7 +116,6 @@ class PrivacyManager {
             el.removeAttribute('aria-disabled');
         });
         
-        // Включаем формы
         const forms = document.querySelectorAll('form');
         forms.forEach(form => {
             form.style.opacity = '1';
@@ -133,7 +125,6 @@ class PrivacyManager {
     }
 
     showToast(message, type = 'info') {
-        // Удаляем старые тосты
         const oldToasts = document.querySelectorAll('.toast');
         oldToasts.forEach(toast => toast.remove());
         
@@ -143,18 +134,18 @@ class PrivacyManager {
         toast.setAttribute('role', 'alert');
         toast.setAttribute('aria-live', 'polite');
         
-        // Стили для тоста
+        const bgColor = type === 'success' ? '#16a085' : 
+                        type === 'warning' ? '#f39c12' : '#1abc9c';
+        
         toast.style.cssText = `
             position: fixed;
             bottom: 100px;
             right: 25px;
-            background: ${type === 'success' ? 'var(--success-color)' : 
-                         type === 'warning' ? 'var(--warning-color)' : 
-                         'var(--secondary-color)'};
+            background: ${bgColor};
             color: white;
             padding: 12px 20px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             z-index: 1002;
             transform: translateY(100%);
             opacity: 0;
@@ -176,38 +167,13 @@ class PrivacyManager {
         }, 3000);
     }
 
-    // Analytics
+    // Analytics - УПРОЩЕНО (сайт не индексируется)
     enableAnalytics() {
-        console.log('Analytics enabled');
-        
-        // Google Analytics
-        if (typeof gtag !== 'undefined') {
-            gtag('consent', 'update', {
-                'analytics_storage': 'granted',
-                'ad_storage': 'granted'
-            });
-        }
-        
-        // Yandex Metrica
-        if (typeof ym !== 'undefined') {
-            ym('setUserProperties', { cookie_consent: 'accepted' });
-        }
+        console.log('Site migrated to arenda-kovrov-mirum.ru - analytics simplified');
     }
 
     disableAnalytics() {
-        console.log('Analytics disabled');
-        
-        if (typeof gtag !== 'undefined') {
-            gtag('consent', 'update', {
-                'analytics_storage': 'denied',
-                'ad_storage': 'denied'
-            });
-        }
-        
-        // Удаляем cookies аналитики
-        this.deleteCookie('_ga');
-        this.deleteCookie('_gid');
-        this.deleteCookie('_ym_uid');
+        console.log('Analytics disabled for migrated site');
     }
 
     // Forms Management
@@ -282,7 +248,7 @@ class PrivacyManager {
         };
         
         window.addEventListener('scroll', checkScroll, { passive: true });
-        checkScroll(); // Initial check
+        checkScroll();
         
         scrollBtn.addEventListener('click', () => {
             window.scrollTo({
@@ -303,7 +269,6 @@ class PrivacyManager {
     // Smooth Scroll
     setupSmoothScroll() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            // Skip if anchor has specific classes or attributes
             if (anchor.classList.contains('no-smooth-scroll') || 
                 anchor.getAttribute('data-no-smooth')) {
                 return;
@@ -326,10 +291,8 @@ class PrivacyManager {
                         behavior: 'smooth'
                     });
                     
-                    // Update URL without jumping
                     history.pushState(null, null, href);
                     
-                    // Focus target for accessibility
                     setTimeout(() => {
                         if (!target.hasAttribute('tabindex')) {
                             target.setAttribute('tabindex', '-1');
@@ -341,23 +304,24 @@ class PrivacyManager {
         });
     }
 
-    // WhatsApp Tracking
+    // WhatsApp Tracking - ОБНОВЛЕНО ДЛЯ ПЕРЕНОСА САЙТА
     setupWhatsAppTracking() {
         document.addEventListener('click', (e) => {
             const whatsappLink = e.target.closest('a[href*="wa.me"], .btn-whatsapp, .whatsapp-link');
             if (!whatsappLink) return;
             
-            // Проверяем, заблокирован ли элемент
+            // Проверяем блокировку
             if (whatsappLink.style.pointerEvents === 'none' || 
                 whatsappLink.getAttribute('aria-disabled') === 'true') {
                 e.preventDefault();
                 e.stopPropagation();
+                this.showToast('Для связи через WhatsApp необходимо принять файлы cookie', 'warning');
                 return;
             }
             
             const consent = this.getCookie(this.cookieName);
             
-            // Если нет согласия, показываем уведомление и блокируем
+            // Если нет согласия
             if (consent !== 'accepted') {
                 e.preventDefault();
                 e.stopPropagation();
@@ -375,45 +339,48 @@ class PrivacyManager {
                 return;
             }
             
-            // Трекинг клика если согласие дано
-            const href = whatsappLink.href;
-            const linkText = whatsappLink.textContent.trim() || 'WhatsApp link';
-            const pageLocation = window.location.pathname;
-            
-            // Добавляем параметры для трекинга
-            const trackingParams = new URLSearchParams({
-                source: 'website',
-                page: pageLocation,
-                medium: 'whatsapp_button',
-                campaign: 'organic',
-                content: linkText
-            });
-            
-            const whatsappUrl = new URL(href);
-            whatsappUrl.searchParams.set('text', 
-                `Здравствуйте! Пишу с сайта resursoria.ru\nСтраница: ${pageLocation}\n\nМеня интересуют услуги аутстаффинга. Пожалуйста, предоставьте консультацию.`
-            );
+            // Определяем контекст сообщения
+            let message = this.getWhatsAppMessage(whatsappLink);
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/79581118514?text=${encodedMessage}`;
             
             // Открываем WhatsApp
-            window.open(whatsappUrl.toString(), '_blank', 'noopener,noreferrer');
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
             
-            // Google Analytics
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'whatsapp_click', {
-                    'event_category': 'engagement',
-                    'event_label': `${pageLocation} - ${linkText}`,
-                    'value': 1
-                });
-            }
-            
-            // Yandex Metrica
-            if (typeof ym !== 'undefined') {
-                ym('reachGoal', 'whatsapp_click', {
-                    page: pageLocation,
-                    link: linkText
-                });
-            }
+            // Логируем переход
+            console.log('WhatsApp opened with message:', message);
         });
+    }
+
+    // Генерация сообщений для WhatsApp
+    getWhatsAppMessage(whatsappLink) {
+        const currentPage = window.location.pathname;
+        let context = '';
+        
+        // Определяем контекст по странице
+        if (currentPage.includes('/calculator')) {
+            context = 'Консультация по расчету экономии на аутстаффинге';
+        } else if (currentPage.includes('/services')) {
+            const activeService = document.querySelector('.service-card:hover h2') || 
+                                document.querySelector('.service-card:focus-within h2');
+            context = activeService ? `Консультация по услуге: ${activeService.textContent}` : 
+                                    'Консультация по услугам аутстаффинга';
+        } else if (currentPage.includes('/contacts')) {
+            context = 'Вопрос с страницы контактов';
+        } else if (currentPage.includes('/blog')) {
+            const articleTitle = document.querySelector('h1') || document.querySelector('h2');
+            context = articleTitle ? `Вопрос по статье: ${articleTitle.textContent}` : 
+                                   'Вопрос по материалам блога';
+        } else {
+            context = 'Консультация по аутстаффингу';
+        }
+        
+        // Добавляем информацию о переносе сайта
+        return `Здравствуйте! Пишу с сайта resursoria.ru (контент перенесен на основной сайт arenda-kovrov-mirum.ru)
+
+${context}
+
+Меня интересуют услуги аутстаффинга. Пожалуйста, предоставьте консультацию.`;
     }
 
     // Accessibility
@@ -447,8 +414,45 @@ class PrivacyManager {
         });
     }
 
+    // Информация о переносе сайта
+    setupMigrationNotice() {
+        // Добавляем динамическое уведомление о переносе
+        const noticeExists = document.querySelector('.migration-notice');
+        if (!noticeExists && !window.location.pathname.includes('/privacy')) {
+            const migrationNotice = document.createElement('div');
+            migrationNotice.className = 'migration-notice';
+            migrationNotice.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                    <span style="font-size: 1.2rem;">📢</span>
+                    <strong>Контент перенесен на основной сайт</strong>
+                </div>
+                <p>Все услуги аутстаффинга теперь доступны на <a href="https://arenda-kovrov-mirum.ru/outstaffing.html" style="color: #16a085; font-weight: bold;">arenda-kovrov-mirum.ru</a></p>
+            `;
+            migrationNotice.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #fef9e7;
+                border-left: 5px solid #f39c12;
+                padding: 15px 20px;
+                border-radius: 12px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                z-index: 1003;
+                max-width: 300px;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(migrationNotice);
+            
+            // Автоматически скрываем через 10 секунд
+            setTimeout(() => {
+                migrationNotice.style.opacity = '0';
+                setTimeout(() => migrationNotice.remove(), 300);
+            }, 10000);
+        }
+    }
+
     trapFocus(element) {
-        // Simple focus trap for modal-like elements
         const focusableElements = element.querySelectorAll(
             'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
         );
@@ -475,12 +479,10 @@ class PrivacyManager {
             
             element.addEventListener('keydown', keydownHandler);
             
-            // Focus first element
             setTimeout(() => {
                 firstElement.focus();
             }, 50);
             
-            // Cleanup
             element._keydownHandler = keydownHandler;
         }
     }
@@ -501,6 +503,7 @@ class SiteUtils {
         this.setupCurrentYear();
         this.setupErrorHandling();
         this.setupActiveNav();
+        this.setupMigrationLinks();
     }
 
     static setupPhoneLinks() {
@@ -508,24 +511,7 @@ class SiteUtils {
             const phoneLink = e.target.closest('a[href^="tel:"]');
             if (phoneLink) {
                 const phoneNumber = phoneLink.href.replace('tel:', '');
-                
-                // Google Analytics
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'phone_click', {
-                        'event_category': 'engagement',
-                        'event_label': phoneNumber,
-                        'value': 1
-                    });
-                }
-                
-                // Yandex Metrica
-                if (typeof ym !== 'undefined') {
-                    ym('reachGoal', 'phone_call', {
-                        number: phoneNumber
-                    });
-                }
-                
-                console.log('Phone call tracked:', phoneNumber);
+                console.log('Phone call initiated:', phoneNumber);
             }
         });
     }
@@ -553,7 +539,6 @@ class SiteUtils {
     }
 
     static setupActiveNav() {
-        // Устанавливаем активный пункт меню на основе текущей страницы
         const currentPath = window.location.pathname;
         const navLinks = document.querySelectorAll('.nav-links a');
         
@@ -566,8 +551,15 @@ class SiteUtils {
         });
     }
 
+    static setupMigrationLinks() {
+        // Обновляем ссылки на основной сайт
+        document.querySelectorAll('a[href*="arenda-kovrov-mirum.ru"]').forEach(link => {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        });
+    }
+
     static setupErrorHandling() {
-        // Global error handler
         window.addEventListener('error', function(e) {
             console.error('Global error:', {
                 message: e.message,
@@ -578,7 +570,6 @@ class SiteUtils {
             });
         });
 
-        // Unhandled promise rejections
         window.addEventListener('unhandledrejection', function(e) {
             console.error('Unhandled promise rejection:', e.reason);
         });
@@ -587,7 +578,7 @@ class SiteUtils {
 
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM Content Loaded - Initializing Resursoria');
+    console.log('DOM Content Loaded - Resursoria (migrated to arenda-kovrov-mirum.ru)');
     
     // Initialize managers
     window.privacyManager = new PrivacyManager();
@@ -625,4 +616,4 @@ function setVH() {
 
 window.addEventListener('resize', setVH);
 window.addEventListener('orientationchange', setVH);
-setVH(); // Initial call
+setVH();

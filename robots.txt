@@ -1,60 +1,89 @@
+# Файл robots.txt для сайта resursoria.ru
+# Запрещаем индексацию всего сайта, так как контент перенесен на основной сайт
+# Основной сайт: https://arenda-kovrov-mirum.ru/outstaffing.html
+
 User-agent: *
-Allow: /
+Disallow: /
+
+# Указываем поисковым системам, где находится основной контент
+Sitemap: https://arenda-kovrov-mirum.ru/sitemap.xml
+
+# Комментарий для поисковых систем:
+# Этот сайт является зеркалом основного сайта компании МИРУМ.
+# Основной контент по аутстаффингу находится на arenda-kovrov-mirum.ru
+# Все канонические ссылки ведут на основной сайт.
+
+# Инструкции для конкретных поисковых систем (опционально)
+User-agent: Googlebot
+Disallow: /
+Crawl-delay: 10
+
+User-agent: Yandex
+Disallow: /
+Clean-param: ref
+
+User-agent: Bingbot
+Disallow: /
+Crawl-delay: 10
+
+User-agent: Baiduspider
+Disallow: /
+Crawl-delay: 10
+
+# Разрешаем доступ только к файлам, которые могут понадобиться поисковым системам
+Allow: /css/*.css
+Allow: /js/*.js
+Allow: /images/icons/*.png
+Allow: /images/icons/*.ico
+Allow: /images/icons/*.svg
+
+# Обязательные технические файлы
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /humans.txt
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
+Allow: /site.webmanifest
+
+# Запрещаем доступ к административным и служебным директориям
 Disallow: /admin/
-Disallow: /private/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /cgi-bin/
 Disallow: /tmp/
+Disallow: /private/
+Disallow: /config/
+Disallow: /backup/
+Disallow: /logs/
 
-Sitemap: https://resursoria.ru/sitemap.xml
+# Запрещаем доступ к динамическим URL с параметрами
+Disallow: /*?
+Disallow: /*&
+Disallow: /*=
+Disallow: /*.php$
+Disallow: /*.asp$
+Disallow: /*.aspx$
 
-# Основные страницы
-Allow: /index.htm
-Allow: /services.html
-Allow: /calculator.html
-Allow: /regions/
-Allow: /blog.html
-Allow: /contacts.html
-Allow: /privacy.html
+# Запрещаем доступ к файлам с личной информацией
+Disallow: /*.sql$
+Disallow: /*.log$
+Disallow: /*.env$
+Disallow: /*.config$
+Disallow: /*.bak$
+Disallow: /*.tar.gz$
 
-# Региональные страницы - города-миллионники
-Allow: /regions/moscow.html
-Allow: /regions/saint-petersburg.html
-Allow: /regions/novosibirsk.html
-Allow: /regions/ekaterinburg.html
-Allow: /regions/kazan.html
-Allow: /regions/nizhny-novgorod.html
-Allow: /regions/chelyabinsk.html
-Allow: /regions/samara.html
-Allow: /regions/omsk.html
-Allow: /regions/rostov-on-don.html
-Allow: /regions/ufa.html
-Allow: /regions/krasnoyarsk.html
-Allow: /regions/voronezh.html
-Allow: /regions/perm.html
-Allow: /regions/volgograd.html
+# Указываем главное зеркало для поисковых систем
+Host: https://arenda-kovrov-mirum.ru
 
-# Региональные страницы - города 500+
-Allow: /regions/krasnodar.html
-Allow: /regions/saratov.html
-Allow: /regions/tyumen.html
-Allow: /regions/tolyatti.html
-Allow: /regions/izhevsk.html
-Allow: /regions/barnaul.html
-Allow: /regions/ulyanovsk.html
-Allow: /regions/irkutsk.html
-Allow: /regions/habarovsk.html
-Allow: /regions/yaroslavl.html
-Allow: /regions/vladivostok.html
-Allow: /regions/makhachkala.html
-Allow: /regions/tomsk.html
-Allow: /regions/orenburg.html
-Allow: /regions/kemerovo.html
+# Для Яндекс - указываем основное зеркало
+Yandex-Host: https://arenda-kovrov-mirum.ru
 
-# Статьи блога
-Allow: /blog/vyvod-personala-bezopasno.html
-Allow: /blog/shtrafy-2025.html
-Allow: /blog/snizhenie-nalogov.html
-Allow: /blog/legalizaciya-migrantov.html
-Allow: /blog/vybor-chaz.html
+# Важная информация для поисковых систем о миграции сайта
+# Этот файл создан: 02.12.2025
+# Причина запрета индексации: Консолидация контента на основном сайте
+# Контакт для вопросов: MatserviceMirum@yandex.ru
 
-# Crawl-delay для бережного индексирования
-Crawl-delay: 1
+# Для веб-мастеров:
+# Если вы видите этот файл на сайте resursoria.ru - это нормально.
+# Мы перенесли весь контент по аутстаффингу на основной сайт компании.
+# Пожалуйста, индексируйте основной сайт: https://arenda-kovrov-mirum.ru

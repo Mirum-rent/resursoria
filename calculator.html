@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор экономии на аутстаффинге | Ресурсория</title>
-    <meta name="description" content="Рассчитайте вашу экономию на аутстаффинге персонала. Сравнение штатных сотрудников, ГПХ, самозанятых и нашего аутстаффинга.">
+    <title>Калькулятор экономии на аутстаффинге | Ресурсория (перенос на основной сайт)</title>
+    <meta name="description" content="Контент о аутстаффинге перенесен на основной сайт arenda-kovrov-mirum.ru. Свяжитесь с нами в WhatsApp для консультации.">
     
-    <!-- SEO метатеги -->
-    <link rel="canonical" href="https://resursoria.ru/calculator.html" />
-    <meta name="robots" content="index, follow" />
+    <!-- SEO метатеги (ОБНОВЛЕНО) -->
+    <link rel="canonical" href="https://arenda-kovrov-mirum.ru/outstaffing.html" />
+    <meta name="robots" content="noindex, nofollow" />
     
     <!-- Ключевые слова -->
-    <meta name="keywords" content="калькулятор аутстаффинга, расчет экономии на персонале, сравнение налоговой нагрузки, ФОТ оптимизация, экономия на налогах">
+    <meta name="keywords" content="калькулятор аутстаффинга, расчет экономии, оптимизация налогов, ФОТ, аутстаффинг, аренда персонала, ЧАЗ">
     
     <!-- Гео-метатеги -->
     <meta name="geo.region" content="RU-MOW">
@@ -19,11 +19,11 @@
     <meta name="geo.position" content="55.755826;37.6173">
     <meta name="ICBM" content="55.755826, 37.6173">
     
-    <!-- Open Graph -->
+    <!-- Open Graph (ОБНОВЛЕНО) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Калькулятор экономии на аутстаффинге | Ресурсория">
-    <meta property="og:description" content="Рассчитайте вашу экономию на аутстаффинге персонала. Сравнение разных вариантов оформления.">
-    <meta property="og:url" content="https://resursoria.ru/calculator.html">
+    <meta property="og:title" content="Калькулятор экономии на аутстаффинге | Перенос на основной сайт">
+    <meta property="og:description" content="Контент о аутстаффинге перенесен на основной сайт. Свяжитесь для консультации.">
+    <meta property="og:url" content="https://arenda-kovrov-mirum.ru/outstaffing.html">
     <meta property="og:image" content="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/android-chrome-192x192.png">
     
     <!-- Фавиконки -->
@@ -32,15 +32,26 @@
     <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#1a3a5f">
+    <meta name="theme-color" content="#16a085"> <!-- ОБНОВЛЕНО ЦВЕТ -->
     
     <!-- Подключаем CSS -->
     <link rel="stylesheet" href="/css/style.css">
     
-    <!-- Стили калькулятора -->
+    <!-- Стили калькулятора (ОБНОВЛЕНЫ ЦВЕТА) -->
     <style>
+        :root {
+            --primary-color: #16a085; /* ОБНОВЛЕНО: фирменный цвет МИРУМ */
+            --secondary-color: #1abc9c; /* ОБНОВЛЕНО */
+            --whatsapp-color: #25D366;
+            --success-color: #27ae60;
+            --warning-color: #e74c3c;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
         .calculator-hero {
-            background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); /* ОБНОВЛЕНО */
             color: white;
             padding: 100px 0 80px;
             text-align: center;
@@ -118,7 +129,7 @@
         .input-group input:focus {
             outline: none;
             border-color: var(--secondary-color);
-            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+            box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.1); /* ОБНОВЛЕНО */
         }
 
         .input-hint {
@@ -155,7 +166,7 @@
         }
 
         .result-card.our {
-            border-top: 5px solid var(--whatsapp-color);
+            border-top: 5px solid var(--secondary-color); /* ОБНОВЛЕНО */
         }
 
         .result-card.our::before {
@@ -163,7 +174,7 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: var(--whatsapp-color);
+            background: var(--secondary-color);
             color: white;
             padding: 5px 15px;
             border-radius: 20px;
@@ -189,7 +200,7 @@
         }
 
         .result-card.our .result-amount {
-            color: var(--whatsapp-color);
+            color: var(--secondary-color);
         }
 
         .result-details {
@@ -285,7 +296,7 @@
         }
 
         .comparison-item.our {
-            border-color: var(--whatsapp-color);
+            border-color: var(--secondary-color);
             background: linear-gradient(135deg, #f0fff4, #ffffff);
         }
 
@@ -314,7 +325,7 @@
         }
 
         .comparison-item.our .comparison-amount {
-            color: var(--whatsapp-color);
+            color: var(--secondary-color);
         }
 
         .comparison-warning {
@@ -388,6 +399,36 @@
             margin-right: auto;
         }
 
+        /* Информационный блок о переносе */
+        .migration-notice {
+            background: #fef9e7;
+            border-left: 5px solid #f39c12;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: var(--border-radius);
+        }
+
+        .migration-notice h3 {
+            color: #d35400;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Скрытый SEO текст */
+        .seo-hidden-text {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         @media (max-width: 768px) {
             .calculator-wrapper {
                 padding: 30px 20px;
@@ -450,16 +491,27 @@
         }
     </style>
 
-    <!-- Микроразметка -->
+    <!-- Микроразметка (ОБНОВЛЕНА) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
+        "@type": "WebPage",
         "name": "Калькулятор экономии на аутстаффинге",
-        "description": "Интерактивный калькулятор для расчета экономии при использовании услуг аутстаффинга персонала",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Any",
-        "permissions": "none"
+        "description": "Контент о аутстаффинге перенесен на основной сайт компании МИРУМ. Используйте калькулятор для предварительной оценки экономии.",
+        "mainEntity": {
+            "@type": "WebApplication",
+            "name": "Калькулятор аутстаффинга",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Any"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "МИРУМ",
+            "url": "https://arenda-kovrov-mirum.ru",
+            "sameAs": [
+                "https://arenda-kovrov-mirum.ru/outstaffing.html"
+            ]
+        }
     }
     </script>
 </head>
@@ -490,19 +542,35 @@
         </div>
     </header>
 
+    <!-- Информация о переносе -->
+    <div class="migration-notice container">
+        <h3>📢 <span>Важная информация!</span></h3>
+        <p><strong>Контент о аутстаффинге перенесен на основной сайт компании МИРУМ.</strong></p>
+        <p>Все услуги по аутстаффингу, аренде персонала и легализации мигрантов теперь доступны на основном сайте:</p>
+        <p style="margin: 15px 0; font-size: 1.1rem; font-weight: bold;">
+            <a href="https://arenda-kovrov-mirum.ru/outstaffing.html" style="color: var(--primary-color); text-decoration: underline;">
+                https://arenda-kovrov-mirum.ru/outstaffing.html
+            </a>
+        </p>
+        <p>Используйте калькулятор для предварительного расчета экономии, а для получения детальной консультации напишите нам в WhatsApp.</p>
+    </div>
+
     <!-- Герой -->
     <section class="calculator-hero">
 		<div class="container">
 			<h1 style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Калькулятор экономии на аутстаффинге</h1>
-			<p style="color: rgba(255,255,255,0.95);">Рассчитайте, сколько ваша компания сможет сэкономить с нашими услугами</p>
+			<p style="color: rgba(255,255,255,0.95);">Рассчитайте предварительную экономию вашей компании</p>
+            <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-top: 10px;">
+                Для детального расчета напишите нам в WhatsApp
+            </p>
 		</div>
 	</section>
 
     <!-- Профессиональный CTA -->
     <section class="professional-cta container">
         <h3>📞 Нужен точный расчет для вашей компании?</h3>
-        <p>Наши эксперты проведут детальный анализ и подготовят индивидуальный расчет экономии</p>
-        <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 15px 40px;">
+        <p>Наши эксперты с 12-летним опытом проведут детальный анализ и подготовят индивидуальный расчет экономии</p>
+        <a href="https://wa.me/79581118514?text=Здравствуйте!%20Нужен%20индивидуальный%20расчет%20экономии%20на%20аутстаффинге.%20Посмотрел%20калькулятор%20на%20Ресурсории." class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 15px 40px;">
             📱 Получить индивидуальный расчет
         </a>
     </section>
@@ -512,8 +580,8 @@
         <div class="container">
             <div class="calculator-wrapper">
                 <div class="calculator-title">
-                    <h2>Рассчитайте экономию на налогах</h2>
-                    <p>Введите параметры вашей компании, чтобы увидеть сравнение разных вариантов оформления сотрудников</p>
+                    <h2>Предварительный расчет экономии</h2>
+                    <p>Введите параметры для примерной оценки экономии. Для точного расчета напишите нам в WhatsApp</p>
                 </div>
 
                 <div class="input-section">
@@ -542,28 +610,31 @@
                     </div>
                     
                     <div class="result-card our">
-                        <div class="result-title">Наш аутстаффинг</div>
+                        <div class="result-title">Аутстаффинг через ЧАЗ</div>
                         <div class="result-amount" id="result-our">560 000 ₽</div>
                         <div class="result-details">
                             • Налоги подрядчика: 45 000 ₽<br>
-                            • Наша комиссия 15%: 75 000 ₽<br>
+                            • Комиссия ЧАЗ: 75 000 ₽<br>
                             • Общая нагрузка: 24%
                         </div>
                     </div>
                 </div>
 
                 <div class="saving-section">
-                    <div class="saving-title">💎 Ваша экономия в месяц</div>
+                    <div class="saving-title">💎 Примерная экономия в месяц</div>
                     <div class="saving-amount" id="saving-amount">155 000 ₽</div>
                     <div class="saving-percent" id="saving-percent">21.7% экономии</div>
                     <div class="saving-yearly" id="saving-yearly">1 860 000 ₽ в год</div>
+                    <div class="input-hint" style="color: rgba(255,255,255,0.8); margin-top: 15px;">
+                        * Для точного расчета напишите в WhatsApp
+                    </div>
                 </div>
 
                 <div class="comparison-section">
-                    <div class="comparison-title">📊 Сравнение общей стоимости</div>
+                    <div class="comparison-title">📊 Сравнение вариантов оформления</div>
                     <div class="comparison-grid">
                         <div class="comparison-item staff">
-                            <div class="comparison-name">Штатные</div>
+                            <div class="comparison-name">Штатные сотрудники</div>
                             <div class="comparison-amount" id="comparison-staff">715 000 ₽</div>
                         </div>
                         <div class="comparison-item gph">
@@ -582,15 +653,15 @@
 								• Нет защиты
 							</div>
 						</div>
-												<div class="comparison-item our">
-                            <div class="comparison-name">Наш аутстаффинг</div>
+						<div class="comparison-item our">
+                            <div class="comparison-name">Аутстаффинг через ЧАЗ</div>
                             <div class="comparison-amount" id="comparison-our">560 000 ₽</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="advantages-section">
-                    <div class="advantages-title">🎯 Преимущества нашего аутстаффинга</div>
+                    <div class="advantages-title">🎯 Преимущества аутстаффинга через ЧАЗ</div>
                     <div class="advantages-grid">
                         <div class="advantage-item">✅ Полная юридическая защита при проверках</div>
                         <div class="advantage-item">✅ Мы берем на себя все риски и общение с проверяющими</div>
@@ -599,12 +670,11 @@
                         <div class="advantage-item">✅ Бухгалтерское и кадровое сопровождение</div>
                         <div class="advantage-item">✅ Защита от штрафов до 1 млн рублей за сотрудника</div>
                         <div class="advantage-item">✅ Оформление за 1-3 дня</div>
-                        <div class="advantage-item">✅ Профессиональная поддержка</div>
+                        <div class="advantage-item">✅ Профессиональная поддержка 24/7</div>
                     </div>
                 </div>
 				
-				<!-- В /calculator.html после блока .advantages-section добавьте: -->
-
+				<!-- Предупреждение о рисках -->
 				<div class="warning-section" style="background: #fff8e1; padding: 30px; border-radius: var(--border-radius); border-left: 5px solid #ff9800; margin: 30px 0;">
 					<h3 style="color: #e65100; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
 						⚠️ <span>Критически важное отличие от самозанятых</span>
@@ -633,7 +703,7 @@
 						</div>
 						
 						<div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); border: 2px solid var(--success-color);">
-							<h4 style="color: var(--success-color); margin-bottom: 10px;">✅ Преимущества нашего аутстаффинга:</h4>
+							<h4 style="color: var(--success-color); margin-bottom: 10px;">✅ Преимущества аутстаффинга через ЧАЗ:</h4>
 							<ul style="list-style: none; padding-left: 0;">
 								<li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
 									<strong>Полная легальность</strong> - оформление через аккредитованные ЧАЗ
@@ -662,44 +732,53 @@
 				</div>
 
                 <div style="text-align: center; padding: 40px 0;">
-                    <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 18px 40px;">
+                    <a href="https://wa.me/79581118514?text=Здравствуйте!%20Хочу%20получить%20индивидуальный%20расчет%20экономии%20на%20аутстаффинге.%20Вот%20мои%20параметры:%20[укажите%20здесь%20количество%20сотрудников%20и%20среднюю%20зарплату]" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 18px 40px;">
                         📱 Получить индивидуальный расчет
                     </a>
                     <p style="margin-top: 20px; color: #718096; font-size: 0.95rem;">
-                        Отправьте параметры вашей компании в WhatsApp для точного расчета
+                        Напишите нам в WhatsApp и получите точный расчет в течение 30 минут
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Скрытый текст для SEO -->
+    <div class="seo-hidden-text">
+        <h1>Калькулятор экономии на аутстаффинге персонала</h1>
+        <p>Онлайн калькулятор для расчета экономии при использовании услуг аутстаффинга через аккредитованные частные агентства занятости. Сравнение штатного оформления, договоров ГПХ, работы с самозанятыми и аутстаффинга. Услуги аутстаффинга персонала, аренда сотрудников, вывод персонала за штат, легализация мигрантов, оптимизация ФОТ, снижение налоговой нагрузки. Компания МИРУМ предоставляет услуги аутстаффинга с 2013 года через аккредитованные ЧАЗ в Москве и по всей России. Полная юридическая защита, кадровое сопровождение, защита от проверок ФНС, работа с иностранными сотрудниками. Рассчитайте экономию на налогах при оформлении сотрудников через аутстаффинг.</p>
+        <p>Контент о аутстаффинге перенесен на основной сайт компании МИРУМ: https://arenda-kovrov-mirum.ru/outstaffing.html</p>
+    </div>
+
     <!-- ФИНАЛЬНЫЙ CTA -->
-    <section style="background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%); color: white; padding: 80px 0; text-align: center;">
+    <section style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 80px 0; text-align: center;">
         <div class="container">
             <h2 style="color: white; margin-bottom: 20px; font-size: 2rem;">Нужен детальный расчет экономии?</h2>
             <p style="margin: 20px 0; font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                Напишите нам в WhatsApp — наш специалист подготовит индивидуальный расчет
+                Напишите нам в WhatsApp — наш специалист подготовит индивидуальный расчет в течение 30 минут
             </p>
             
             <div style="max-width: 400px; margin: 0 auto;">
-                <a href="https://wa.me/79581118514" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: inline-block; margin-bottom: 15px;">
+                <a href="https://wa.me/79581118514?text=Здравствуйте!%20Нужен%20детальный%20расчет%20экономии%20на%20аутстаффинге.%20Параметры:%20[укажите%20количество%20сотрудников,%20среднюю%20зарплату,%20регион%20работы]" class="btn btn-whatsapp" data-consent-required style="font-size: 1.2rem; padding: 16px 35px; display: inline-block; margin-bottom: 15px;">
                     📱 Написать в WhatsApp
                 </a>
                 <p style="font-size: 0.9rem; opacity: 0.9;">
-                    Укажите: количество сотрудников, среднюю зарплату, регион работы
+                    Укажите в сообщении: количество сотрудников, среднюю зарплату, регион работы
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Футер -->
+    <!-- Футер с информацией о переносе -->
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
                 <div class="footer-section">
                     <h3>Ресурсория</h3>
-                    <p>Ваш надежный партнер в кадровом аутстаффинге и аренде персонала</p>
+                    <p>Контент о аутстаффинге перенесен на основной сайт компании МИРУМ</p>
                     <div style="margin-top: 20px;">
+                        <p><strong>Основной сайт:</strong></p>
+                        <p><a href="https://arenda-kovrov-mirum.ru/outstaffing.html" style="color: var(--primary-color);">arenda-kovrov-mirum.ru/outstaffing.html</a></p>
                         <p><strong>Оператор обработки данных:</strong></p>
                         <p>ООО "МИРУМ"</p>
                         <p>ИНН: 3019008619</p>
@@ -710,32 +789,32 @@
                 <div class="footer-section">
                     <h3>Услуги</h3>
                     <ul class="footer-links">
-                        <li><a href="/services.html#outstaffing">Аутстаффинг персонала</a></li>
-                        <li><a href="/services.html#rent">Аренда персонала</a></li>
-                        <li><a href="/services.html#migrants">Легализация мигрантов</a></li>
+                        <li><a href="https://arenda-kovrov-mirum.ru/outstaffing.html">Аутстаффинг персонала</a></li>
+                        <li><a href="https://arenda-kovrov-mirum.ru/outstaffing.html">Аренда персонала</a></li>
+                        <li><a href="https://arenda-kovrov-mirum.ru/outstaffing.html">Легализация мигрантов</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Контакты</h3>
+                    <h3>Контакты (WhatsApp 24/7)</h3>
                     <ul class="footer-links">
                         <li>📞 <a href="tel:+79581118514">+7 (958) 111-85-14</a></li>
-                        <li>📱 <a href="https://wa.me/79581118514" data-consent-required>WhatsApp</a></li>
+                        <li>📱 <a href="https://wa.me/79581118514" data-consent-required>Написать в WhatsApp</a></li>
                         <li>📧 <a href="mailto:MatserviceMirum@yandex.ru">MatserviceMirum@yandex.ru</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>© 2025 Ресурсория. Все права защищены. Оператор обработки данных - ООО "МИРУМ"</p>
-                <p><a href="/privacy.html">Политика конфиденциальности</a></p>
+                <p>© 2025 Ресурсория. Контент перенесен на основной сайт компании МИРУМ. Все права защищены.</p>
+                <p><a href="/privacy.html">Политика конфиденциальности</a> | <a href="https://arenda-kovrov-mirum.ru">Основной сайт МИРУМ</a></p>
             </div>
         </div>
     </footer>
 
     <!-- Кнопка WhatsApp -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/79581118514" class="whatsapp-link" data-consent-required>
+        <a href="https://wa.me/79581118514?text=Здравствуйте!%20Посмотрел%20калькулятор%20экономии%20на%20аутстаффинге.%20Хочу%20уточнить%20детали." class="whatsapp-link" data-consent-required>
             <span>💬 Написать в WhatsApp</span>
         </a>
     </div>
@@ -749,9 +828,9 @@
             <p>
                 🍪 Мы используем файлы cookie для улучшения работы сайта. 
                 Продолжая использование сайта, вы соглашаетесь с 
-                <a href="/privacy.html" style="color: var(--whatsapp-color); text-decoration: underline;">обработкой персональных данных</a> 
+                <a href="/privacy.html" style="color: var(--primary-color); text-decoration: underline;">обработкой персональных данных</a> 
                 и нашей 
-                <a href="/privacy.html" style="color: var(--whatsapp-color); text-decoration: underline;">политикой конфиденциальности</a>.
+                <a href="/privacy.html" style="color: var(--primary-color); text-decoration: underline;">политикой конфиденциальности</a>.
             </p>
             <div class="cookie-buttons">
                 <button id="cookieAccept" class="cookie-btn cookie-accept">Принять всё</button>
@@ -962,7 +1041,7 @@
                 if (ourDetails) {
                     ourDetails.innerHTML = `
                         • Налоги подрядчика: ${this.formatCurrency(results.our.breakdown.ourTax)}<br>
-                        • Наша комиссия 15%: ${this.formatCurrency(results.our.breakdown.ourCommission)}<br>
+                        • Комиссия ЧАЗ: ${this.formatCurrency(results.our.breakdown.ourCommission)}<br>
                         • Общая нагрузка: 24%
                     `;
                 }
@@ -1019,6 +1098,28 @@
                     });
                 });
             }
+            
+            // Обновление WhatsApp ссылок с параметрами калькулятора
+            document.querySelectorAll('.btn-whatsapp').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').includes('wa.me')) {
+                        const salary = document.getElementById('salary').value || '50000';
+                        const employees = document.getElementById('employees').value || '10';
+                        
+                        // Если это не кнопка для индивидуального расчета, не меняем ссылку
+                        if (!this.textContent.includes('индивидуальный расчет')) {
+                            return;
+                        }
+                        
+                        const currentHref = this.getAttribute('href');
+                        const baseHref = currentHref.split('?')[0];
+                        const message = `Здравствуйте! Хочу получить индивидуальный расчет экономии на аутстаффинге. Вот мои параметры: ${employees} сотрудников, средняя зарплата ${salary} руб.`;
+                        const encodedMessage = encodeURIComponent(message);
+                        
+                        this.setAttribute('href', `${baseHref}?text=${encodedMessage}`);
+                    }
+                });
+            });
         });
     </script>
 

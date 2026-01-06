@@ -6,17 +6,78 @@
     <title>Аутстаффинг персонала по всей России | Ресурсория</title>
     <meta name="description" content="✅ Аутстаффинг персонала в 85 регионах России. Вывод сотрудников за штат через ЧАЗ. Снижение налогов до 40%. Легализация мигрантов.">
     
+    <!-- КАНОНИЧЕСКАЯ ССЫЛКА (ВАЖНО!) -->
+    <link rel="canonical" href="https://arenda-kovrov-mirum.ru/outstaffing.html" />
+    
+    <!-- ЗАПРЕТ ИНДЕКСАЦИИ -->
+    <meta name="robots" content="noindex, nofollow" />
+    
+    <!-- Гео-метатеги -->
+    <meta name="geo.region" content="RU">
+    <meta name="geo.placename" content="Russia">
+    <meta name="geo.position" content="55.755826;37.6173">
+    <meta name="ICBM" content="55.755826, 37.6173">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Аутстаффинг персонала по всей России">
+    <meta property="og:description" content="Услуги аутстаффинга персонала во всех регионах России">
+    <meta property="og:url" content="https://arenda-kovrov-mirum.ru/outstaffing.html">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg">
+    
+    <!-- Фавиконки -->
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/apple-touch-icon.png">
+    
+    <!-- Вебманифест -->
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Стили -->
     <link rel="stylesheet" href="/css/style.css">
     <style>
+        /* Основные стили */
         .hero {
             background: linear-gradient(135deg, #1a3a5f 0%, #2c5aa0 100%);
             color: white;
             padding: 100px 0 80px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            position: relative;
+            z-index: 1;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .regions-section {
             padding: 80px 0;
+            background: #f8f9fa;
         }
 
         .regions-categories {
@@ -24,10 +85,22 @@
         }
 
         .category-title {
-            color: var(--primary-color);
+            color: #1a3a5f;
             margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 15px;
+            border-bottom: 3px solid #16a085;
+            font-size: 1.8rem;
+            position: relative;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: #ffd700;
         }
 
         .regions-grid {
@@ -39,50 +112,246 @@
 
         .region-link {
             background: white;
-            padding: 15px;
-            border-radius: var(--border-radius);
+            padding: 20px 15px;
+            border-radius: 12px;
             text-decoration: none;
-            color: var(--primary-color);
+            color: #1a3a5f;
             text-align: center;
-            transition: var(--transition);
-            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            border: 2px solid #e9ecef;
             display: block;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .region-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .region-link:hover::before {
+            left: 100%;
         }
 
         .region-link:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--box-shadow);
-            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-color: #16a085;
+            color: #16a085;
         }
 
         .region-link.million {
-            background: var(--secondary-color);
+            background: linear-gradient(135deg, #1a3a5f, #2c5aa0);
             color: white;
-            font-weight: bold;
+            font-weight: 600;
+            border: none;
+        }
+        
+        .region-link.million:hover {
+            background: linear-gradient(135deg, #2c5aa0, #1a3a5f);
+            color: white;
+            border-color: transparent;
         }
 
         .region-link.large {
-            background: #e7f3ff;
-            border-color: var(--secondary-color);
+            background: linear-gradient(135deg, #e7f3ff, #ffffff);
+            border-color: #2c5aa0;
+            font-weight: 500;
+        }
+        
+        .region-link.large:hover {
+            background: linear-gradient(135deg, #d4e7ff, #f0f7ff);
+            border-color: #16a085;
+        }
+        
+        /* Стили для блоков с информацией */
+        .info-banner {
+            background: linear-gradient(135deg, #16a085, #138a72);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(22, 160, 133, 0.3);
+        }
+        
+        .info-banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .info-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #16a085;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .btn-primary:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Стили для навигации в хлебных крошках */
+        .breadcrumbs {
+            padding: 20px 0;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .breadcrumbs a {
+            color: #16a085;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumbs a:hover {
+            color: #138a72;
+            text-decoration: underline;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+                padding: 0 15px;
+            }
+            
+            .regions-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .region-link {
+                padding: 15px 10px;
+                font-size: 1rem;
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            .info-banner {
+                margin: 30px 15px;
+                padding: 30px 20px;
+            }
+            
+            .info-banner h3 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .regions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Стили для SEO текста (скрытого) */
+        .seo-text {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
     </style>
+    
+    <!-- Schema.org разметка -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Аутстаффинг персонала по регионам России",
+        "description": "Услуги аутстаффинга персонала во всех регионах России",
+        "url": "https://arenda-kovrov-mirum.ru/outstaffing.html",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Главная",
+                    "item": "https://arenda-kovrov-mirum.ru"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Аутстаффинг по регионам",
+                    "item": "https://arenda-kovrov-mirum.ru/outstaffing.html"
+                }
+            ]
+        },
+        "mainEntity": {
+            "@type": "Service",
+            "name": "Аутстаффинг персонала",
+            "description": "Услуги аутстаффинга персонала по всей России",
+            "areaServed": {
+                "@type": "Country",
+                "name": "Россия"
+            }
+        }
+    }
+    </script>
 </head>
 <body>
+    <!-- Хлебные крошки -->
     <nav class="breadcrumbs container">
         <a href="/">Главная</a> > 
-        <span>Регионы</span>
+        <span>Регионы аутстаффинга</span>
     </nav>
 
+    <!-- Шапка сайта -->
     <header class="main-header">
         <div class="header-container container">
             <a href="/" class="logo">
-                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" alt="Ресурсория">
+                <img src="https://raw.githubusercontent.com/Mirum-rent/resursoria/main/images/icons/logo.svg" alt="Ресурсория - аутстаффинг персонала" width="150" height="50">
             </a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="/">Главная</a></li>
                     <li><a href="/services.html">Услуги</a></li>
-                    <li><a href="/regions/">Регионы</a></li>
+                    <li><a href="/regions/" style="color: #16a085; font-weight: bold;">Регионы</a></li>
                     <li><a href="/blog.html">Блог</a></li>
                     <li><a href="/contacts.html">Контакты</a></li>
                 </ul>
@@ -91,10 +360,16 @@
         </div>
     </header>
 
+    <!-- Основной контент -->
     <section class="hero">
         <div class="container">
             <h1>Аутстаффинг персонала по всей России</h1>
-            <p>Работаем в 85 регионах страны. Выберите ваш город для получения локализованных услуг</p>
+            <p>Работаем в 85 регионах страны. Услуги аутстаффинга и аренды персонала в вашем городе. Снижение налоговой нагрузки до 40%.</p>
+            
+            <!-- Скрытый SEO текст -->
+            <div class="seo-text">
+                Аутстаффинг персонала в Москве, Санкт-Петербурге, Новосибирске, Екатеринбурге, Казани, Нижнем Новгороде, Челябинске, Самаре, Омске, Ростове-на-Дону, Уфе, Красноярске, Воронеже, Перми, Волгограде. Услуги вывода сотрудников за штат через ЧАЗ по всей России.
+            </div>
         </div>
     </section>
 
@@ -119,26 +394,26 @@
                 <a href="/regions/volgograd.html" class="region-link million">Волгоград</a>
             </div>
 
-            <h2 class="category-title">🏛️ Крупные города (500+ тыс.)</h2>
-			<div class="regions-grid">
-				<a href="/regions/krasnodar.html" class="region-link large">Краснодар</a>
-				<a href="/regions/saratov.html" class="region-link large">Саратов</a>
-				<a href="/regions/tyumen.html" class="region-link large">Тюмень</a>
-				<a href="/regions/tolyatti.html" class="region-link large">Тольятти</a>
-				<a href="/regions/izhevsk.html" class="region-link large">Ижевск</a>
-				<a href="/regions/barnaul.html" class="region-link large">Барнаул</a>
-				<a href="/regions/ulyanovsk.html" class="region-link large">Ульяновск</a>
-				<a href="/regions/irkutsk.html" class="region-link large">Иркутск</a>
-				<a href="/regions/habarovsk.html" class="region-link large">Хабаровск</a>
-				<a href="/regions/yaroslavl.html" class="region-link large">Ярославль</a>
-				<a href="/regions/vladivostok.html" class="region-link large">Владивосток</a>
-				<a href="/regions/makhachkala.html" class="region-link large">Махачкала</a>
-				<a href="/regions/tomsk.html" class="region-link large">Томск</a>
-				<a href="/regions/orenburg.html" class="region-link large">Оренбург</a>
-				<a href="/regions/kemerovo.html" class="region-link large">Кемерово</a>
-			</div>
+            <h2 class="category-title">🏛️ Крупные города (500+ тыс. жителей)</h2>
+            <div class="regions-grid">
+                <a href="/regions/krasnodar.html" class="region-link large">Краснодар</a>
+                <a href="/regions/saratov.html" class="region-link large">Саратов</a>
+                <a href="/regions/tyumen.html" class="region-link large">Тюмень</a>
+                <a href="/regions/tolyatti.html" class="region-link large">Тольятти</a>
+                <a href="/regions/izhevsk.html" class="region-link large">Ижевск</a>
+                <a href="/regions/barnaul.html" class="region-link large">Барнаул</a>
+                <a href="/regions/ulyanovsk.html" class="region-link large">Ульяновск</a>
+                <a href="/regions/irkutsk.html" class="region-link large">Иркутск</a>
+                <a href="/regions/habarovsk.html" class="region-link large">Хабаровск</a>
+                <a href="/regions/yaroslavl.html" class="region-link large">Ярославль</a>
+                <a href="/regions/vladivostok.html" class="region-link large">Владивосток</a>
+                <a href="/regions/makhachkala.html" class="region-link large">Махачкала</a>
+                <a href="/regions/tomsk.html" class="region-link large">Томск</a>
+                <a href="/regions/orenburg.html" class="region-link large">Оренбург</a>
+                <a href="/regions/kemerovo.html" class="region-link large">Кемерово</a>
+            </div>
 
-            <h2 class="category-title">🏡 Города (100-500 тыс.)</h2>
+            <h2 class="category-title">🏡 Города (100-500 тыс. жителей)</h2>
             <div class="regions-grid">
                 <a href="/regions/novokuznetsk.html" class="region-link">Новокузнецк</a>
                 <a href="/regions/ryazan.html" class="region-link">Рязань</a>
@@ -153,45 +428,62 @@
             </div>
         </div>
 
-        <div style="text-align: center; padding: 40px; background: #f8f9fa; border-radius: var(--border-radius);">
-            <h3>Не нашли ваш город?</h3>
-            <p>Мы работаем по всей России! Свяжитесь с нами для уточнения возможности работы в вашем регионе.</p>
-            <a href="/contacts.html" class="btn btn-primary" style="margin-top: 20px;">Связаться с нами</a>
+        <!-- Информационный баннер -->
+        <div class="info-banner">
+            <h3>Аутстаффинг персонала в вашем городе</h3>
+            <p>Не нашли свой город в списке? Мы работаем по всей России! Свяжитесь с нами для получения информации об услугах аутстаффинга в вашем регионе.</p>
+            <a href="/contacts.html" class="btn-primary">
+                Получить консультацию по аутстаффингу
+            </a>
+            <div style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                <p>📞 <strong>Телефон:</strong> +7 (958) 111-85-14</p>
+                <p>📱 <strong>WhatsApp:</strong> <a href="https://wa.me/79581118514" style="color: white; text-decoration: underline;">Написать в WhatsApp</a></p>
+            </div>
         </div>
     </section>
 
+    <!-- Футер -->
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
                 <div class="footer-section">
                     <h3>Ресурсория</h3>
-                    <p>Аутстаффинг и аренда персонала по всей России</p>
+                    <p>Аутстаффинг и аренда персонала по всей России. Часть компании МИРУМ.</p>
+                    <div style="margin-top: 15px; font-size: 0.9rem;">
+                        <p><strong>Оператор обработки данных:</strong></p>
+                        <p>ООО "МИРУМ"</p>
+                        <p>ИНН: 3019008619</p>
+                        <p>ОГРН: 1133023000665</p>
+                    </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Регионы</h3>
+                    <h3>Ключевые регионы</h3>
                     <ul class="footer-links">
-                        <li><a href="/regions/moscow.html">Москва</a></li>
-                        <li><a href="/regions/saint-petersburg.html">Санкт-Петербург</a></li>
-                        <li><a href="/regions/novosibirsk.html">Новосибирск</a></li>
-                        <li><a href="/regions/">Все регионы</a></li>
+                        <li><a href="/regions/moscow.html">Аутстаффинг в Москве</a></li>
+                        <li><a href="/regions/saint-petersburg.html">Аутстаффинг в СПб</a></li>
+                        <li><a href="/regions/novosibirsk.html">Аутстаффинг в Новосибирске</a></li>
+                        <li><a href="/regions/">Все города России</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Контакты</h3>
                     <ul class="footer-links">
-                        <li><a href="tel:+79581118514">+7 (958) 111-85-14</a></li>
-                        <li><a href="https://wa.me/79581118514">WhatsApp</a></li>
-                        <li><a href="mailto:MatserviceMirum@yandex.ru">Email</a></li>
+                        <li>📞 <a href="tel:+79581118514">+7 (958) 111-85-14</a></li>
+                        <li>📱 <a href="https://wa.me/79581118514">WhatsApp для консультаций</a></li>
+                        <li>📧 <a href="mailto:MatserviceMirum@yandex.ru">MatserviceMirum@yandex.ru</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Ресурсория. ООО "МИРУМ". Все права защищены.</p>
+                <p>© 2025 Ресурсория (часть компании МИРУМ). Все права защищены. | <a href="/privacy.html" style="color: #16a085;">Политика конфиденциальности</a></p>
+                <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.7;">
+                    Сайт не индексируется. Основной контент по аутстаффингу находится на <a href="https://arenda-kovrov-mirum.ru/outstaffing.html" style="color: #16a085;">arenda-kovrov-mirum.ru</a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Кнопки -->
+    <!-- Кнопки для связи -->
     <div class="whatsapp-float">
         <a href="https://wa.me/79581118514" class="whatsapp-link" data-consent-required>
             <span>💬 Написать в WhatsApp</span>
@@ -200,14 +492,71 @@
 
     <div class="scroll-to-top" id="scrollToTop">↑</div>
 
+    <!-- Уведомление о куках -->
     <div id="cookieNotice" class="cookie-notice">
-        <p>Мы используем файлы cookie для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с обработкой персональных данных.</p>
-        <div class="cookie-buttons">
-            <button id="cookieAccept" class="cookie-btn cookie-accept">Принять</button>
-            <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+        <div class="container">
+            <p>
+                🍪 Мы используем файлы cookie для улучшения работы сайта. 
+                Продолжая использование сайта, вы соглашаетесь с 
+                <a href="/privacy.html" style="color: #16a085; text-decoration: underline;">обработкой персональных данных</a>.
+            </p>
+            <div class="cookie-buttons">
+                <button id="cookieAccept" class="cookie-btn cookie-accept">Принять</button>
+                <button id="cookieReject" class="cookie-btn cookie-reject">Отклонить</button>
+            </div>
         </div>
     </div>
 
+    <!-- JavaScript -->
     <script src="/js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Кнопка "Наверх"
+            const scrollBtn = document.getElementById('scrollToTop');
+            if (scrollBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        scrollBtn.classList.add('visible');
+                    } else {
+                        scrollBtn.classList.remove('visible');
+                    }
+                });
+                
+                scrollBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Предупреждение о том, что сайт не индексируется
+            console.log('⚠️ ВНИМАНИЕ: Сайт resursoria.ru не индексируется поисковыми системами.');
+            console.log('📱 Основной контент по аутстаффингу находится на: https://arenda-kovrov-mirum.ru/outstaffing.html');
+            console.log('🔍 Причина: консолидация контента на основном сайте компании.');
+            
+            // Перехват кликов по ссылкам регионов
+            document.querySelectorAll('.region-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const regionName = this.textContent.trim();
+                    const message = `📍 ЗАПРОС НА АУТСТАФФИНГ В ГОРОДЕ: ${regionName}\n\n` +
+                                   `Я интересуюсь услугами аутстаффинга персонала в городе ${regionName}.\n` +
+                                   `Пожалуйста, свяжитесь со мной для консультации.\n\n` +
+                                   `🌐 Страница: Регионы аутстаффинга\n` +
+                                   `🕒 Время: ${new Date().toLocaleString('ru-RU')}`;
+                    
+                    // Открываем WhatsApp с сообщением
+                    const whatsappUrl = `https://wa.me/79581118514?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // Сообщение пользователю
+                    alert(`Открывается WhatsApp для консультации по аутстаффингу в ${regionName}. Просто отправьте сообщение!`);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -18,3 +18,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
           server-dir: /resursoria.ru/htdocs/www/
+          secure: true
